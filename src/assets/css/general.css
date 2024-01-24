@@ -1,0 +1,15 @@
+@import url('reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&family=Roboto:ital,wght@0,100;0,400;0,700;1,500&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--color-body);
+  width: 1440px;
+}
+
+:root {
+  --color-main: #241400;
+  --color-footer: #391f00;
+  --color-body: #fffaf5;
+  --color-red: #720418;
+}
