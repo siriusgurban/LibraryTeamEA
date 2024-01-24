@@ -4,7 +4,7 @@
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--color-body);
-  width: 1440px;
+  max-width: 1440px;
 }
 
 :root {
@@ -12,4 +12,13 @@ body {
   --color-footer: #391f00;
   --color-body: #fffaf5;
   --color-red: #720418;
+}
+
+.zoom {
+  transition: transform 0.2s; /* Animation */
+}
+
+.zoom:hover {
+  transform: scale(1.2);
+  cursor: pointer; /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
