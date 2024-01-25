@@ -5,28 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" href="./src/assets/icons/logo_red.svg" type="image/x-icon">
+    <link rel="icon" href="../icons/logo_red.svg" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./src/assets/css/index.css">
+    <link rel="stylesheet" href="../css/catalog.css">
 
-    <title>Library</title>
+    <title>Catalog</title>
 </head>
 
 <body>
 
     <!-- ---------------------------------------HEADER-BEGINS-------------------------------------------------------- -->
 
+
     <header class="container">
-        <div class="d-flex justify-content-between align-items-center my-auto" style="height: 100px;">
+        <div class="d-flex justify-content-between align-items-center" style="height: 100px;">
 
             <div>
-                <a class="text-decoration-none" href="#">
+                <a class="text-decoration-none" href="../../../index.html">
                     <div class="d-flex gap-2 align-items-center">
-                        <img src="./src/assets/icons/logo_red.svg" alt="">
+                        <img src="../icons/logo_red.svg" alt="">
                         <div class="d-flex flex-column">
-                            <div class="fw-bold text-uppercase" style="color: var(--color-red); font-size: 14px;">
-                                Library</div>
+                            <div class="fw-bold text-uppercase" style="color: var(--color-red); font-size: 14px;">Library</div>
                             <div style="background-color: #C3C0BD; height: 1px; width: 120px;"></div>
                             <div class="text-secondary" style="font-size: 13px;">book store</div>
                         </div>
@@ -36,21 +36,23 @@
 
             <nav>
                 <ul class="d-flex gap-3" style="font-size: 12px;">
-                    <li><a href="index.html" class="nav-active">Home</a></li>
-                    <li><a href="./src/assets/pages/catalog.html" class="nav-color">Catalog</a></li>
-                    <li><a href="./src/assets/pages/about.html" class="nav-color">About Store</a></li>
-                    <li><a href="./src/assets/pages/contactUs.html" class="nav-color">Contact Us</a></li>
-                    <li><a href="./src/assets/pages/search.html" class="nav-color">Search</a></li>
+                    <li><a href="../../../index.html" class="nav-color">Home</a>
+                    </li>
+                    <li><a href="catalog.html" class="nav-active">Catalog</a></li>
+                    <li><a href="about.html" class="nav-color">About Store</a>
+                    </li>
+                    <li><a href="contactUs.html" class="nav-color">Contact Us</a>
+                    </li>
+                    <li><a href="search.html" class="nav-color">Search</a></li>
                 </ul>
             </nav>
 
             <div type="button" class="" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <div class="d-flex align-items-center gap-2">
-                    <img src="./src/assets/icons/personal_icon.svg" alt="">
+                    <img src="../icons/personal_icon.svg" alt="">
                     <div style="font-size: 14px;">Join Us</div>
                 </div>
             </div>
-
         </div>
     </header>
 
@@ -61,9 +63,8 @@
 
 
     <main>
-
         <section>
-            <div class="fw-bold">Index</div>
+            <div class="fw-bold">Catalog</div>
         </section>
 
         <!-- ---------------------------------------SOCIAL-SECTION-BEGINS-------------------------------------------------------- -->
@@ -73,32 +74,30 @@
             <div class="d-flex flex-column gap-4">
                 <div class="fw-bold text-center" style="font-size: 25px;">Follow us on social media</div>
                 <div class="d-flex justify-content-center" style="gap: 54px;">
-                    <div><img src="./src/assets/icons/facebookicon.svg" class="zoom" alt="facebook"></div>
-                    <div><img src="./src/assets/icons/instagramicon.svg" class="zoom" alt="instagram"></div>
-                    <div><img src="./src/assets/icons/twettericon.svg" class="zoom" alt="twetter"></div>
+                    <div><img src="../icons/facebookicon.svg" class="zoom" alt="facebook"></div>
+                    <div><img src="../icons/instagramicon.svg" class="zoom" alt="instagram"></div>
+                    <div><img src="../icons/twettericon.svg" class="zoom" alt="twetter"></div>
                 </div>
             </div>
         </section>
 
         <!-- ---------------------------------------SOCIAL-SECTION-ENDS-------------------------------------------------------- -->
 
-
     </main>
 
     <!-- ---------------------------------------MAIN-ENDS-------------------------------------------------------- -->
 
+      <!-- ---------------------------------------FOOTER-BEGINS-------------------------------------------------------- -->
 
-    <!-- ---------------------------------------FOOTER-BEGINS-------------------------------------------------------- -->
 
-
-    <footer class="" style="background-color: var(--color-footer);">
+      <footer class="" style="background-color: var(--color-footer);">
 
         <div class="container d-flex justify-content-between" style="height: 236px; padding-top: 56px;">
 
             <div>
                 <a class="text-decoration-none" href="#">
                     <div class="d-flex gap-1 align-items-center">
-                        <img src="./src/assets/icons/logo.svg" alt="logo">
+                        <img src="../icons/logo.svg" alt="logo">
                         <div class="d-flex flex-column gap-2">
                             <div class="text-white fw-bold text-uppercase" style="font-size: 14px;">Library</div>
                             <div style="background-color: #C3C0BD; height: 1px;"></div>
@@ -144,13 +143,14 @@
 
     <!-- ---------------------------------------FOOTER-ENDS-------------------------------------------------------- -->
 
+
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 
-<script type="module" src="./src/assets/js/joinUs.js"></script>
-<script type="module" src="./src/assets/js/index.js"></script>
+<script type="module" src="../js/joinUs.js"></script>
+<script type="module" src="../js/catalog.js"></script>
 
 </html>

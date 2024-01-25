@@ -1,0 +1,40 @@
+@import url('reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&family=Roboto:ital,wght@0,100;0,400;0,700;1,500&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--color-body);
+}
+
+:root {
+  --color-main: #241400;
+  --color-footer: #391f00;
+  --color-body: #fffaf5;
+  --color-red: #720418;
+  --color-orange: #e16a00;
+}
+
+.zoom {
+  transition: transform 0.2s; /* Animation */
+}
+
+.zoom:hover {
+  transform: scale(1.2);
+  cursor: pointer; /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.nav-active {
+  color: var(--color-orange);
+  text-decoration: underline;
+  text-decoration-color: var(--color-orange);
+}
+
+.nav-color {
+  color: var(--color-main);
+  text-decoration: none;
+}
+
+.nav-color:hover {
+  color: var(--color-orange);
+  transition: all ease 0.2s;
+}
