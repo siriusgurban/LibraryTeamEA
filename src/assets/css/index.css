@@ -1,2 +1,226 @@
-@import url('general.css');
+@import url("general.css");
+.store-description {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.store-description h3 {
+  display: flex;
+  width: 467px;
+  height: 33px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
 
+  color: var(--color-main);
+  font-family: Montserrat;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 196.187%; /* 70.627px */
+}
+
+.store-description p {
+  display: flex;
+  width: 370px;
+  height: 61px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+
+  color: var(--color-main);
+  font-family: Montserrat;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 196.187%; /* 25.504px */
+}
+
+.go-to-catalog-btn {
+  width: 212px;
+  height: 50px;
+  flex-shrink: 0;
+
+  filter: drop-shadow(0px 7px 35px rgba(214, 100, 0, 0.22));
+  background-color: var(--color-orange);
+  border: none;
+}
+
+.go-to-catalog-btn span {
+  display: flex;
+  width: 164px;
+  height: 29px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 196.187%; /* 29.428px */
+}
+/* about store  */
+.about-store-section {
+  display: flex;
+  gap: 142;
+}
+
+.about-store-section-left {
+  margin-top: 244px;
+}
+
+.about-store-section-right {
+  margin-top: 146px;
+  margin-left: 120px;
+}
+
+/* catalog container */
+.catalog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 68px;
+}
+
+.catalog-container h3 {
+  color: var(--color-black);
+  font-family: Montserrat;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 196.187%; /* 49.047px */
+}
+.catalog-element-style {
+  width: 242px;
+  height: 76px;
+  flex-shrink: 0;
+
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  margin-top: 66px;
+}
+
+.catalog-row1,
+.catalog-row2,
+.catalog-row3 {
+  display: flex;
+  gap: 36px;
+}
+
+.catalog span {
+  color: var(--color-main);
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 196.187%; /* 27.466px */
+}
+
+/* typography-container */
+.typography-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+
+  margin-top: 140px;
+  margin-bottom: 32px;
+}
+.typography-container h3 {
+  color: var(--color-main);
+
+  font-family: Montserrat;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 196.187%; /* 49.047px */
+}
+
+/* numbers */
+.numbers-container {
+  width: 1170px;
+  height: 98px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30;
+  margin-bottom: 159px;
+}
+
+.typography {
+  width: 270px;
+  height: 98px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.number {
+  color: var(--color-main);
+  font-family: Montserrat;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 196.187%; /* 98.094px */
+}
+
+.number-desc {
+  color: var(--color-main);
+
+  font-family: Montserrat;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 196.187%; /* 25.504px */
+}
+
+/* delivery */
+.delivery {
+  flex-shrink: 0;
+  display: flex;
+  gap: 42px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 80px;
+}
+.delivery h3 {
+  color: var(--color-main);
+
+  font-family: Montserrat;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 196.187%; /* 49.047px */
+}
+
+.delivery p {
+  color: var(--color-main);
+  text-align: center;
+
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 196.187%; /* 23.542px */
+
+  width: 1170px;
+}
