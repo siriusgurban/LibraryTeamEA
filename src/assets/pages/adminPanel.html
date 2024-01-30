@@ -15,7 +15,179 @@
 
 <body>
 
-    <div>Admin Panel</div>
+    <main>
+
+        <!-- -------------------------------------------- Admin Authecation Starts-------------------------------------- -->
+
+
+        <section id="adminCard" class="">
+            <div class=" d-flex justify-content-center align-items-center"
+                style="height: 100vh;  background-color: var(--color-red);">
+                <form class="row bg-white" style="width: 40%;" action="" id="adminForm">
+                    <h1 class="fs-1 fw-bold text-center mb-5 mt-5">Welcome, admin!</h1>
+                    <div class="mb-4 col-10 m-auto">
+                        <input type="text" class="form-control p-3" id="inpUsername" aria-describedby="emailHelp"
+                            placeholder="Username" required />
+                    </div>
+                    <div class="mb-4 col-10 m-auto">
+                        <input type="password" class="form-control p-3" id="inpPassword" aria-describedby="emailHelp"
+                            placeholder="Password" name="username" required />
+                    </div>
+                    <div id="alertWrong" class="my-4"></div>
+                    <div class="modal-footer w-100 d-flex justify-content-center mb-4">
+                        <button type="submit" class="btn btn-warning text-white zoom py-3 fs-5"
+                            style="background-color: var(--color-orange); width: 80%;">Join</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- -------------------------------------------- Admin Authecation Ends-------------------------------------- -->
+
+
+
+        <section id="adminPanel" class="d-none" style="background-color: var(--color-body);">
+
+            <!-------------------------------------------- Left Side Menu Starts------------------------------------->
+
+
+            <div class="ps-5 py-5"
+                style="width:25%; position: fixed; height: 100%; overflow: auto; background-color: var(--color-red); overflow-x: hidden;">
+
+                <div class="d-flex align-items-center gap-2 text-decoration-none link-warning ">
+                    <div><img src="../icons/logo.svg" height="112" width="88" alt=""></div>
+                    <div class="d-flex flex-column gap-1">
+                        <div class="text-white fw-bold text-uppercase fs-3">Library</div>
+                        <div style="background-color: #C3C0BD; height: 1px;"></div>
+                        <div class="text-white fs-3">Admin Panel</div>
+                    </div>
+                </div>
+
+                <a class="text-decoration-none link-warning text-white " href="#home">
+                    <h2 class="fs-5 d-flex align-items-center gap-2 zoom"><img src="../icons/logo.svg" alt="">Home</h2>
+                </a>
+                <a class="text-decoration-none link-warning text-white " href="#books">
+                    <h2 class="fs-5 d-flex align-items-center gap-2 zoom"><img src="../icons/logo.svg" alt="">Books</h2>
+                </a>
+                <h2 class="fs-5 d-flex align-items-center gap-2 text-decoration-none link-warning text-white zoom"><img
+                        src="../icons/logo.svg" alt="">About</h2>
+                <a class="text-decoration-none link-warning text-white" href="#joinUs">
+                    <h2 class="fs-5 d-flex align-items-center gap-2 zoom"><img src="../icons/logo.svg" alt="">Join Us
+                    </h2>
+                </a>
+                <a class="text-decoration-none link-warning text-white" href="#contactUs">
+                    <h2 class="fs-5 d-flex align-items-center gap-2 zoom"><img src="../icons/logo.svg" alt="">Contact Us
+                    </h2>
+                </a>
+                <h2 style="cursor: pointer;" id="adminLogOut"
+                    class="fs-5 d-flex align-items-center gap-2 text-decoration-none link-warning text-white zoom"><img
+                        src="../icons/logo.svg" alt="">Log Out</h2>
+            </div>
+
+            <!-------------------------------------------- Left Side Menu Ends------------------------------------->
+
+
+            <!-------------------------------------------- Right Side Menu Starts------------------------------------->
+
+
+            <div class="p-4" style="margin-left: 27%;">
+
+
+
+
+                <!-------------------------------------------- Add Book Starts------------------------------------->
+
+
+                <!-------------------------------------------- Add Book Ends------------------------------------->
+
+                <!-------------------------------------------- About Store Starts------------------------------------->
+
+
+
+                <!-------------------------------------------- About Store Ends------------------------------------->
+
+
+                <!-------------------------------------------- Join Us Starts------------------------------------->
+
+                <h1 id="joinUs" class="mt-5 mb-3 fs-2 fw-bold">Join Us</h1>
+                <table class="table table-striped table-bordered w-75">
+                    <thead class="fw-bold text-white text-center">
+                        <tr>
+                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">#</th>
+                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">Fullname
+                            </th>
+                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">Address
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="joinUstbody">
+
+                    </tbody>
+                </table>
+
+                <!-------------------------------------------- Join Us Ends------------------------------------->
+
+                <!-------------------------------------------- Books Starts------------------------------------->
+                <h1 id="books" class="mt-5 mb-3 fs-2 fw-bold">BOOKS</h1>
+                <table class="table table-striped table-bordered">
+                    <thead class=" fw-bold text-white text-center">
+                        <tr>
+                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">#</th>
+                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">Title
+                            </th>
+                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">Author
+                            </th>
+                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                Description</th>
+                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">Category
+                            </th>
+                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">Delete
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="booktbody" class="">
+
+                    </tbody>
+                </table>
+
+                <!-------------------------------------------- Books Ends------------------------------------>
+
+
+                <!-------------------------------------------- Contact Us Starts------------------------------------->
+
+                <h1 id="contactUs" class="mt-5 mb-3 fs-2 fw-bold">Contact Us</h1>
+                <table class="table table-striped table-bordered">
+                    <thead class="fw-bold text-white text-center">
+                        <tr>
+                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">#</th>
+                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">Fullname
+                            </th>
+                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">Address
+                            </th>
+                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">Email
+                            </th>
+                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">Phone
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="contactUstbody">
+
+                    </tbody>
+                </table>
+
+                <!-------------------------------------------- Contact Us Ends------------------------------------->
+
+
+            </div>
+
+
+            <!-------------------------------------------- Right Side Menu Ends------------------------------------->
+
+
+        </section>
+
+    </main>
 
 </body>
 
