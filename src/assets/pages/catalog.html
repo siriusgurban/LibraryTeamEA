@@ -1,156 +1,479 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="icon" href="../icons/logo_red.svg" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/catalog.css">
+    <link rel="icon" href="../icons/logo_red.svg" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/catalog.css" />
 
     <title>Catalog</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!-- ---------------------------------------HEADER-BEGINS-------------------------------------------------------- -->
 
-
     <header class="container">
-        <div class="d-flex justify-content-between align-items-center" style="height: 100px;">
+      <div class="d-flex justify-content-between align-items-center my-auto header-section flex-wrap"
+          style="height: 100px;">
 
-            <div>
-                <a class="text-decoration-none" href="../../../index.html">
-                    <div class="d-flex gap-2 align-items-center">
-                        <img src="../icons/logo_red.svg" alt="">
-                        <div class="d-flex flex-column">
-                            <div class="fw-bold text-uppercase" style="color: var(--color-red); font-size: 14px;">Library</div>
-                            <div style="background-color: #C3C0BD; height: 1px; width: 120px;"></div>
-                            <div class="text-secondary" style="font-size: 13px;">book store</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+          <div class="">
+            <a class="text-decoration-none" href="../../../index.html">
+              <div class="d-flex gap-2 align-items-center">
+                      <img src="../icons/logo_red.svg" alt="">
+                      <div class="d-flex flex-column">
+                          <div class="fw-bold text-uppercase" style="color: var(--color-red); font-size: 14px;">
+                              Library</div>
+                          <div style="background-color: #C3C0BD; height: 1px; width: 120px;"></div>
+                          <div class="text-secondary" style="font-size: 13px;">book store</div>
+                      </div>
+                  </div>
+              </a>
+          </div>
 
-            <nav>
-                <ul class="d-flex gap-3" style="font-size: 12px;">
-                    <li><a href="../../../index.html" class="nav-color">Home</a>
-                    </li>
-                    <li><a href="catalog.html" class="nav-active">Catalog</a></li>
-                    <li><a href="about.html" class="nav-color">About Store</a>
-                    </li>
-                    <li><a href="contactUs.html" class="nav-color">Contact Us</a>
-                    </li>
-                    <li><a href="search.html" class="nav-color">Search</a></li>
-                </ul>
-            </nav>
+          <nav class="navbar">
 
-            <div type="button" class="" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <div class="d-flex align-items-center gap-2">
-                    <img src="../icons/personal_icon.svg" alt="">
-                    <div style="font-size: 14px;">Join Us</div>
-                </div>
-            </div>
-        </div>
-    </header>
+              <ul id="navMenuLarge" class="d-flex gap-3 nav-menu" style="font-size: 12px;">
+                  <li><a href="../../../index.html" class="nav-color">Home</a></li>
+                  <li><a href="../pages/catalog.html" class="nav-active">Catalog</a></li>
+                  <li><a href="../pages/about.html" class="nav-color">About Store</a></li>
+                  <li><a href="../pages/contactUs.html" class="nav-color">Contact Us</a></li>
+                  <li><a href="../pages/search.html" class="nav-color">Search</a></li>
+              </ul>
+
+              <div class="hamburger">
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+              </div>
+
+          </nav>
+
+          <div id="joinUsBtn" type="button" class="" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <div class="d-flex align-items-center gap-2">
+                  <img src="../icons/personal_icon.svg" alt="">
+                  <div id="joinUsText" style="font-size: 14px;">Join Us</div>
+              </div>
+          </div>
+
+      </div>
+  </header>
+
 
     <!-- ---------------------------------------HEADER-ENDS-------------------------------------------------------- -->
 
     <!-- ---------------------------------------MAIN-BEGINS-------------------------------------------------------- -->
 
-
-
     <main>
-        <section>
-            <div class="fw-bold">Catalog</div>
-        </section>
 
-        <!-- ---------------------------------------SOCIAL-SECTION-BEGINS-------------------------------------------------------- -->
+   <!-----------------------------------------JOIN-US-BEGINS-MODAL------------------------------------------------------ -->
 
-        <section class="d-flex align-items-center justify-content-center"
-            style="height: 410px; color: var(--color-main)">
-            <div class="d-flex flex-column gap-4">
-                <div class="fw-bold text-center" style="font-size: 25px;">Follow us on social media</div>
-                <div class="d-flex justify-content-center" style="gap: 54px;">
-                    <div><img src="../icons/facebookicon.svg" class="zoom" alt="facebook"></div>
-                    <div><img src="../icons/instagramicon.svg" class="zoom" alt="instagram"></div>
-                    <div><img src="../icons/twettericon.svg" class="zoom" alt="twetter"></div>
-                </div>
+   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+
+        <div class=" text-end"><button type="button" class="btn fs-1" style="color: white;" data-bs-dismiss="modal" aria-label="Close">✖</button>
+        </div><div class="modal-content w-100">
+
+            <div class="modal-header" style="padding-top: 35px; padding-bottom: 16px;font-size: 40px;">
+                <h1 class="modal-title fw-bolder text-center m-auto col-12" id="exampleModalLabel">Join Us
+                </h1>
             </div>
-        </section>
 
-        <!-- ---------------------------------------SOCIAL-SECTION-ENDS-------------------------------------------------------- -->
+            <div class="modal-body">
 
-    </main>
+                <div id="successAlert"></div>
 
-    <!-- ---------------------------------------MAIN-ENDS-------------------------------------------------------- -->
+                <form class="row" action="" id="joinUsBtn">
 
-      <!-- ---------------------------------------FOOTER-BEGINS-------------------------------------------------------- -->
-
-
-      <footer class="" style="background-color: var(--color-footer);">
-
-        <div class="container d-flex justify-content-between" style="height: 236px; padding-top: 56px;">
-
-            <div>
-                <a class="text-decoration-none" href="#">
-                    <div class="d-flex gap-1 align-items-center">
-                        <img src="../icons/logo.svg" alt="logo">
-                        <div class="d-flex flex-column gap-2">
-                            <div class="text-white fw-bold text-uppercase" style="font-size: 14px;">Library</div>
-                            <div style="background-color: #C3C0BD; height: 1px;"></div>
-                            <div class="text-white text-uppercase" style="font-size: 13px;">book store</div>
-                        </div>
+                    <div class="mb-4 mt-2 col-11 m-auto ab " style="width: 90%;">
+                        <input type="text" class="form-control p-3 w-100 px-5" id="inpFullname"
+                            aria-describedby="emailHelp" placeholder="Full Name" required
+                            style="border: 1px solid #CECECE;" />
                     </div>
-                </a>
-            </div>
+                    <div class="mb-4 col-11 m-auto ab" style="width: 90%;">
+                        <input type="email" class="form-control p-3 w-100 px-5" id="inpEmail"
+                            aria-describedby="emailHelp" placeholder="Email address" name="username" required
+                            style="border: 1px solid #CECECE;" />
+                    </div>
 
-            <div class="d-flex flex-column text-white gap-3 text-start" style=" cursor:pointer; font-size: 13px;">
-                <div class="fs-5 ">Popular</div>
-                <div class="text-white link-secondary">Programming</div>
-                <div class="text-white link-secondary">Books for children</div>
-                <div class="text-white link-secondary">Psychology</div>
-                <div class="text-white link-secondary">Business</div>
-            </div>
+                    <div class="modal-footer mx-auto w-100 col-11">
+                        <button id="joinUsButton" type="submit" class="btn text-white py-3 mt-3 mx-auto"
+                            style="background-color: var(--color-orange); width: 90%;">Join</button>
+                    </div>
 
-            <div class="d-flex flex-column text-white gap-3 text-start" style=" cursor:pointer; font-size: 13px;">
-                <div class="fs-5">Cash</div>
-                <div class="text-white link-secondary">Delivery</div>
-                <div class="text-white link-secondary">Payment</div>
-                <div class="text-white link-secondary">About the store</div>
-            </div>
+                </form>
 
-            <div class="d-flex flex-column text-white gap-3 text-start" style=" cursor:pointer; font-size: 13px;">
-                <div class="fs-5">Help</div>
-                <div class="text-white link-secondary">Contacts</div>
-                <div class="text-white link-secondary">Purchase returns</div>
-                <div class="text-white link-secondary">Buyer help</div>
-            </div>
-
-            <div class="d-flex flex-column align-items-center gap-2 ">
-                <div class="fw-bold text-white">+994511234567</div>
-                <button class="border border-warning text-warning link-secondary"
-                    style="background-color: var(--color-footer); padding: 8px 50px;">Request a call</button>
             </div>
 
         </div>
-        <div class="text-white d-flex justify-content-center align-items-center" style="height: 40px; font-size: 12px;">
-            <div>All rights reserved © 2003-2024 LIBRARY TERMS OF USE | Privacy Policy</div>
+    </div>
+</div>
+
+<!-----------------------------------------JOIN-US-ENDS-MODAL------------------------------------------------------ -->
+      <section class="allBooks-slider-section">
+        <div class="all-books">
+          <h1>All books</h1>
+          <div>
+            <div class="categories">
+              <ul>
+                <li><a href="">Fantastik</a></li>
+                <li><a href="">Self-development</a></li>
+                <li><a href="">Baby</a></li>
+                <li><a href="">Clas</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </footer>
 
-    <!-- ---------------------------------------FOOTER-ENDS-------------------------------------------------------- -->
+        <!--  -->
+
+        <div class="swiper-container">
+            <div class="swiper-wraper slider-1">
+              <div class="swiper-slide">
+                <div>
+                  <!--  -->
+                  <div class="card">
+                    <img src="../images/KonstantinBook.png" />
+                    <h2>Order in Chaos</h2>
+                    <p>Konstantin Koptelov</p>
+                    <button class="read-more zoom">Read more</button>
+                  </div>
+                </div>
+  
+                <div>
+                  <!--  -->
+                  <div class="card">
+                    <img src="../images/KonstantinBook.png" />
+                    <h2>Order in Chaos</h2>
+                    <p>Konstantin Koptelov</p>
+                    <button class="read-more zoom">Read more</button>
+                  </div>
+                </div>
+
+                <div>
+                    <!--  -->
+                    <div class="card">
+                      <img src="../images/KonstantinBook.png" />
+                      <h2>Order in Chaos</h2>
+                      <p>Konstantin Koptelov</p>
+                      <button class="read-more zoom">Read more</button>
+                    </div>
+                </div>
+
+                <div>
+                    <!--  -->
+                    <div class="card">
+                      <img src="../images/KonstantinBook.png" />
+                      <h2>Order in Chaos</h2>
+                      <p>Konstantin Koptelov</p>
+                      <button class="read-more zoom">Read more</button>
+                    </div>
+                </div>
+                <div>
+                    <!--  -->
+                    <div class="card">
+                      <img src="../images/KonstantinBook.png" />
+                      <h2>Order in Chaos</h2>
+                      <p>Konstantin Koptelov</p>
+                      <button class="read-more zoom">Read more</button>
+                    </div>
+                </div>
+                <div>
+                    <!--  -->
+                    <div class="card">
+                      <img src="../images/KonstantinBook.png" />
+                      <h2>Order in Chaos</h2>
+                      <p>Konstantin Koptelov</p>
+                      <button class="read-more zoom">Read more</button>
+                    </div>
+                </div>
 
 
-</body>
+              </div>
+            </div>
+            
+          </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+          <div class="arrow-prev">
+            <img class="swiper-button-prev" src="../images/previousArrow.svg" />
+          </div>
+          <div class="arrow-next">
+            <img src="../images/nextArrow.svg" />
+          </div>
+        </div>
+      </section>
+
+      <!-- bestseller -->
+      <section class="bestSeller-slider-section">
+        <div>
+          <h1 class="w-100 text-center bestSeller">Bestseller</h1>
+        </div>
+
+        <div class="swiper-container ">
+          <div class="swiper-wraper slider-2">
+            <div class="swiper-slide">
+              <div>
+                <!--  -->
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
+              </div>
+
+              <div>
+                <!--  -->
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
+              </div>
+              <div>
+                <!--  -->
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
+              </div>
+              <div>
+                <!--  -->
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
+              </div>
+              <div>
+                <!--  -->
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
+              </div>
+              <div>
+                <!--  -->
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="arrow-prev">
+            <img class="swiper-button-prev" src="../images/previousArrow.svg" />
+          </div>
+          <div class="arrow-next">
+            <img src="../images/nextArrow.svg" />
+          </div>
+        </div>
+      </section>
+
+      <!-- New releases -->
+      <section>
+        <div>
+          <h1 class="w-100 text-center new-releases">New releases</h1>
+        </div>
+
+        <div class="swiper container">
+          <div class="swiper-wraper slider-3">
+            <div class="swiper-slide">
+              <div>
+                <!--  -->
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+
+                  <button class="read-more zoom">Read more</button>
+                </div>
+              </div>
+
+              <div>
+                <!--  -->
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
+              </div>
+
+              <div>
+                <!--  -->
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
+              </div>
+
+              <div>
+                <!--  -->
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
+              </div>
+
+              <div>
+                <!--  -->
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
+              </div>
+
+              <div>
+                <!--  -->
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="arrow-prev">
+            <img class="swiper-button-prev" src="../images/previousArrow.svg" />
+          </div>
+          <div class="arrow-next">
+            <img src="../images/nextArrow.svg" />
+          </div>
+        </div>
+      </section>
+
+       <!-- ---------------------------------------SOCIAL-SECTION-BEGINS-------------------------------------------------------- -->
+
+     <section id="socialSection" class="d-flex align-items-center justify-content-center social-section"
+     style="height: 410px; color: var(--color-main)">
+     <div class="d-flex flex-column gap-4">
+         <div class="fw-bold text-center social-section-text" style="font-size: 25px;">Follow us on social media
+         </div>
+         <div class="d-flex justify-content-center social-section-icons" style="gap: 54px;">
+             <div><img src="../icons/facebookicon.svg" class="zoom w-100 social-section-icon"
+                     alt="facebook"></div>
+             <div><img src="../icons/instagramicon.svg" class="zoom w-100 social-section-icon"
+                     alt="instagram"></div>
+             <div><img src="../icons/twettericon.svg" class="zoom w-100 social-section-icon"
+                     alt="twetter"></div>
+         </div>
+     </div>
+ </section>
+ 
+     <!-- ---------------------------------------SOCIAL-SECTION-ENDS-------------------------------------------------------- -->
+   </main>
+ 
+   <!-- ---------------------------------------MAIN-ENDS-------------------------------------------------------- -->
+ 
+   <!-- ---------------------------------------FOOTER-BEGINS-------------------------------------------------------- -->
+ 
+   <footer class="" style="background-color: var(--color-footer);">
+     <div class="container ">
+       <div class="d-flex justify-content-between footer-up " style=" padding-top: 46px; padding-bottom: 40px;">
+ 
+         <div class="footer-up-logo" style="width: 30%;">
+           <a class="text-decoration-none" href="#">
+             <div class="d-flex gap-1 align-items-center p-3">
+               <img class="footer-up-logo-icon" src="../icons/books-stack-of-three 2.svg" width="68"
+                 alt="logo">
+               <div class="d-flex flex-column gap-2 footer-up-logo-text">
+                 <div class="text-white fw-bold text-uppercase" style="font-size: 14px;">Library</div>
+                 <div class="footer-up-logo-line" style="background-color: #C3C0BD; height: 1px; width: 100%;"></div>
+                 <div class="text-white text-uppercase" style="font-size: 13px;">book&nbsp;store</div>
+               </div>
+             </div>
+           </a>
+         </div>
+ 
+         <div class="d-flex justify-content-between flex-wrap footer-large" style="width: 70%;">
+ 
+           <div class="d-flex flex-column text-white gap-3 text-start py-3" style=" cursor:pointer; font-size: 13px;">
+             <div class="fs-5 ">Popular</div>
+             <div class="text-white link-secondary">Programming</div>
+             <div class="text-white link-secondary">Books for children</div>
+             <div class="text-white link-secondary">Psychology</div>
+             <div class="text-white link-secondary">Business</div>
+           </div>
+ 
+           <div class="d-flex flex-column text-white gap-3 text-start  py-3" style=" cursor:pointer; font-size: 13px;">
+             <div class="fs-5">Cash</div>
+             <div class="text-white link-secondary">Delivery</div>
+             <div class="text-white link-secondary">Payment</div>
+             <div class="text-white link-secondary">About the store</div>
+           </div>
+ 
+           <div class="d-flex flex-column text-white gap-3 text-start  py-3" style=" cursor:pointer; font-size: 13px;">
+             <div class="fs-5">Help</div>
+             <div class="text-white link-secondary">Contacts</div>
+             <div class="text-white link-secondary">Purchase returns</div>
+             <div class="text-white link-secondary">Buyer help</div>
+           </div>
+ 
+           <div class="d-flex flex-column align-items-center gap-2   py-3">
+             <div class="fw-bold text-white">+994511234567</div>
+             <div class="border border-warning text-warning link-secondary"
+               style="background-color: var(--color-footer); padding: 2px 4px;">Request a call</div>
+           </div>
+         </div>
+ 
+         <div class="footer-small">
+           <ul class="d-flex gap-3 footer-menu" style="font-size: 12px;">
+             <li><a href="index.html" class="nav-color">Home</a></li>
+             <li><a href="../pages/catalog.html" class="nav-color">Catalog</a></li>
+             <li><a href="../pages/about.html" class="nav-color">About&nbsp;Store</a></li>
+             <li><a href="../pages/contactUs.html" class="nav-color">Contact&nbsp;Us</a></li>
+             <li><a href="../pages/search.html" class="nav-color">Search</a></li>
+           </ul>
+         </div>
+ 
+       </div>
+       <div class="text-white d-flex justify-content-center align-items-center footer-down"
+         style="height: 40px; font-size: 12px;">
+         <div class="text-center">All rights reserved © 2003-2024 LIBRARY TERMS OF USE | Privacy Policy</div>
+       </div>
+     </div>
+   </footer>
+ 
+ 
+   <!-- ---------------------------------------FOOTER-ENDS-------------------------------------------------------- -->
+ </body>
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"
+  ></script>
 
-<script type="module" src="../js/joinUs.js"></script>
-<script type="module" src="../js/catalog.js"></script>
-
+  <script type="module" src="../js/hamburgerMenu.js"></script>
+  <script type="module" src="../js/joinUs.js"></script>
+  <script type="module" src="../js/catalog.js"></script>
 </html>
