@@ -40,6 +40,16 @@ body {
   transition: all ease 0.2s;
 }
 
+.nav-hover{
+  color: #FFF;
+  text-decoration: none;
+}
+
+.nav-hover:hover {
+  color: var(--color-orange);
+  transition: all ease 0.2s;
+}
+
 .hamburger {
   display: none !important;
 }
