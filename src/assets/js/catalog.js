@@ -1,34 +1,31 @@
 "use strict";
 
-console.log("catalog");
-
-const swiper = new Swiper(".swiper-container", {
+const swiper = new Swiper(".swiper", {
   // Optional parameters
-  //   spaceBetween: 10,
-  slidesPerView: 5,
-  //   direction: "horizontal",
+  direction: "horizontal",
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false, // Continue autoplay even when the user interacts with the slider
+  },
   loop: true,
-  // Navigation arrows
-  //   navigation: {
-  //     nextEl: ".swiper-button-next",
-  //     prevEl: ".swiper-button-prev",
-  // },
+  slidesPerView: 1,
+  // arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
   breakpoints: {
-    0: {
+    320: {
       slidesPerView: 1.5,
-      navigation: false,
     },
-    575: {
+    601: {
       slidesPerView: 2,
-      navigation: false,
-    },
-    991: {
-      slidesPerView: 3,
     },
     1200: {
+      slidesPerView: 3,
+    },
+    1440: {
       slidesPerView: 5,
     },
-    // loopAdditionalSlides: 5, // Adjust this based on the number of slides you have
-    // loopedSlides: 5,
   },
 });

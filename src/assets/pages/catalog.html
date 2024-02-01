@@ -82,193 +82,332 @@
     <!-- ---------------------------------------MAIN-BEGINS-------------------------------------------------------- -->
 
     <main>
-      <!-- all books  -->
-      <section class="allBooks-slider-section">
+      <section
+        class="classForDisplayNoneArrows allBooks-slider-section container"
+      >
         <div class="all-books">
           <h1>All books</h1>
+          <div class="categories">
+            <ul>
+              <li><a href="#">Fantastik</a></li>
+              <li><a href="#">Self-development</a></li>
+              <li><a href="#">Baby</a></li>
+              <li><a href="#">Clas</a></li>
+              <li><a href="#">Fantastik</a></li>
+              <li><a href="#">Self-development</a></li>
+              <li><a href="#">Baby</a></li>
+              <li><a href="#">Clas</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Slider container for all books -->
+        <div class="swiper">
+          <!-- Wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="card-container">
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card-container">
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card-container">
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card-container">
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card-container">
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card-container">
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  Navigation arrows -->
           <div>
-            <div class="categories">
-              <ul>
-                <li><a href="">Fantastik</a></li>
-                <li><a href="">Self-development</a></li>
-                <li><a href="">Baby</a></li>
-                <li><a href="">Clas</a></li>
-              </ul>
-            </div>
+            <img
+              class="swiper-button-prev"
+              src="../images/previousArrow.svg"
+              alt="arrow"
+            />
           </div>
-        </div>
-
-        <div class="swiper-container container">
-          <!-- Slider  All Books-->
-          <div class="swiper-wrapper">
-            <!-- cards -->
-            <div class="swiper-slide">
-              <div class="card">
-                <img src="../images/KonstantinBook.png" />
-                <h2>Order in Chaos</h2>
-                <p>Konstantin Koptelov</p>
-                <button class="read-more zoom">Read more</button>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="card">
-                <img src="../images/KonstantinBook.png" />
-                <h2>Order in Chaos</h2>
-                <p>Konstantin Koptelov</p>
-                <button class="read-more zoom">Read more</button>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="card">
-                <img src="../images/KonstantinBook.png" />
-                <h2>Order in Chaos</h2>
-                <p>Konstantin Koptelov</p>
-                <button class="read-more zoom">Read more</button>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="card">
-                <img src="../images/KonstantinBook.png" />
-                <h2>Order in Chaos</h2>
-                <p>Konstantin Koptelov</p>
-                <button class="read-more zoom">Read more</button>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="card">
-                <img src="../images/KonstantinBook.png" />
-                <h2>Order in Chaos</h2>
-                <p>Konstantin Koptelov</p>
-                <button class="read-more zoom">Read more</button>
-              </div>
-            </div>
-          </div>
-          <div></div>
-          <div class="swiper-button-prev">
-            <img src="../images/previousArrow.svg" alt="Previous Arrow" />
-          </div>
-          <div class="swiper-button-next">
-            <img src="../images/nextArrow.svg" alt="Next Arrow" />
+          <div>
+            <img
+              class="swiper-button-next"
+              src="../images/nextArrow.svg"
+              alt="arrow"
+            />
           </div>
         </div>
       </section>
 
-      <!-- bestSeller -->
-      <section>
+      <!-- Bestseller -->
+      <section class="classForDisplayNoneArrows container">
         <div>
-          <h1 class="w-100 text-center bestSeller">Besteller</h1>
+          <h1 class="bestSeller w-100 text-center">Bestseller</h1>
         </div>
-
-        <div class="swiper-container container">
-          <!--slider bestSeller -->
+        <!-- Slider container for bestsellers  -->
+        <div class="swiper">
+          <!-- Wrapper -->
           <div class="swiper-wrapper">
-            <!-- cards -->
+            <!-- Slides -->
+
             <div class="swiper-slide">
-              <div class="card">
-                <img src="../images/KonstantinBook.png" />
-                <h2>Order in Chaos</h2>
-                <p>Konstantin Koptelov</p>
-                <button class="read-more zoom">Read more</button>
+              <div class="card-container">
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="card">
-                <img src="../images/KonstantinBook.png" />
-                <h2>Order in Chaos</h2>
-                <p>Konstantin Koptelov</p>
-                <button class="read-more zoom">Read more</button>
+              <div class="card-container">
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="card">
-                <img src="../images/KonstantinBook.png" />
-                <h2>Order in Chaos</h2>
-                <p>Konstantin Koptelov</p>
-                <button class="read-more zoom">Read more</button>
+              <div class="card-container">
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="card">
-                <img src="../images/KonstantinBook.png" />
-                <h2>Order in Chaos</h2>
-                <p>Konstantin Koptelov</p>
-                <button class="read-more zoom">Read more</button>
+              <div class="card-container">
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="card">
-                <img src="../images/KonstantinBook.png" />
-                <h2>Order in Chaos</h2>
-                <p>Konstantin Koptelov</p>
-                <button class="read-more zoom">Read more</button>
+              <div class="card-container">
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card-container">
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                </div>
               </div>
             </div>
           </div>
-          <div class="swiper-button-prev">
-            <img src="../images/previousArrow.svg" alt="Previous Arrow" />
+          <!--navigation arrows -->
+          <div>
+            <img
+              class="swiper-button-prev"
+              src="../images/previousArrow.svg"
+              alt="arrow"
+            />
           </div>
-          <div class="swiper-button-next">
-            <img src="../images/nextArrow.svg" alt="Next Arrow" />
+          <div>
+            <img
+              class="swiper-button-next"
+              src="../images/nextArrow.svg"
+              alt="arrow"
+            />
           </div>
         </div>
       </section>
 
-      <!-- New releases -->
-      <section>
+      <!-- New Releases -->
+      <section class="classForDisplayNoneArrows container">
         <div>
           <h1 class="new-releases">New releases</h1>
         </div>
-        <div class="swiper-container container">
-          <!--Slider New releases -->
+
+        <!-- Slider Container for New releases -->
+        <div class="swiper">
+          <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
-            <!-- cards -->
+            <!-- Slides -->
             <div class="swiper-slide">
-              <div class="card">
-                <img src="../images/KonstantinBook.png" />
-                <h2>Order in Chaos</h2>
-                <p>Konstantin Koptelov</p>
-                <button class="read-more zoom">Read more</button>
+              <div class="card-container">
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                  <div class="newBookIcon position-absolute top-0 end-0">
+                    <h3>New</h3>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="card">
-                <img src="../images/KonstantinBook.png" />
-                <h2>Order in Chaos</h2>
-                <p>Konstantin Koptelov</p>
-                <button class="read-more zoom">Read more</button>
+              <div class="card-container">
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                  <div class="newBookIcon position-absolute top-0 end-0">
+                    <h3>New</h3>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="card">
-                <img src="../images/KonstantinBook.png" />
-                <h2>Order in Chaos</h2>
-                <p>Konstantin Koptelov</p>
-                <button class="read-more zoom">Read more</button>
+              <div class="card-container">
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                  <div class="newBookIcon position-absolute top-0 end-0">
+                    <h3>New</h3>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="card">
-                <img src="../images/KonstantinBook.png" />
-                <h2>Order in Chaos</h2>
-                <p>Konstantin Koptelov</p>
-                <button class="read-more zoom">Read more</button>
+              <div class="card-container">
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                  <div class="newBookIcon position-absolute top-0 end-0">
+                    <h3>New</h3>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="card">
-                <img src="../images/KonstantinBook.png" />
-                <h2>Order in Chaos</h2>
-                <p>Konstantin Koptelov</p>
-                <button class="read-more zoom">Read more</button>
+              <div class="card-container">
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                  <div class="newBookIcon position-absolute top-0 end-0">
+                    <h3>New</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card-container">
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                  <div class="newBookIcon position-absolute top-0 end-0">
+                    <h3>New</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card-container">
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                  <div class="newBookIcon position-absolute top-0 end-0">
+                    <h3>New</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card-container">
+                <div class="card">
+                  <img src="../images/KonstantinBook.png" />
+                  <h2>Order in Chaos</h2>
+                  <p>Konstantin Koptelov</p>
+                  <button class="read-more zoom">Read more</button>
+                  <div class="newBookIcon position-absolute top-0 end-0">
+                    <h3>New</h3>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="swiper-button-prev">
-            <img src="../images/previousArrow.svg" alt="Previous Arrow" />
+          <!--  Navigation Arrows-->
+          <div>
+            <img
+              class="swiper-button-prev"
+              src="../images/previousArrow.svg"
+              alt="arrow"
+            />
           </div>
-          <div class="swiper-button-next">
-            <img src="../images/nextArrow.svg" alt="Next Arrow" />
+          <div>
+            <img
+              class="swiper-button-next"
+              src="../images/nextArrow.svg"
+              alt="arrow"
+            />
           </div>
         </div>
       </section>
