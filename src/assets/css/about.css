@@ -32,7 +32,7 @@
   height: 100%;
   object-fit: contain;
 }
-@media (min-width: 270px) and (max-width: 576px) {
+@media (min-width: 320px) and (max-width: 600px) {
   .about-container {
     flex-direction: column-reverse;
   }
