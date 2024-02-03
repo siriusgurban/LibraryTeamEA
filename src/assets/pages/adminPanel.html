@@ -103,6 +103,98 @@
 
                 <!-------------------------------------------- Add Book Starts------------------------------------->
 
+                <section class="AddBookStart">
+                 <div class="container">
+                <div class="adminlogo">
+                    <img class="adminImg" src="../images/admin.svg" alt="">
+                    <h1 class="adminText">Admin</h1>
+
+                </div>
+                <h1 class="addBook">
+                    Add book
+                </h1>
+
+                <div class="searchBook">
+                    <h1 class="SearchText">Search book</h1>
+                    <div class="SearchDiv">
+                    <input placeholder="Dan Brown" id="inptSearch" class="inptSearch" type="text">
+                    <button id="SearchIcon" class="Searchbtn"><img class="SearchIcon" src="../images/adminsearch.svg" alt=""></button>
+                    </div>
+                    <ul id="BooksUl" class="Books ">
+                      
+                        
+                        
+
+                    </ul>
+
+                    <h1 class="BookFormText">Book form</h1>
+
+                    <div class="BookForm">
+                        <div class="formInptDiv">
+                            <h1 class="formText">Book Name</h1>
+                            <input id="BookName" class="forminpt" type="text">
+                        </div>
+                        <div class="formInptDiv">
+                            <h1 class="formText">Author Name</h1>
+                            <input id="AuthorName" class="forminpt" type="text">
+                        </div>
+                        <div class="formInptDiv">
+                            <h1 class="formText">Book Image Url</h1>
+                            <input id="BookUrl" class="forminpt" type="text">
+                        </div>
+                        <div class="formInptDiv">
+                            <h1 class="formText">Publication Year</h1>
+                            <input id="BookYear" class="forminpt" type="select"  min="1" max="10000">
+                        </div>
+                       
+                        <div class="checkboxDiv">
+                            <input  id="checkboxNew" class="checkbox" type="checkbox" name="subscribe" value="yes">
+                            <h1 class="checkboxtext">New</h1>
+                        </div>
+                        <div class="checkboxDiv">
+                            <input id="checkboxBesteller" class="checkbox" type="checkbox" name="subscribe" value="yes">
+                            <h1 class="checkboxtext">Besteller</h1>
+
+
+                        </div>
+                        <div class="formInptDiv">
+                            <h1 class="formText">Description</h1>
+                           <textarea  id="Description" class="forminpt" name="" id="" ></textarea>
+                        </div>
+                        <div class="formInptDiv">
+                            <div class="addType">
+                                <h1 class="formText">Book Type</h1>
+                            <button class="btnType" id="btnType">
+                                <img class="plus" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQohzGtGfqNTwSnGQZcUY01REBTCpCNlsItoA&usqp=CAU" alt="">
+                            </button>
+                            </div>
+                            <input id="BookType" class="forminpt d-none" type="text">
+                            <select id="select" class="forminpt d-block"   name="cars">
+                                <option value="" disabled selected hidden>Select an option</option>
+                                
+                
+                              </select>
+                        </div>
+                       
+                        <button id="FormBtnAdd" class="FormBtn">Add</button>
+                        <h1 id="textEror" class="textEror ">Please fill in all input fields!!</h1>
+                        <h1 class="TextSuccessfully" id="TextSuccessfully">The book was added successfully</h1>
+
+                    </div>
+
+
+
+                </div>
+
+                
+
+
+
+                 </div>
+                    
+                </section>
+
+
 
                 <!-------------------------------------------- Add Book Ends------------------------------------->
 
