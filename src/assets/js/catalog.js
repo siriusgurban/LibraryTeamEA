@@ -1,5 +1,6 @@
 "use strict";
 
+//--------------------------------------------- swiper slider codes ---------------------------------------- //
 const swiper = new Swiper(".swiper", {
   // Optional parameters
   direction: "horizontal",
