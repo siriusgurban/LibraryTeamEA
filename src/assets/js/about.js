@@ -13,9 +13,8 @@ const firebaseConfig1 = {
     appId: "1:387899207763:web:48057601fe5a4efd8a96a6"
 };
 
-
 const app = initializeApp(firebaseConfig1);
-const db = getDatabase(app);
+const db = getDatabase();
 
 
 const main_section = document.querySelector("#main_section");
@@ -25,15 +24,13 @@ const main_section = document.querySelector("#main_section");
     onValue(aboutUsRef, async (s) => {
         const data = await s.val();
 
-        console.log(data, "data");
-
         main_section.innerHTML = ` <h1 class="about">${data?.title}</h1>
                                     <div class="d-flex" style="gap: 50px">
                                         <div class="w-50">
                                             <p class="parag">${data?.content}</p>
                                         </div>
                                         <div class="w-50">
-                                            <img class="about_img" src="${data?.image}" alt="aboutStore" />
+                                            <img class="about_img w-100" src="${data?.image}" alt="aboutStore" />
                                         </div>
                                     </div>`
     })
