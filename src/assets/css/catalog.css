@@ -23,7 +23,9 @@
   line-height: 196.187%; /* 49.047px */
   margin-left: 30px;
 }
-
+#all-books-link {
+  cursor: pointer;
+}
 /* for scroll */
 .categories {
   max-width: 500px;
