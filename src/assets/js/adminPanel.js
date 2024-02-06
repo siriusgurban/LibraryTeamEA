@@ -140,7 +140,7 @@ async function getDateBooks() {
         let filteredItems = response2.items.filter(item => item.volumeInfo.authors !== undefined && item.volumeInfo.authors.length > 0);
         let map1=response2.items.map((i,index)=>{
             return`
-            <li data-info="${index}"   class="AdminLi" >
+            <li  data-info="${index}"   class="AdminLi" >
             <img data-info="${index}" id="img"   class="adminHistory" src="../images/adminhistory.svg" alt="">
             <h1 data-info="${index}" class="AdminLiText">${ i.volumeInfo.title}</h1>
         </li>
