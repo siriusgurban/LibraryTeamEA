@@ -317,6 +317,30 @@ window.addEventListener("load", (e) => {
 //? -------------------------------------------- Join Us Starts-------------------------------------
 
 
+let joinUstbody = document.querySelector("#joinUstbody");
+
+function renderJoinUsesonTable() {
+
+    const contacUses = ref(db, "joinUs");
+    onValue(contacUses, async (snapshot) => {
+
+        const data = await snapshot.val();
+
+        const arr = convert(data);
+       
+        console.log(arr, "arr");
+        joinUstbody.innerHTML = arr.map((el, index) => {
+            return `<tr >
+            <th scope="row" class="text-center p-3">${index + 1}</th>
+            <td class="text-center p-3">${el.fullname}</td>
+            <td class="text-center p-3">${el.email}</td>
+            </tr>`
+        }).join("");
+
+    })
+}
+
+renderJoinUsesonTable();
 
 //? -------------------------------------------- Join Us Endss-------------------------------------
 
