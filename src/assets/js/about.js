@@ -18,8 +18,7 @@ const app = initializeApp(firebaseConfig1);
 const db = getDatabase(app);
 
 
-const container = document.querySelector(".container");
-console.log(container);
+const main_section = document.querySelector("#main_section");
 
  async function getData(col) {
     const aboutUsRef = ref(db, col)
@@ -28,7 +27,7 @@ console.log(container);
 
         console.log(data, "data");
 
-        container.innerHTML = ` <h1 class="about">${data?.title}</h1>
+        main_section.innerHTML = ` <h1 class="about">${data?.title}</h1>
                                     <div class="d-flex" style="gap: 50px">
                                         <div class="w-50">
                                             <p class="parag">${data?.content}</p>
