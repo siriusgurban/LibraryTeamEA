@@ -340,7 +340,7 @@ function renderJoinUsesonTable() {
     })
 }
 
-renderJoinUsesonTable();
+renderJoinUsesonTable(); 
 
 //? -------------------------------------------- Join Us Endss-------------------------------------
 
