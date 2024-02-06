@@ -44,9 +44,9 @@ function getCategoriesDatas(collection) {
 }
 
 //  function to render the categories
-function renderCategories(categoriesData) {
+function renderCategories(categoriesDat) {
   let arrayDetectingRepetitionCategorie = [];
-  const categoriesItem = categoriesData
+  const categoriesItem = categoriesDat
     .map((item) => {
       // Checking if the item is already in the array
       if (arrayDetectingRepetitionCategorie.includes(item[1].Book_categories)) {
@@ -66,10 +66,11 @@ function renderCategories(categoriesData) {
 
 // result
 getCategoriesDatas("Books")
-  .then((categoriesData) => {
-    renderCategories(categoriesData);
+  .then((categoriesDat) => {
+    renderCategories(categoriesDat);
   })
   .catch((error) => {
     console.error(error);
   });
+
 // -----------------------------Js For Catalog Section End-----------------------------//
