@@ -65,6 +65,12 @@ async function getDataById(userId) {
       BookAuthor.innerHTML=data.Book_Author
       if (splitArr.length>100) {
         BookDescription.innerHTML=`${splitArr.slice(0, 100).join(" ")} <span cursor="pointer" id="ReadMore">...Read more</span> `;
+        let ReadMore=document.querySelector("#ReadMore")
+        ReadMore.style.cursor = "pointer"
+        ReadMore.addEventListener("click",()=>{
+          BookDescription.innerHTML=data.Book_escription
+  
+        })
 
         
       }
@@ -73,16 +79,12 @@ async function getDataById(userId) {
         BookDescription.innerHTML=data.Book_escription
 
       }
-      let ReadMore=document.querySelector("#ReadMore")
-      ReadMore.style.cursor = "pointer"
-      ReadMore.addEventListener("click",()=>{
-        BookDescription.innerHTML=data.Book_escription
 
-      })
 
       
    
       BookImgUrl.src=`${data.Book_url}`
+      console.log(data.Book_url);
      
       
     } else {
