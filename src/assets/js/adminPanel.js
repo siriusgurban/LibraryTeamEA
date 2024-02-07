@@ -4,7 +4,7 @@
 
 
 import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-import { set } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+import { set, remove } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
 const adminCard = document.querySelector("#adminCard");
 const adminForm = document.querySelector("#adminForm");
@@ -296,7 +296,7 @@ aboutBtnAdd.addEventListener("click", () => {
 })
 
 window.addEventListener("load", (e) => {
-    
+
     function getData(col) {
         const aboutRef = ref(db, col)
         onValue(aboutRef, async (s) => {
@@ -321,14 +321,13 @@ let joinUstbody = document.querySelector("#joinUstbody");
 
 function renderJoinUsesonTable() {
 
-    const contacUses = ref(db, "joinUs");
-    onValue(contacUses, async (snapshot) => {
+    const joinUses = ref(db, "joinUs");
+    onValue(joinUses, async (snapshot) => {
 
         const data = await snapshot.val();
 
         const arr = convert(data);
-       
-        console.log(arr, "arr");
+
         joinUstbody.innerHTML = arr.map((el, index) => {
             return `<tr >
             <th scope="row" class="text-center p-3">${index + 1}</th>
@@ -340,7 +339,7 @@ function renderJoinUsesonTable() {
     })
 }
 
-renderJoinUsesonTable(); 
+renderJoinUsesonTable();
 
 //? -------------------------------------------- Join Us Endss-------------------------------------
 
@@ -348,6 +347,76 @@ renderJoinUsesonTable();
 //? -------------------------------------------- Books Starts-------------------------------------
 
 //? Show books as table on AdminPanel where you can delete books
+
+
+let booktbody = document.querySelector("#booktbody");
+
+function renderBooksonTable() {
+    const books = ref(db, "Books/");
+
+    onValue(books, async (snapshot) => {
+        const data = await snapshot.val();
+        const arr = convert(data);
+
+        booktbody.innerHTML = arr.map((item, index) => {
+            return `<tr >
+                        <th scope="row" class="text-center">${index + 1}</th>
+                        <td class="col-4"><img src="${item.Book_url == "undefined" ? `../icon/logo_red.svg` : item.Book_url}" style="width: 10%" class="border" alt=""><p>${item?.Book_Name}</p></td>
+                        <td class="text-center">${item?.Book_Author}</td>
+                        <td><div class="descHover" style="overflow:hidden; width: 300px; height:50px;">${item?.Book_escription}</div></td>
+                        <td class="text-center">${item?.Book_categories}</td>
+                        <td class="text-center"><button class="btn delBtn"  type="button" data-id="${item?.id}"  data-bs-toggle="modal" data-bs-target="#exampleModal"><img class="w-75" src="../icons/icons8-waste-50.png" /></button></td>
+                    </tr>`
+        }).join("");
+
+
+
+        let descHover = document.querySelectorAll(".descHover");
+
+        descHover.forEach((btn) => {                      //shows function that shows full description and then hide description
+            btn.addEventListener("mouseover", (e) => {
+                btn.style.overflow = "visible";
+                btn.style.height = "auto";
+            })
+            btn.addEventListener("mouseleave", () => {
+                btn.style.overflow = "hidden";
+                btn.style.height = "50px";
+            })
+        })
+
+        const deleteItemBtn = document.querySelector("#deleteItemBtn");
+
+        let delBtn = document.querySelectorAll(".delBtn");
+
+        delBtn.forEach(btn => {
+            btn.addEventListener("click", () => {
+                console.log(btn.dataset.id, "btn.dataset.id");          //delete function called
+                // deleteBook(btn.dataset.id);
+
+                deleteItemBtn.addEventListener("click", () => {
+                    deleteBook(btn.dataset.id);
+                })
+
+            })
+        })
+
+
+
+        function deleteBook(bookId) {                                   //delete function
+            let rmv = ref(db, "Books/" + bookId);
+
+            
+            remove(rmv).then(() => console.log("Successfully deleted"));
+            // let myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            // const myModalEl = document.querySelector('.modal');
+            // myModal.hide()        
+        }
+
+    })
+}
+
+renderBooksonTable();
+
 
 
 //? -------------------------------------------- Books Ends-------------------------------------
