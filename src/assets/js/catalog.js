@@ -65,7 +65,9 @@ function renderDatas(categorieData) {
 
 getCategories("Books")
   .then((categorieData) => {
+    showSpinner();
     renderDatas(categorieData);
+    hideSpinner();
   })
   .catch((error) => {
     console.error(error);
@@ -124,10 +126,14 @@ function renderBookCards(booksData1) {
               <img src="${item[1].Book_url}" alt="${item[1].Book_Name}" />
               <h2>${
                 item[1].Book_Name.length > 16
-                  ? item[1].Book_Name.slice(0, 16) + "..."
+                  ? item[1].Book_Name.slice(0, 14) + "..."
                   : item[1].Book_Name
               }</h2>
-              <p>${item[1].Book_Author}</p>
+              <p>${
+                item[1].Book_Author.length > 16
+                  ? item[1].Book_Author.slice(0, 16) + "..."
+                  : item[1].Book_Author
+              }</p>
               <button class="read-more zoom" data-id="${
                 item[0]
               }">Read more</button>
@@ -174,10 +180,14 @@ function renderBookCards2(booksData2) {
               <img src="${item[1].Book_url}" alt="${item[1].Book_Name}" />
               <h2>${
                 item[1].Book_Name.length > 16
-                  ? item[1].Book_Name.slice(0, 16) + "..."
+                  ? item[1].Book_Name.slice(0, 14) + "..."
                   : item[1].Book_Name
               }</h2>
-              <p>${item[1].Book_Author}</p>
+              <p>${
+                item[1].Book_Author.length > 16
+                  ? item[1].Book_Author.slice(0, 16) + "..."
+                  : item[1].Book_Author
+              }</p>
               <button class="read-more zoom" data-id="${
                 item[0]
               }">Read more</button>
@@ -220,10 +230,14 @@ function renderBookCards3(booksData3) {
               <img src="${item[1].Book_url}" alt="${item[1].Book_Name}" />
               <h2>${
                 item[1].Book_Name.length > 16
-                  ? item[1].Book_Name.slice(0, 16) + "..."
+                  ? item[1].Book_Name.slice(0, 14) + "..."
                   : item[1].Book_Name
               }</h2>
-              <p>${item[1].Book_Author}</p>
+              <p>${
+                item[1].Book_Author.length > 16
+                  ? item[1].Book_Author.slice(0, 16) + "..."
+                  : item[1].Book_Author
+              }</p>
               <button class="read-more zoom" data-id="${
                 item[0]
               }">Read more</button>
@@ -287,7 +301,6 @@ categoriesList.addEventListener("click", async function (event) {
 const allBooksLink = document.querySelector("#all-books-link");
 allBooksLink.addEventListener("click", async function () {
   SwiperSlider();
-
   try {
     const booksData = await getCategories("Books");
     renderBookCards(booksData);
@@ -297,3 +310,17 @@ allBooksLink.addEventListener("click", async function () {
     console.error(error);
   }
 });
+
+const spinnerContainers = document.querySelectorAll("#spinner-container");
+// function to show the spinner
+function showSpinner() {
+  spinnerContainers.forEach((container) => {
+    container.classList.remove("d-none");
+  });
+}
+// function to hide the spinner
+function hideSpinner() {
+  spinnerContainers.forEach((container) => {
+    container.classList.add("d-none");
+  });
+}
