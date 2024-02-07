@@ -268,8 +268,60 @@
                 <!-------------------------------------------- Join Us Ends------------------------------------->
 
                 <!-------------------------------------------- Books Starts------------------------------------->
-                <h1 id="books" class="mt-5 mb-3 fs-2 fw-bold">BOOKS</h1>
 
+
+                  
+
+                <section id="about" class="AddBookStart" style="margin-top: 160px;">
+                    <div class="container">
+                        <h1 id="books" class="addBook">Books</h1>
+                        <table class="table table-striped table-bordered">
+                            <thead class="text-white text-center" style="font-size: 14px;">
+                                <tr>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">#
+                                    </th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Title
+                                    </th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Author
+                                    </th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Description</th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Category
+                                    </th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Delete
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="booktbody" style="font-size: 14px;">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+
+
+                <div class="modal" id="exampleModal" tabindex="-1">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Deleting</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <p>Are you sure?</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button id="deleteItemBtn" type="button" class="btn text-white" style="background-color: var(--color-red);">Delete item</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
                 <!-------------------------------------------- Books Ends------------------------------------>
 
