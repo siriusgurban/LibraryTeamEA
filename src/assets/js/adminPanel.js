@@ -110,7 +110,7 @@ let TextSuccessfully = document.querySelector("#TextSuccessfully")
 
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getDatabase, ref, push, onValue, get, } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+import { getDatabase, ref, push, onValue, get,child } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAj8wm_LJMO_RQyZjODELgAZNRcf3wNA58",
@@ -423,6 +423,47 @@ renderBooksonTable();
 
 
 //? -------------------------------------------- Contact Us Starts-------------------------------------
+let ContactTable=document.querySelector("#ContactTable")
+async function getDataContact(){
+   let  dbRefC=ref(getDatabase())
+    let snapshotC=await get(child(dbRefC,"contactUs"))
+    let covertData=convert(snapshotC.val())
+    let ContactMap=covertData.map((item,id)=>{
+
+
+        
+        return `
+        
+
+
+
+        <tr>
+        <th scope="col" scope="row" class="text-center">${id+1}
+        </th>
+        <th scope="col" scope="row" class="text-center"">${item.Full_Name
+        }
+           
+        </th>
+        <th scope="col" scope="row" class="text-center"">${item.Address}
+            
+        </th>
+        <th scope="col" scope="row" class="text-center"">
+            ${item.Email}</th>
+        <th scope="col" scope="row" class="text-center"">
+           ${item.Phone}
+        </th>
+        </tr>
+
+
+        `
+        
+    })
+    ContactTable.innerHTML=ContactMap.join("")
+
+
+}
+getDataContact()
+
 
 
 
