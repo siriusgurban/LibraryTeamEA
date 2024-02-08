@@ -20,7 +20,7 @@
         <!-- -------------------------------------------- Admin Authecation Starts-------------------------------------- -->
 
 
-        <section id="adminCard" class="">
+        <section id="adminCard" class="d-none">
             <div class=" d-flex justify-content-center align-items-center"
                 style="height: 100vh;  background-color: var(--color-red);">
                 <form class="row bg-white" style="width: 40%;" action="" id="adminForm">
@@ -55,40 +55,43 @@
                 style="width:22%; position: fixed; height: 100%; overflow: auto; background-color: var(--color-red); overflow-x: hidden; padding-top: 90px; padding-left: 30px;">
                 <div class="d-flex flex-column" style="gap: 30px;">
 
-                
-                <div class="d-flex align-items-center gap-2 text-decoration-none link-warning ">
-                    <div><img src="../icons/logo.svg" width="68" alt=""></div>
-                    <div class="d-flex flex-column gap-1">
-                        <div class="text-white fw-bold text-uppercase" style="font-size: 14px;">Library</div>
-                        <div style="background-color: rgba(255, 255, 255, 0.59); height: 1px; width: 120px;"></div>
-                        <div class="text-white"  style="font-size: 13px;">Admin Panel</div>
-                    </div>
-                </div>
 
-                <a class="text-decoration-none nav-hover" href="#home">
-                    <h2 class=" d-flex align-items-center gap-2 zoom " style="font-size: 18px;"><img
-                            src="../icons/logo.svg" width="35" alt="">Home</h2>
-                </a>
-                <a class="text-decoration-none nav-hover" href="#books">
-                    <h2 class=" d-flex align-items-center gap-2 zoom"  style="font-size: 18px;"><img src="../icons/logo.svg" width="35"
-                            alt="">Books</h2>
-                </a>
-                <h2 class=" d-flex align-items-center gap-2 text-decoration-none  zoom nav-hover"  style="font-size: 18px;"><img
-                        src="../icons/logo.svg" width="35" alt="">About</h2>
-                <a class="text-decoration-none  nav-hover" href="#joinUs">
-                    <h2 class=" d-flex align-items-center gap-2 zoom"  style="font-size: 18px;"><img src="../icons/logo.svg" width="35"
-                            alt="">Join Us
-                    </h2>
-                </a>
-                <a class="text-decoration-none " href="#contactUs">
-                    <h2 class=" d-flex align-items-center gap-2 zoom nav-hover"  style="font-size: 18px;"><img src="../icons/logo.svg" width="35"
-                            alt="">Contact Us
-                    </h2>
-                </a>
-                <h2 style="cursor: pointer;" id="adminLogOut"
-                    class=" d-flex align-items-center gap-2 text-decoration-none  zoom  nav-hover"  style="font-size: 18px;"><img
-                        src="../icons/logo.svg" width="35" alt="">Log Out</h2>
-            </div></div>
+                    <div class="d-flex align-items-center gap-2 text-decoration-none link-warning ">
+                        <div><img src="../icons/logo.svg" width="68" alt=""></div>
+                        <div class="d-flex flex-column gap-1">
+                            <div class="text-white fw-bold text-uppercase" style="font-size: 14px;">Library</div>
+                            <div style="background-color: rgba(255, 255, 255, 0.59); height: 1px; width: 120px;"></div>
+                            <div class="text-white" style="font-size: 13px;">Admin Panel</div>
+                        </div>
+                    </div>
+
+                    <a class="text-decoration-none nav-hover" href="#home">
+                        <h2 class=" d-flex align-items-center gap-2 zoom " style="font-size: 18px;"><img
+                                src="../icons/logo.svg" width="35" alt="">Home</h2>
+                    </a>
+                    <a class="text-decoration-none nav-hover" href="#books">
+                        <h2 class=" d-flex align-items-center gap-2 zoom" style="font-size: 18px;"><img
+                                src="../icons/logo.svg" width="35" alt="">Books</h2>
+                    </a>
+                    <a class="text-decoration-none  nav-hover" href="#about">
+                        <h2 class=" d-flex align-items-center gap-2 text-decoration-none  zoom nav-hover"
+                            style="font-size: 18px;"><img src="../icons/logo.svg" width="35" alt="">About</h2>
+                    </a>
+                    <a class="text-decoration-none  nav-hover" href="#joinUs">
+                        <h2 class=" d-flex align-items-center gap-2 zoom" style="font-size: 18px;"><img
+                                src="../icons/logo.svg" width="35" alt="">Join Us
+                        </h2>
+                    </a>
+                    <a class="text-decoration-none " href="#contactUs">
+                        <h2 class=" d-flex align-items-center gap-2 zoom nav-hover" style="font-size: 18px;"><img
+                                src="../icons/logo.svg" width="35" alt="">Contact Us
+                        </h2>
+                    </a>
+                    <h2 style="cursor: pointer;" id="adminLogOut"
+                        class=" d-flex align-items-center gap-2 text-decoration-none  zoom  nav-hover"
+                        style="font-size: 18px;"><img src="../icons/logo.svg" width="35" alt="">Log Out</h2>
+                </div>
+            </div>
 
             <!-------------------------------------------- Left Side Menu Ends------------------------------------->
 
@@ -104,94 +107,99 @@
                 <!-------------------------------------------- Add Book Starts------------------------------------->
 
                 <section class="AddBookStart">
-                 <div class="container">
-                <div class="adminlogo">
-                    <img class="adminImg" src="../images/admin.svg" alt="">
-                    <h1 class="adminText">Admin</h1>
-
-                </div>
-                <h1 class="addBook">
-                    Add book
-                </h1>
-
-                <div class="searchBook">
-                    <h1 class="SearchText">Search book</h1>
-                    <div class="SearchDiv">
-                    <input placeholder="Dan Brown" id="inptSearch" class="inptSearch" type="text">
-                    <button id="SearchIcon" class="Searchbtn"><img class="SearchIcon" src="../images/adminsearch.svg" alt=""></button>
-                    </div>
-                    <ul id="BooksUl" class="Books ">
-                      
-                        
-                        
-
-                    </ul>
-
-                    <h1 class="BookFormText">Book form</h1>
-
-                    <div class="BookForm">
-                        <div class="formInptDiv">
-                            <h1 class="formText">Book Name</h1>
-                            <input id="BookName" class="forminpt" type="text">
-                        </div>
-                        <div class="formInptDiv">
-                            <h1 class="formText">Author Name</h1>
-                            <input id="AuthorName" class="forminpt" type="text">
-                        </div>
-                        <div class="formInptDiv">
-                            <h1 class="formText">Book Image Url</h1>
-                            <input id="BookUrl" class="forminpt" type="text">
-                        </div>
-                        <div class="formInptDiv">
-                            <h1 class="formText">Publication Year</h1>
-                            <input id="BookYear" class="forminpt" type="select"  min="1" max="10000">
-                        </div>
-                       
-                        <div class="checkboxDiv">
-                            <input  id="checkboxNew" class="checkbox" type="checkbox" name="subscribe" value="yes">
-                            <h1 class="checkboxtext">New</h1>
-                        </div>
-                        <div class="checkboxDiv">
-                            <input id="checkboxBesteller" class="checkbox" type="checkbox" name="subscribe" value="yes">
-                            <h1 class="checkboxtext">Besteller</h1>
-
+                    <div class="container">
+                        <div class="adminlogo">
+                            <img class="adminImg" src="../images/admin.svg" alt="">
+                            <h1 class="adminText">Admin</h1>
 
                         </div>
-                        <div class="formInptDiv">
-                            <h1 class="formText">Description</h1>
-                           <textarea  id="Description" class="forminpt" name="" id="" ></textarea>
-                        </div>
-                        <div class="formInptDiv">
-                            <div class="addType">
-                                <h1 class="formText">Book Type</h1>
-                            <button class="btnType" id="btnType">
-                                <img class="plus" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQohzGtGfqNTwSnGQZcUY01REBTCpCNlsItoA&usqp=CAU" alt="">
-                            </button>
+                        <h1 class="addBook">
+                            Add book
+                        </h1>
+
+                        <div class="searchBook">
+                            <h1 class="SearchText">Search book</h1>
+                            <div class="SearchDiv">
+                                <input placeholder="Dan Brown" id="inptSearch" class="inptSearch" type="text">
+                                <button id="SearchIcon" class="Searchbtn"><img class="SearchIcon"
+                                        src="../images/adminsearch.svg" alt=""></button>
                             </div>
-                            <input id="BookType" class="forminpt d-none" type="text">
-                            <select id="select" class="forminpt d-block"   name="cars">
-                                <option value="" disabled selected hidden>Select an option</option>
-                                
-                
-                              </select>
+                            <ul id="BooksUl" class="Books ">
+
+
+
+
+                            </ul>
+
+                            <h1 class="BookFormText">Book form</h1>
+
+                            <div class="BookForm">
+                                <div class="formInptDiv">
+                                    <h1 class="formText">Book Name</h1>
+                                    <input id="BookName" class="forminpt" type="text">
+                                </div>
+                                <div class="formInptDiv">
+                                    <h1 class="formText">Author Name</h1>
+                                    <input id="AuthorName" class="forminpt" type="text">
+                                </div>
+                                <div class="formInptDiv">
+                                    <h1 class="formText">Book Image Url</h1>
+                                    <input id="BookUrl" class="forminpt" type="text">
+                                </div>
+                                <div class="formInptDiv">
+                                    <h1 class="formText">Publication Year</h1>
+                                    <input id="BookYear" class="forminpt" type="select" min="1" max="10000">
+                                </div>
+
+                                <div class="checkboxDiv">
+                                    <input id="checkboxNew" class="checkbox" type="checkbox" name="subscribe"
+                                        value="yes">
+                                    <h1 class="checkboxtext">New</h1>
+                                </div>
+                                <div class="checkboxDiv">
+                                    <input id="checkboxBesteller" class="checkbox" type="checkbox" name="subscribe"
+                                        value="yes">
+                                    <h1 class="checkboxtext">Besteller</h1>
+
+
+                                </div>
+                                <div class="formInptDiv">
+                                    <h1 class="formText">Description</h1>
+                                    <textarea id="Description" class="forminpt" name="" id=""></textarea>
+                                </div>
+                                <div class="formInptDiv">
+                                    <div class="addType">
+                                        <h1 class="formText">Book Type</h1>
+                                        <button class="btnType" id="btnType">
+                                            <img class="plus"
+                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQohzGtGfqNTwSnGQZcUY01REBTCpCNlsItoA&usqp=CAU"
+                                                alt="">
+                                        </button>
+                                    </div>
+                                    <input id="BookType" class="forminpt d-none" type="text">
+                                    <select id="select" class="forminpt d-block" name="cars">
+                                        <option value="" disabled selected hidden>Select an option</option>
+
+
+                                    </select>
+                                </div>
+
+                                <button id="FormBtnAdd" class="FormBtn">Add</button>
+                                <h1 id="textEror" class="textEror ">Please fill in all input fields!!</h1>
+                                <h1 class="TextSuccessfully" id="TextSuccessfully">The book was added successfully</h1>
+
+                            </div>
+
+
+
                         </div>
-                       
-                        <button id="FormBtnAdd" class="FormBtn">Add</button>
-                        <h1 id="textEror" class="textEror ">Please fill in all input fields!!</h1>
-                        <h1 class="TextSuccessfully" id="TextSuccessfully">The book was added successfully</h1>
+
+
+
+
 
                     </div>
 
-
-
-                </div>
-
-                
-
-
-
-                 </div>
-                    
                 </section>
 
 
@@ -200,21 +208,120 @@
 
                 <!-------------------------------------------- About Store Starts------------------------------------->
 
+                <section id="about" class="AddBookStart" style="margin-top: 160px;">
+                    <div class="container">
+                        <h1 class="addBook">About Store</h1>
+                        <div class="searchBook">
 
+                            <div class="BookForm">
+
+                                <div class="formInptDiv">
+                                    <h1 class="formText">Title</h1>
+                                    <input id="aboutTitle" class="forminpt" type="text">
+                                </div>
+
+                                <div class="formInptDiv">
+                                    <h1 class="formText">Book Image Url</h1>
+                                    <input id="aboutImgUrl" class="forminpt" type="text">
+                                </div>
+
+                                <div class="formInptDiv">
+                                    <h1 class="formText">Description</h1>
+                                    <textarea id="aboutDescription" class="forminpt" name=""></textarea>
+                                </div>
+
+                                <button id="aboutBtnAdd" class="FormBtn">About info add</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
                 <!-------------------------------------------- About Store Ends------------------------------------->
 
 
                 <!-------------------------------------------- Join Us Starts------------------------------------->
+                <section id="about" class="AddBookStart" style="margin-top: 160px;">
+                    <div class="container">
+                        <h1 id="joinUs" class="addBook">Join Us</h1>
+                        <table class="table table-striped table-bordered w-50">
+                            <thead class="text-white text-center" style="font-size: 14px;">
+                                <tr>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">#
+                                    </th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Fullname
+                                    </th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Address
+                                    </th>
 
-                <h1 id="joinUs" class="mt-5 mb-3 fs-2 fw-bold">Join Us</h1>
+                                </tr>
+                            </thead>
+                            <tbody id="joinUstbody" style="font-size: 14px;">
 
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
 
                 <!-------------------------------------------- Join Us Ends------------------------------------->
 
                 <!-------------------------------------------- Books Starts------------------------------------->
-                <h1 id="books" class="mt-5 mb-3 fs-2 fw-bold">BOOKS</h1>
 
+
+                  
+
+                <section id="about" class="AddBookStart" style="margin-top: 160px;">
+                    <div class="container">
+                        <h1 id="books" class="addBook">Books</h1>
+                        <table class="table table-striped table-bordered">
+                            <thead class="text-white text-center" style="font-size: 14px;">
+                                <tr>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">#
+                                    </th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Title
+                                    </th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Author
+                                    </th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Description</th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Category
+                                    </th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Delete
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="booktbody" style="font-size: 14px;">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+
+
+                <div class="modal" id="exampleModal" tabindex="-1">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Deleting</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <p>Are you sure?</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button id="deleteItemBtn" type="button" class="btn text-white" style="background-color: var(--color-red);">Delete item</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
                 <!-------------------------------------------- Books Ends------------------------------------>
 

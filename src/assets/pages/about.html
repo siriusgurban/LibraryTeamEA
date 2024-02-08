@@ -75,7 +75,7 @@
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
 
-                <div class=" text-end"><button type="button" class="btn fs-1" style="color: white;"
+                <div class=" text-end"><button type="button" class="btn fs-3" style="color: white;"
                         data-bs-dismiss="modal" aria-label="Close">✖</button>
                 </div>
                 <div class="modal-content w-100">
@@ -89,7 +89,7 @@
 
                         <div id="successAlert"></div>
 
-                        <form class="row" action="" id="joinUsBtn">
+                        <form class="row" action="" id="joinUsFormBtn">
 
                             <div class="mb-4 mt-2 col-11 m-auto ab " style="width: 90%;">
                                 <input type="text" class="form-control p-3 w-100 px-5" id="inpFullname"
@@ -120,24 +120,27 @@
 
         <section>
             <div class="container">
-                <h1 class="about">About Store</h1>
+              <div id="main_section">
+                <h1 class="about">
+                  <div class="spinner-border text-dark" style="width: 40px; height: 40px;" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </h1>
                 <div class="d-flex" style="gap: 50px">
-                    <div class="w-50">
-                        <p class="parag">
-                            We work without holidays and weekends! Residents of Kiev can
-                            receive an order on the day of its registration. Customers from
-                            other cities of Ukraine can receive an order within 1-5 days,
-                            depending on the location of the settlement and the selected
-                            delivery method. Orders over UAH 1000 are delivered free of
-                            charge *. You can see the available methods, exact terms and
-                            cost of delivery during checkout in the order basket, after
-                            selecting the delivery city.
-                        </p>
+                  <div class="w-50 d-flex justify-content-evenly" >
+                    
+                    <div class="spinner-border text-dark" style="width: 100px; height: 100px; " role="status">
+                      <span class="visually-hidden">Loading...</span>
                     </div>
-                    <div class="w-50">
-                        <img class="about_img" src="../images/aboutStore.svg" alt="aboutStore" />
+                    
+                  </div>
+                  <div class="w-50 bg-secondary p-5 d-flex  justify-content-center ">
+                    <div class="spinner-border text-dark"style="width: 100px; height: 100px;" role="status">
+                      <span class="visually-hidden text-center" >Loading...</span>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
         </section>
 
