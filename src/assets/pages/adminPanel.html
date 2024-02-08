@@ -292,6 +292,9 @@
                                         Category
                                     </th>
                                     <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Edit
+                                    </th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
                                         Delete
                                     </th>
                                 </tr>
@@ -307,22 +310,23 @@
 
                 <div class="modal" id="exampleModal" tabindex="-1">
                     <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title">Deleting</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          <p>Are you sure?</p>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button id="deleteItemBtn" type="button" class="btn text-white" style="background-color: var(--color-red);">Delete item</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                        <div class="modal-content">
+                            <div class="modal-header" style="background-color: var(--color-red);">
+                                <h5 class="modal-title text-white">Deleting...</h5>
+                                <button type="button" class="btn-close text-white" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" id="deleteModalContent">
 
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button id="deleteItemBtn" type="button" class="btn text-white"
+                                    style="background-color: var(--color-red);">Delete book</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-------------------------------------------- Books Ends------------------------------------>
 
 

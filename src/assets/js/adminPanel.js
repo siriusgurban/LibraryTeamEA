@@ -360,39 +360,69 @@ function renderBooksonTable() {
 
         booktbody.innerHTML = arr.map((item, index) => {
             return `<tr >
-                        <th scope="row" class="text-center">${index + 1}</th>
-                        <td class="col-4"><img src="${item.Book_url == "undefined" ? `../icon/logo_red.svg` : item.Book_url}" style="width: 10%" class="border" alt=""><p>${item?.Book_Name}</p></td>
-                        <td class="text-center">${item?.Book_Author}</td>
-                        <td><div class="descHover" style="overflow:hidden; width: 300px; height:50px;">${item?.Book_escription}</div></td>
-                        <td class="text-center">${item?.Book_categories}</td>
-                        <td class="text-center"><button class="btn delBtn"  type="button" data-id="${item?.id}"  data-bs-toggle="modal" data-bs-target="#exampleModal"><img class="w-75" src="../icons/icons8-waste-50.png" /></button></td>
+                        <th scope="row" class="text-center p-3">${index + 1}</th>
+                        <td col-3 class="text-center p-3">${item?.Book_Name.slice(0, 10)}</td>
+                        <td col-3 class="text-center p-3">${item?.Book_Author.slice(0, 10)}</td>
+                        <td col-3 class="text-center p-3">${item?.Book_escription.slice(0, 10)}</td>
+                        <td col-3 class="text-center p-3">${item?.Book_categories.slice(0, 10)}</td>
+                        <td class="text-center"><img role="button" data-id="${item?.id}" data-bs-toggle="modal" data-bs-target="#exampleModal" class="editIcon" style="width: 25%" src="../icons/icons8-edit-24.png" /></td>
+                        <td class="text-center"><img role="button" data-id="${item?.id}" data-name="${item?.Book_Name}" data-author="${item?.Book_Author}" data-image="${item?.Book_url}" data-type="${item?.Book_categories}" data-bs-toggle="modal" data-bs-target="#exampleModal" class="deleteIcon" style="width: 20%" src="../icons/icons8-trash-48.png" /></td>
                     </tr>`
         }).join("");
 
-
-
+        
         let descHover = document.querySelectorAll(".descHover");
+        let editIcon = document.querySelectorAll(".editIcon");
+        let deleteIcon = document.querySelectorAll(".deleteIcon");
 
-        descHover.forEach((btn) => {                      //shows function that shows full description and then hide description
-            btn.addEventListener("mouseover", (e) => {
-                btn.style.overflow = "visible";
-                btn.style.height = "auto";
+        editIcon.forEach((icon) => {
+            icon.addEventListener("mouseover", (e) => {
+                icon.src = "../icons/icons8-edit.gif";
             })
-            btn.addEventListener("mouseleave", () => {
-                btn.style.overflow = "hidden";
-                btn.style.height = "50px";
+            icon.addEventListener("mouseleave", () => {
+                icon.src = "../icons/icons8-edit-24.png";
             })
         })
 
+        deleteIcon.forEach((icon) => {
+            icon.addEventListener("mouseover", (e) => {
+                icon.src = "../icons/system-solid-39-trash.gif";
+            })
+            icon.addEventListener("mouseleave", () => {
+                icon.src = "../icons/icons8-trash-48.png";
+            })
+        })
+
+        
+        deleteIcon.forEach((icon) => {
+            icon.addEventListener("click", (e) => {
+                icon.src = "../icons/system-solid-39-trash.gif";
+            })
+            icon.addEventListener("mouseleave", () => {
+                icon.src = "../icons/icons8-trash-48.png";
+            })
+        })
+
+        // descHover.forEach((btn) => {                      //shows function that shows full description and then hide description
+        //     btn.addEventListener("mouseover", (e) => {
+        //         btn.style.overflow = "visible";
+        //         btn.style.height = "auto";
+        //     })
+        //     btn.addEventListener("mouseleave", () => {
+        //         btn.style.overflow = "hidden";
+        //         btn.style.height = "50px";
+        //     })
+        // })
+
         const deleteItemBtn = document.querySelector("#deleteItemBtn");
+        const deleteModalContent = document.querySelector("#deleteModalContent");
 
         let delBtn = document.querySelectorAll(".delBtn");
 
-        delBtn.forEach(btn => {
+        deleteIcon.forEach(btn => {
             btn.addEventListener("click", () => {
                 console.log(btn.dataset.id, "btn.dataset.id");          //delete function called
-                // deleteBook(btn.dataset.id);
-
+                deleteModalContent.innerHTML = `<div class="d-flex justify-content-between gap-3"><div class="d-flex flex-column gap-3"><p><span class="fw-bold">Author: </span>${btn.dataset.author}</p><p><span class="fw-bold">Title: </span>${btn.dataset.name}</p><p><span class="fw-bold">Type: </span>${btn.dataset.type}</p></div><div><img  style="width: 100px" src="${btn.dataset.image}"/></div></div>`;
                 deleteItemBtn.addEventListener("click", () => {
                     deleteBook(btn.dataset.id);
                 })
@@ -405,7 +435,7 @@ function renderBooksonTable() {
         function deleteBook(bookId) {                                   //delete function
             let rmv = ref(db, "Books/" + bookId);
 
-            
+
             remove(rmv).then(() => console.log("Successfully deleted"));
             // let myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
             // const myModalEl = document.querySelector('.modal');
