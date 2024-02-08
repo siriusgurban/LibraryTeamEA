@@ -127,17 +127,17 @@
                   <div class="InputsDiv   ">
                     
                       <div class="inptDiv1">
-                        <input class=" ContactInput " type="text" placeholder="Full Name">
+                        <input class=" ContactInput " id="Full_Name" type="text" placeholder="Full Name">
                     
                     
-                      <input class=" ContactInput  " type="text" placeholder="Email">
+                      <input class=" ContactInput  " id="Email" type="email" placeholder="Email">
                    
                       </div>
                    
-                     <div class="inptDiv2"> <input class=" ContactInput" type="text" placeholder="Address">
+                     <div class="inptDiv2"> <input class=" ContactInput" id="Address" type="text" placeholder="Address">
                    
                    
-                        <input class=" ContactInput" type="text" placeholder="Phone">
+                        <input class=" ContactInput" type="number" id="Phone" placeholder="Phone">
                       </div>
 
                   
@@ -145,14 +145,16 @@
                   </div>
 
                   <div class=" TextAreaDiv w-100 ">
-                    <textarea class="ContactTextare" name="" id="" cols="" rows=""></textarea>
+                    <textarea class="ContactTextare"  name="" id="ContactTextare" cols="" rows=""></textarea>
                   </div>
                 </div>
+                <h1 id="TextErorContact" class="TextEror">Please fill in all input field</h1>
 
 
                 <div class="BtnDivC">
-                    <button class="Contactbtn">Send</button>
+                    <button id="Contactbtn" class="Contactbtn">Send</button>
                 </div>
+                
               </div>
 
         </section>
