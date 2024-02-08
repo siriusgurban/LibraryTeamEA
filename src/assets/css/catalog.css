@@ -1,5 +1,9 @@
 @import url("general.css");
 
+.spinner-red {
+  color: var(--color-red);
+}
+
 .allBooks-slider-section {
   margin-bottom: 84px;
   margin-top: 80px;
@@ -33,6 +37,22 @@
   overflow-x: scroll;
   display: flex;
   justify-content: space-between;
+}
+
+#categoriesList::-webkit-scrollbar {
+  width: 3px;
+  height: 10px;
+  color: var(--color-main);
+}
+#categoriesList::-webkit-scrollbar-button {
+  display: none;
+}
+#categoriesList::-webkit-scrollbar-thumb {
+  background: var(--color-red);
+  border-radius: 10px;
+}
+#categoriesList::-webkit-scrollbar-thumb:hover {
+  background: var(--color-main);
 }
 
 .categories ul {

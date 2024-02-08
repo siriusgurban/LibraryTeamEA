@@ -144,10 +144,12 @@
   font-weight: 700;
   line-height: 196.187%; /* 27.466px */
   text-decoration: none;
+  text-align: center;
 }
 
-.catalog a:hover {
-  font-size: 18px;
+.catalog :hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 /* typography-container */
