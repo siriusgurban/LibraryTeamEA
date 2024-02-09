@@ -431,15 +431,16 @@ function renderBooksonTable() {
             btn.addEventListener("click", () => {
                 console.log(btn.dataset.id, "Edit button"); //edit function called
                 editModalContent.innerHTML = `<div class="d-flex justify-content-between gap-3">
-                                                <div class="d-flex flex-column gap-3">
-                                                <p><span class="fw-bold">Author: </span><input id="inpAuthor" class="form-control" value="${btn.dataset.author}" /></p>
-                                                <p><span class="fw-bold">Title: </span><input id="inpName" class="form-control" value="${btn.dataset.name}" /></p>
-                                                <p><span class="fw-bold">Type: </span><input id="inpType" class="form-control" value="${btn.dataset.type}" /></p>
-                                                <p><span class="fw-bold">Description: </span><input id="inpDesc" class="form-control" value="${btn.dataset.desc}" /></p>
+                                                <div class="d-flex flex-column gap-3 w-75">
+                                                    <p><span class="fw-bold">Author: </span><input id="inpAuthor" class="form-control shadow" value="${btn.dataset.author}" /></p>
+                                                    <p><span class="fw-bold">Title: </span><input id="inpName" class="form-control shadow" value="${btn.dataset.name}" /></p>
+                                                    <p><span class="fw-bold">Type: </span><input id="inpType" class="form-control shadow" value="${btn.dataset.type}" /></p>
+                                                    <p><span class="fw-bold">Description: </span><textarea id="inpDesc" class="form-control shadow" value="${btn.dataset.desc}">${btn.dataset.desc}</textarea></p>
+                                                    <p><span class="fw-bold">Image Url: </span><input id="inpImage" class="form-control shadow" value="${btn.dataset.image}"/></p>
                                                 </div>
-                                                <div>
-                                                    <img  style="width: 100px" src="${btn.dataset.image}"/>
-                                                    <input id="inpImage" class="form-control" style="width: 100px" value="${btn.dataset.image}"/>
+                                                <div class="w-25">
+                                                    <img class="w-100 border border-secondary shadow" style="" src="${btn.dataset.image}"/>
+                                                 
                                                 </div>
                                             </div>`;
 
@@ -484,11 +485,12 @@ function renderBooksonTable() {
             btn.addEventListener("click", () => {
                 console.log(btn.dataset.id, "Delete button");          //delete function called
                 deleteModalContent.innerHTML = `<div class="d-flex justify-content-between gap-3">
-                                                    <div class="d-flex flex-column gap-3">
-                                                    <p><span class="fw-bold">Author: </span>${btn.dataset.author}</p>
-                                                    <p><span class="fw-bold">Title: </span>${btn.dataset.name}</p>
-                                                    <p><span class="fw-bold">Type: </span>${btn.dataset.type}</p></div>
-                                                    <div><img  style="width: 100px" src="${btn.dataset.image}"/></div>
+                                                    <div class="d-flex flex-column gap-2 w-75">
+                                                        <p><span class="fw-bold">Author: </span>${btn.dataset.author}</p>
+                                                        <p><span class="fw-bold">Title: </span>${btn.dataset.name}</p>
+                                                        <p><span class="fw-bold">Type: </span>${btn.dataset.type}</p>
+                                                    </div>
+                                                    <div class="w-25"><img class="w-100 border border-secondary shadow" style="" src="${btn.dataset.image}"/></div>
                                                 </div>`;
 
                 deleteItemBtn.addEventListener("click", () => {
