@@ -110,7 +110,7 @@ let TextSuccessfully = document.querySelector("#TextSuccessfully")
 
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getDatabase, ref, push, onValue, get,child } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+import { getDatabase, ref, push, onValue, get, child } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAj8wm_LJMO_RQyZjODELgAZNRcf3wNA58",
@@ -277,6 +277,7 @@ const aboutTitle = document.querySelector("#aboutTitle");
 const aboutImgUrl = document.querySelector("#aboutImgUrl");
 const aboutDescription = document.querySelector("#aboutDescription");
 const aboutBtnAdd = document.querySelector("#aboutBtnAdd");
+const aboutAlert = document.querySelector("#aboutAlert");
 
 aboutBtnAdd.addEventListener("click", () => {
 
@@ -290,9 +291,20 @@ aboutBtnAdd.addEventListener("click", () => {
     function addAbout(col, object) {
         const aboutRef = ref(db, col);
         set(aboutRef, object);
+        alertFn();
     }
 
     addAbout("aboutUs", obj);
+
+    function alertFn() {
+        aboutAlert.innerHTML = `<div class="alert alert-success p-2 text-center" role="alert">
+                                    Successfully changed!
+                                </div>`
+
+        setTimeout(() => {
+            aboutAlert.innerHTML = "";
+        }, 1000)
+    }
 })
 
 window.addEventListener("load", (e) => {
@@ -361,10 +373,10 @@ function renderBooksonTable() {
         booktbody.innerHTML = arr.map((item, index) => {
             return `<tr >
                         <th scope="row" class="text-center p-3">${index + 1}</th>
-                        <td col-3 class="text-center p-3">${item?.Book_Name.slice(0, 20)}</td>
-                        <td col-3 class="text-center p-3">${item?.Book_Author.slice(0, 20)}</td>
-                        <td col-3 class="text-center p-3">${item?.Book_escription.slice(0, 10)}</td>
-                        <td col-3 class="text-center p-3">${item?.Book_categories.slice(0, 10)}</td>
+                        <td col-3 class="text-center p-3"><a class="tooltip-test text-decoration-none text-dark" title="${item?.Book_Name}">${item?.Book_Name.length > 25 ? item?.Book_Name.slice(0, 25) + "..." : item?.Book_Name}</a></td>
+                        <td col-3 class="text-center p-3"><a class="tooltip-test text-decoration-none text-dark" title="${item?.Book_Author}">${item?.Book_Author.length > 25 ? item?.Book_Author.slice(0, 25) + "..." : item?.Book_Author}</a></td>
+                        <td col-3 class="text-center p-3"><a class="tooltip-test text-decoration-none text-dark" title="${item?.Book_escription}">${item?.Book_escription.length > 10 ? item?.Book_escription.slice(0, 10) + "..." : item?.Book_escription}</a></td>
+                        <td col-3 class="text-center p-3"><a class="tooltip-test text-decoration-none text-dark" title="${item?.Book_categories}">${item?.Book_categories.length > 10 ? item?.Book_categories.slice(0, 10) + "..." : item?.Book_categories}</a></td>
                         <td class="text-center"><img role="button" 
                             data-id="${item?.id}" data-name="${item?.Book_Name}" 
                             data-author="${item?.Book_Author}" data-image="${item?.Book_url}" 
@@ -510,7 +522,7 @@ function renderBooksonTable() {
             // myModal.hide()        
         }
 
-       
+
 
 
 
@@ -527,11 +539,11 @@ function sortByName() {
     onValue(books, async (snapshot) => {
         const data = await snapshot.val();
         const arr = convert(data);
-        console.log(arr.map(item=>item.Book_Name).sort(),"cliked on sort");
+        console.log(arr.map(item => item.Book_Name).sort(), "cliked on sort");
 
         tableTitle.addEventListener("click", () => {
             console.log("cliked on sort");
-            booktbody.innerHTML = arr.map(item=>item.Book_Name).sort().map((item, index) => {
+            booktbody.innerHTML = arr.map(item => item.Book_Name).sort().map((item, index) => {
                 return `<tr >
                             <th scope="row" class="text-center p-3">${index + 1}</th>
                             <td col-3 class="text-center p-3">${item?.slice(0, 20)}</td>
@@ -560,25 +572,25 @@ function sortByName() {
 
 
 //? -------------------------------------------- Contact Us Starts-------------------------------------
-let ContactTable=document.querySelector("#ContactTable")
-async function getDataContact(){
-   let  dbRefC=ref(getDatabase())
-    let snapshotC=await get(child(dbRefC,"contactUs"))
-    let covertData=convert(snapshotC.val())
-    let ContactMap=covertData.map((item,id)=>{
+let ContactTable = document.querySelector("#ContactTable")
+async function getDataContact() {
+    let dbRefC = ref(getDatabase())
+    let snapshotC = await get(child(dbRefC, "contactUs"))
+    let covertData = convert(snapshotC.val())
+    let ContactMap = covertData.map((item, id) => {
 
 
-        
+
         return `
         
 
 
 
         <tr>
-        <th scope="col" scope="row" class="text-center">${id+1}
+        <th scope="col" scope="row" class="text-center">${id + 1}
         </th>
         <th scope="col" scope="row" class="text-center"">${item.Full_Name
-        }
+            }
            
         </th>
         <th scope="col" scope="row" class="text-center"">${item.Address}
@@ -593,9 +605,9 @@ async function getDataContact(){
 
 
         `
-        
+
     })
-    ContactTable.innerHTML=ContactMap.join("")
+    ContactTable.innerHTML = ContactMap.join("")
 
 
 }
