@@ -292,6 +292,31 @@ categoriesList.addEventListener("click", async function (event) {
       renderBookCards(filteredBooks);
       renderBookCards2(filteredBooks);
       renderBookCards3(filteredBooks);
+
+      localStorage.setItem("selectedCategory", selectedCategory);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+});
+
+// localStorage
+document.addEventListener("DOMContentLoaded", async function () {
+  SwiperSlider();
+  const selectedCategory = localStorage.getItem("selectedCategory");
+
+  if (selectedCategory) {
+    try {
+      const booksData = await getCategories("Books");
+
+      const filteredBooks = booksData.filter(
+        (item) => item[1].Book_categories === selectedCategory
+      );
+
+      // Update each slider with the filtered books
+      renderBookCards(filteredBooks);
+      renderBookCards2(filteredBooks);
+      renderBookCards3(filteredBooks);
     } catch (error) {
       console.error(error);
     }
@@ -306,6 +331,8 @@ allBooksLink.addEventListener("click", async function () {
     renderBookCards(booksData);
     renderBookCards2(booksData);
     renderBookCards3(booksData);
+
+    localStorage.setItem("selectedCategory", allBooksLink);
   } catch (error) {
     console.error(error);
   }
