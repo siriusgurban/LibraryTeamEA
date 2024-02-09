@@ -4,7 +4,7 @@
 
 
 import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-import { set, remove } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+import { set, remove, update } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
 const adminCard = document.querySelector("#adminCard");
 const adminForm = document.querySelector("#adminForm");
@@ -361,16 +361,22 @@ function renderBooksonTable() {
         booktbody.innerHTML = arr.map((item, index) => {
             return `<tr >
                         <th scope="row" class="text-center p-3">${index + 1}</th>
-                        <td col-3 class="text-center p-3">${item?.Book_Name.slice(0, 10)}</td>
-                        <td col-3 class="text-center p-3">${item?.Book_Author.slice(0, 10)}</td>
+                        <td col-3 class="text-center p-3">${item?.Book_Name.slice(0, 20)}</td>
+                        <td col-3 class="text-center p-3">${item?.Book_Author.slice(0, 20)}</td>
                         <td col-3 class="text-center p-3">${item?.Book_escription.slice(0, 10)}</td>
                         <td col-3 class="text-center p-3">${item?.Book_categories.slice(0, 10)}</td>
-                        <td class="text-center"><img role="button" data-id="${item?.id}" data-bs-toggle="modal" data-bs-target="#exampleModal" class="editIcon" style="width: 25%" src="../icons/icons8-edit-24.png" /></td>
-                        <td class="text-center"><img role="button" data-id="${item?.id}" data-name="${item?.Book_Name}" data-author="${item?.Book_Author}" data-image="${item?.Book_url}" data-type="${item?.Book_categories}" data-bs-toggle="modal" data-bs-target="#exampleModal" class="deleteIcon" style="width: 20%" src="../icons/icons8-trash-48.png" /></td>
+                        <td class="text-center"><img role="button" 
+                            data-id="${item?.id}" data-name="${item?.Book_Name}" 
+                            data-author="${item?.Book_Author}" data-image="${item?.Book_url}" 
+                            data-type="${item?.Book_categories}" data-desc="${item?.Book_escription}" 
+                            data-new="${item?.Book_New}" data-best="${item?.Book_Besteller}" 
+                             data-year="${item?.Book_Year}" data-date="${item?.Book_Date}"
+                            data-bs-toggle="modal" data-bs-target="#modalEdit" class="editIcon" style="width: 30%" src="../icons/icons8-edit-24.png" /></td>
+                        <td class="text-center"><img role="button" data-id="${item?.id}" data-name="${item?.Book_Name}" data-author="${item?.Book_Author}" data-image="${item?.Book_url}" data-type="${item?.Book_categories}" data-bs-toggle="modal" data-bs-target="#modalDelete" class="deleteIcon" style="width: 26%" src="../icons/icons8-trash-48.png" /></td>
                     </tr>`
         }).join("");
 
-        
+
         let descHover = document.querySelectorAll(".descHover");
         let editIcon = document.querySelectorAll(".editIcon");
         let deleteIcon = document.querySelectorAll(".deleteIcon");
@@ -393,7 +399,7 @@ function renderBooksonTable() {
             })
         })
 
-        
+
         deleteIcon.forEach((icon) => {
             icon.addEventListener("click", (e) => {
                 icon.src = "../icons/system-solid-39-trash.gif";
@@ -414,15 +420,77 @@ function renderBooksonTable() {
         //     })
         // })
 
+        const editItemBtn = document.querySelector("#editItemBtn");
         const deleteItemBtn = document.querySelector("#deleteItemBtn");
+        const editModalContent = document.querySelector("#editModalContent");
         const deleteModalContent = document.querySelector("#deleteModalContent");
 
         let delBtn = document.querySelectorAll(".delBtn");
 
+        editIcon.forEach(btn => {
+            btn.addEventListener("click", () => {
+                console.log(btn.dataset.id, "Edit button"); //edit function called
+                editModalContent.innerHTML = `<div class="d-flex justify-content-between gap-3">
+                                                <div class="d-flex flex-column gap-3">
+                                                <p><span class="fw-bold">Author: </span><input id="inpAuthor" class="form-control" value="${btn.dataset.author}" /></p>
+                                                <p><span class="fw-bold">Title: </span><input id="inpName" class="form-control" value="${btn.dataset.name}" /></p>
+                                                <p><span class="fw-bold">Type: </span><input id="inpType" class="form-control" value="${btn.dataset.type}" /></p>
+                                                <p><span class="fw-bold">Description: </span><input id="inpDesc" class="form-control" value="${btn.dataset.desc}" /></p>
+                                                </div>
+                                                <div>
+                                                    <img  style="width: 100px" src="${btn.dataset.image}"/>
+                                                    <input id="inpImage" class="form-control" style="width: 100px" value="${btn.dataset.image}"/>
+                                                </div>
+                                            </div>`;
+
+
+                const inpAuthor = document.querySelector("#inpAuthor");
+                const inpName = document.querySelector("#inpName");
+                const inpType = document.querySelector("#inpType");
+                const inpDesc = document.querySelector("#inpDesc");
+                const inpImage = document.querySelector("#inpImage");
+                const year = btn.dataset.year;
+                const newC = btn.dataset.new;
+                const best = btn.dataset.best;
+                const date = btn.dataset.date;
+
+                editItemBtn.addEventListener("click", () => {
+                    const obj = {
+
+                        Book_Name: inpName.value,
+                        Book_Author: inpAuthor.value,
+                        Book_categories: inpType.value,
+                        Book_url: inpImage.value,
+                        Book_escription: inpDesc.value,
+                        Book_Year: year,
+                        Book_New: newC,
+                        Book_Besteller: best,
+                        Book_Date: date
+
+                    }
+                    uptData(btn.dataset.id, "Books/", obj)
+                    console.log(obj, "edited");
+                })
+
+            })
+        })
+
+        function uptData(id, col, data) {
+            const dataRef = ref(db, col + "/" + id);
+            update(dataRef, data);
+        }
+
         deleteIcon.forEach(btn => {
             btn.addEventListener("click", () => {
-                console.log(btn.dataset.id, "btn.dataset.id");          //delete function called
-                deleteModalContent.innerHTML = `<div class="d-flex justify-content-between gap-3"><div class="d-flex flex-column gap-3"><p><span class="fw-bold">Author: </span>${btn.dataset.author}</p><p><span class="fw-bold">Title: </span>${btn.dataset.name}</p><p><span class="fw-bold">Type: </span>${btn.dataset.type}</p></div><div><img  style="width: 100px" src="${btn.dataset.image}"/></div></div>`;
+                console.log(btn.dataset.id, "Delete button");          //delete function called
+                deleteModalContent.innerHTML = `<div class="d-flex justify-content-between gap-3">
+                                                    <div class="d-flex flex-column gap-3">
+                                                    <p><span class="fw-bold">Author: </span>${btn.dataset.author}</p>
+                                                    <p><span class="fw-bold">Title: </span>${btn.dataset.name}</p>
+                                                    <p><span class="fw-bold">Type: </span>${btn.dataset.type}</p></div>
+                                                    <div><img  style="width: 100px" src="${btn.dataset.image}"/></div>
+                                                </div>`;
+
                 deleteItemBtn.addEventListener("click", () => {
                     deleteBook(btn.dataset.id);
                 })
@@ -434,18 +502,55 @@ function renderBooksonTable() {
 
         function deleteBook(bookId) {                                   //delete function
             let rmv = ref(db, "Books/" + bookId);
-
-
             remove(rmv).then(() => console.log("Successfully deleted"));
             // let myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
             // const myModalEl = document.querySelector('.modal');
             // myModal.hide()        
         }
 
+       
+
+
+
     })
 }
 
 renderBooksonTable();
+
+const tableTitle = document.querySelector("#tableTitle");
+
+function sortByName() {
+    const books = ref(db, "Books/");
+
+    onValue(books, async (snapshot) => {
+        const data = await snapshot.val();
+        const arr = convert(data);
+        console.log(arr.map(item=>item.Book_Name).sort(),"cliked on sort");
+
+        tableTitle.addEventListener("click", () => {
+            console.log("cliked on sort");
+            booktbody.innerHTML = arr.map(item=>item.Book_Name).sort().map((item, index) => {
+                return `<tr >
+                            <th scope="row" class="text-center p-3">${index + 1}</th>
+                            <td col-3 class="text-center p-3">${item?.slice(0, 20)}</td>
+                            <td col-3 class="text-center p-3">${item?.Book_Author?.slice(0, 20)}</td>
+                            <td col-3 class="text-center p-3">${item?.Book_escription?.slice(0, 10)}</td>
+                            <td col-3 class="text-center p-3">${item?.Book_categories?.slice(0, 10)}</td>
+                            <td class="text-center"><img role="button" 
+                                data-id="${item?.id}" data-name="${item?.Book_Name}" 
+                                data-author="${item?.Book_Author}" data-image="${item?.Book_url}" 
+                                data-type="${item?.Book_categories}" data-desc="${item?.Book_escription}" 
+                                data-new="${item?.Book_New}" data-best="${item?.Book_Besteller}" 
+                                 data-year="${item?.Book_Year}" data-date="${item?.Book_Date}"
+                                data-bs-toggle="modal" data-bs-target="#modalEdit" class="editIcon" style="width: 25%" src="../icons/icons8-edit-24.png" /></td>
+                            <td class="text-center"><img role="button" data-id="${item?.id}" data-name="${item?.Book_Name}" data-author="${item?.Book_Author}" data-image="${item?.Book_url}" data-type="${item?.Book_categories}" data-bs-toggle="modal" data-bs-target="#modalDelete" class="deleteIcon" style="width: 20%" src="../icons/icons8-trash-48.png" /></td>
+                        </tr>`
+            }).join("");
+        })
+    })
+}
+
+// sortByName()
 
 
 
