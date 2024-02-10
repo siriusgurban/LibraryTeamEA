@@ -389,6 +389,7 @@ function renderBooksonTable() {
         }).join("");
 
 
+
         let descHover = document.querySelectorAll(".descHover");
         let editIcon = document.querySelectorAll(".editIcon");
         let deleteIcon = document.querySelectorAll(".deleteIcon");
@@ -421,21 +422,13 @@ function renderBooksonTable() {
             })
         })
 
-        // descHover.forEach((btn) => {                      //shows function that shows full description and then hide description
-        //     btn.addEventListener("mouseover", (e) => {
-        //         btn.style.overflow = "visible";
-        //         btn.style.height = "auto";
-        //     })
-        //     btn.addEventListener("mouseleave", () => {
-        //         btn.style.overflow = "hidden";
-        //         btn.style.height = "50px";
-        //     })
-        // })
+
 
         const editItemBtn = document.querySelector("#editItemBtn");
         const deleteItemBtn = document.querySelector("#deleteItemBtn");
         const editModalContent = document.querySelector("#editModalContent");
         const deleteModalContent = document.querySelector("#deleteModalContent");
+        const alertEdit = document.querySelector("#alertEdit");
 
         let delBtn = document.querySelectorAll(".delBtn");
 
@@ -444,14 +437,14 @@ function renderBooksonTable() {
                 console.log(btn.dataset.id, "Edit button"); //edit function called
                 editModalContent.innerHTML = `<div class="d-flex justify-content-between gap-3">
                                                 <div class="d-flex flex-column gap-3 w-75">
-                                                    <p><span class="fw-bold">Author: </span><input id="inpAuthor" class="form-control shadow" value="${btn.dataset.author}" /></p>
-                                                    <p><span class="fw-bold">Title: </span><input id="inpName" class="form-control shadow" value="${btn.dataset.name}" /></p>
-                                                    <p><span class="fw-bold">Type: </span><input id="inpType" class="form-control shadow" value="${btn.dataset.type}" /></p>
-                                                    <p><span class="fw-bold">Description: </span><textarea id="inpDesc" class="form-control shadow" value="${btn.dataset.desc}">${btn.dataset.desc}</textarea></p>
-                                                    <p><span class="fw-bold">Image Url: </span><input id="inpImage" class="form-control shadow" value="${btn.dataset.image}"/></p>
+                                                    <p class="d-flex flex-column gap-1 fw-bold"><span class="text-center">Author</span><input id="inpAuthor" class="form-control shadow" style="font-size: 14px" value="${btn.dataset.author}" /></p>
+                                                    <p class="d-flex flex-column gap-1 fw-bold"><span class="text-center">Title</span><input id="inpName" class="form-control shadow" style="font-size: 14px" value="${btn.dataset.name}" /></p>
+                                                    <p class="d-flex flex-column gap-1 fw-bold"><span class="text-center">Type</span><input id="inpType" class="form-control shadow" style="font-size: 14px" value="${btn.dataset.type}" /></p>
+                                                    <p class="d-flex flex-column gap-1 fw-bold"><span class="text-center">Description</span><textarea id="inpDesc" class="form-control shadow" style="font-size: 14px" value="${btn.dataset.desc}">${btn.dataset.desc}</textarea></p>
+                                                    <p class="d-flex flex-column gap-1 fw-bold"><span class="text-center">Image Url</span><input id="inpImage" class="form-control shadow" style="font-size: 14px" value="${btn.dataset.image}"/></p>
                                                 </div>
-                                                <div class="w-25">
-                                                    <img class="w-100 border border-secondary shadow" style="" src="${btn.dataset.image}"/>
+                                                <div class="w-25 d-flex align-items-center">
+                                                    <img class="w-100 border border-secondary shadow rounded" style="" src="${btn.dataset.image}"/>
                                                  
                                                 </div>
                                             </div>`;
@@ -483,6 +476,7 @@ function renderBooksonTable() {
                     }
                     uptData(btn.dataset.id, "Books/", obj)
                     console.log(obj, "edited");
+                    alertEditFn();
                 })
 
             })
@@ -491,6 +485,17 @@ function renderBooksonTable() {
         function uptData(id, col, data) {
             const dataRef = ref(db, col + "/" + id);
             update(dataRef, data);
+            
+        }
+
+        function alertEditFn() {
+            alertEdit.innerHTML = `<div class="alert alert-success p-2 m-0 text-center" role="alert">
+                                        Successfully edited!
+                                    </div>`
+    
+            setTimeout(() => {
+                alertEdit.innerHTML = "";
+            }, 1500)
         }
 
         deleteIcon.forEach(btn => {
@@ -498,11 +503,11 @@ function renderBooksonTable() {
                 console.log(btn.dataset.id, "Delete button");          //delete function called
                 deleteModalContent.innerHTML = `<div class="d-flex justify-content-between gap-3">
                                                     <div class="d-flex flex-column gap-2 w-75">
-                                                        <p><span class="fw-bold">Author: </span>${btn.dataset.author}</p>
-                                                        <p><span class="fw-bold">Title: </span>${btn.dataset.name}</p>
-                                                        <p><span class="fw-bold">Type: </span>${btn.dataset.type}</p>
+                                                        <p class="d-flex flex-column gap-1 fw-bold"><span class="text-center">Author</span><p style="font-size:14px" class="text-center shadow">${btn.dataset.author}</p></p>
+                                                        <p class="d-flex flex-column gap-1 fw-bold"><span class="text-center">Title</span><p style="font-size:14px" class="text-center shadow">${btn.dataset.name}</p></p>
+                                                        <p class="d-flex flex-column gap-1 fw-bold"><span class="text-center">Type</span><p style="font-size:14px" class="text-center shadow">${btn.dataset.type}</p></p>
                                                     </div>
-                                                    <div class="w-25"><img class="w-100 border border-secondary shadow" style="" src="${btn.dataset.image}"/></div>
+                                                    <div class="w-25"><img class="w-100 border border-secondary shadow rounded" style="" src="${btn.dataset.image}"/></div>
                                                 </div>`;
 
                 deleteItemBtn.addEventListener("click", () => {
@@ -516,15 +521,8 @@ function renderBooksonTable() {
 
         function deleteBook(bookId) {                                   //delete function
             let rmv = ref(db, "Books/" + bookId);
-            remove(rmv).then(() => console.log("Successfully deleted"));
-            // let myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-            // const myModalEl = document.querySelector('.modal');
-            // myModal.hide()        
+            remove(rmv).then(() => console.log("Successfully deleted"));    
         }
-
-
-
-
 
     })
 }
@@ -532,6 +530,7 @@ function renderBooksonTable() {
 renderBooksonTable();
 
 const tableTitle = document.querySelector("#tableTitle");
+
 
 function sortByName() {
     const books = ref(db, "Books/");
@@ -543,22 +542,8 @@ function sortByName() {
 
         tableTitle.addEventListener("click", () => {
             console.log("cliked on sort");
-            booktbody.innerHTML = arr.map(item => item.Book_Name).sort().map((item, index) => {
-                return `<tr >
-                            <th scope="row" class="text-center p-3">${index + 1}</th>
-                            <td col-3 class="text-center p-3">${item?.slice(0, 20)}</td>
-                            <td col-3 class="text-center p-3">${item?.Book_Author?.slice(0, 20)}</td>
-                            <td col-3 class="text-center p-3">${item?.Book_escription?.slice(0, 10)}</td>
-                            <td col-3 class="text-center p-3">${item?.Book_categories?.slice(0, 10)}</td>
-                            <td class="text-center"><img role="button" 
-                                data-id="${item?.id}" data-name="${item?.Book_Name}" 
-                                data-author="${item?.Book_Author}" data-image="${item?.Book_url}" 
-                                data-type="${item?.Book_categories}" data-desc="${item?.Book_escription}" 
-                                data-new="${item?.Book_New}" data-best="${item?.Book_Besteller}" 
-                                 data-year="${item?.Book_Year}" data-date="${item?.Book_Date}"
-                                data-bs-toggle="modal" data-bs-target="#modalEdit" class="editIcon" style="width: 25%" src="../icons/icons8-edit-24.png" /></td>
-                            <td class="text-center"><img role="button" data-id="${item?.id}" data-name="${item?.Book_Name}" data-author="${item?.Book_Author}" data-image="${item?.Book_url}" data-type="${item?.Book_categories}" data-bs-toggle="modal" data-bs-target="#modalDelete" class="deleteIcon" style="width: 20%" src="../icons/icons8-trash-48.png" /></td>
-                        </tr>`
+            tdName.innerHTML = arr.map(item => item.Book_Name).sort().map((item, index) => {
+                return `<a class="tooltip-test text-decoration-none text-dark" title="${item}">${item.length > 25 ? item.slice(0, 25) + "..." : item}</a>`
             }).join("");
         })
     })
