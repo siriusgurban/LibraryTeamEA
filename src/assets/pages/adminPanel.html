@@ -322,11 +322,13 @@
                             <div class="modal-body" id="editModalContent">
 
                             </div>
-                            <div class="modal-footer">
+                            <div class="modal-footer d-flex align-items-center justify-content-between">
+                                <div id="alertEdit"></div>
+                                <div>
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                                 <button id="editItemBtn" type="button" class="btn text-white"
                                     style="background-color: var(--color-orange);">Edit book</button>
-                            </div>
+                            </div></div>
                         </div>
                     </div>
                 </div>
@@ -346,7 +348,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                <button id="deleteItemBtn" type="button" class="btn text-white"
+                                <button id="deleteItemBtn" type="button" class="btn text-white" data-bs-dismiss="modal"
                                     style="background-color: var(--color-red);">Delete book</button>
                             </div>
                         </div>
