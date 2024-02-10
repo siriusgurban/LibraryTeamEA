@@ -99,8 +99,8 @@ function renderFoundBooks() {
                   <div class="d-flex justify-content-between">
 
                     <div class="w-100" style="max-width: 220px;">
-                      <img src="../images/hand-drawn-flat-design-stack-books_23-2149334862.avif" class="card-img-bottom"
-                        class="img-fluid rounded-start w-100" alt="default book">
+                      <img src="../images/41bLP6NzvKL.jpg"
+                        class="object-fit-contain w-100 border border-danger shadow" alt="default book">
                     </div>
 
                     <div class="w-100">
