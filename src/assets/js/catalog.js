@@ -65,9 +65,7 @@ function renderDatas(categorieData) {
 
 getCategories("Books")
   .then((categorieData) => {
-    showSpinner();
     renderDatas(categorieData);
-    hideSpinner();
   })
   .catch((error) => {
     console.error(error);
@@ -275,9 +273,14 @@ function renderBooksReadMore(id) {
 categoriesList.addEventListener("click", async function (event) {
   SwiperSlider();
   const categoryLink = event.target.closest(".categorieLink");
-
   if (categoryLink) {
+    document.querySelectorAll(".categorieLink").forEach((link) => {
+      link.style.color = "";
+      allBooksLink.style.color = "var(--color-orange)";
+    });
     const selectedCategory = categoryLink.textContent;
+    categoryLink.style.color = "var(--color-orange)";
+    allBooksLink.style.color = "";
 
     try {
       // Fetch all books initially
@@ -317,6 +320,13 @@ document.addEventListener("DOMContentLoaded", async function () {
       renderBookCards(filteredBooks);
       renderBookCards2(filteredBooks);
       renderBookCards3(filteredBooks);
+      document.querySelectorAll(".categorieLink").forEach((link) => {
+        if (link.textContent === selectedCategory) {
+          link.style.color = "var(--color-orange)";
+        } else {
+          link.style.color = "";
+        }
+      });
     } catch (error) {
       console.error(error);
     }
@@ -331,23 +341,12 @@ allBooksLink.addEventListener("click", async function () {
     renderBookCards(booksData);
     renderBookCards2(booksData);
     renderBookCards3(booksData);
-
+    document.querySelectorAll(".categorieLink").forEach((link) => {
+      link.style.color = "";
+    });
+    allBooksLink.style.color = "var(--color-orange)";
     localStorage.setItem("selectedCategory", allBooksLink);
   } catch (error) {
     console.error(error);
   }
 });
-
-const spinnerContainers = document.querySelectorAll("#spinner-container");
-// function to show the spinner
-function showSpinner() {
-  spinnerContainers.forEach((container) => {
-    container.classList.remove("d-none");
-  });
-}
-// function to hide the spinner
-function hideSpinner() {
-  spinnerContainers.forEach((container) => {
-    container.classList.add("d-none");
-  });
-}
