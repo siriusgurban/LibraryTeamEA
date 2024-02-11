@@ -4,7 +4,7 @@
 
 
 import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-import { set, remove } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+import { set, remove, update } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
 const adminCard = document.querySelector("#adminCard");
 const adminForm = document.querySelector("#adminForm");
@@ -110,7 +110,7 @@ let TextSuccessfully = document.querySelector("#TextSuccessfully")
 
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getDatabase, ref, push, onValue, get,child } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+import { getDatabase, ref, push, onValue, get, child } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAj8wm_LJMO_RQyZjODELgAZNRcf3wNA58",
@@ -277,6 +277,7 @@ const aboutTitle = document.querySelector("#aboutTitle");
 const aboutImgUrl = document.querySelector("#aboutImgUrl");
 const aboutDescription = document.querySelector("#aboutDescription");
 const aboutBtnAdd = document.querySelector("#aboutBtnAdd");
+const aboutAlert = document.querySelector("#aboutAlert");
 
 aboutBtnAdd.addEventListener("click", () => {
 
@@ -290,9 +291,20 @@ aboutBtnAdd.addEventListener("click", () => {
     function addAbout(col, object) {
         const aboutRef = ref(db, col);
         set(aboutRef, object);
+        alertFn();
     }
 
     addAbout("aboutUs", obj);
+
+    function alertFn() {
+        aboutAlert.innerHTML = `<div class="alert alert-success p-2 text-center" role="alert">
+                                    Successfully changed!
+                                </div>`
+
+        setTimeout(() => {
+            aboutAlert.innerHTML = "";
+        }, 1000)
+    }
 })
 
 window.addEventListener("load", (e) => {
@@ -360,38 +372,143 @@ function renderBooksonTable() {
 
         booktbody.innerHTML = arr.map((item, index) => {
             return `<tr >
-                        <th scope="row" class="text-center">${index + 1}</th>
-                        <td class="col-4"><img src="${item.Book_url == "undefined" ? `../icon/logo_red.svg` : item.Book_url}" style="width: 10%" class="border" alt=""><p>${item?.Book_Name}</p></td>
-                        <td class="text-center">${item?.Book_Author}</td>
-                        <td><div class="descHover" style="overflow:hidden; width: 300px; height:50px;">${item?.Book_escription}</div></td>
-                        <td class="text-center">${item?.Book_categories}</td>
-                        <td class="text-center"><button class="btn delBtn"  type="button" data-id="${item?.id}"  data-bs-toggle="modal" data-bs-target="#exampleModal"><img class="w-75" src="../icons/icons8-waste-50.png" /></button></td>
+                        <th scope="row" class="text-center p-3">${index + 1}</th>
+                        <td col-3 class="text-center p-3"><a class="tooltip-test text-decoration-none text-dark" title="${item?.Book_Name}">${item?.Book_Name.length > 25 ? item?.Book_Name.slice(0, 25) + "..." : item?.Book_Name}</a></td>
+                        <td col-3 class="text-center p-3"><a class="tooltip-test text-decoration-none text-dark" title="${item?.Book_Author}">${item?.Book_Author.length > 25 ? item?.Book_Author.slice(0, 25) + "..." : item?.Book_Author}</a></td>
+                        <td col-3 class="text-center p-3"><a class="tooltip-test text-decoration-none text-dark" title="${item?.Book_escription}">${item?.Book_escription.length > 10 ? item?.Book_escription.slice(0, 10) + "..." : item?.Book_escription}</a></td>
+                        <td col-3 class="text-center p-3"><a class="tooltip-test text-decoration-none text-dark" title="${item?.Book_categories}">${item?.Book_categories.length > 10 ? item?.Book_categories.slice(0, 10) + "..." : item?.Book_categories}</a></td>
+                        <td class="text-center"><img role="button" 
+                            data-id="${item?.id}" data-name="${item?.Book_Name}" 
+                            data-author="${item?.Book_Author}" data-image="${item?.Book_url}" 
+                            data-type="${item?.Book_categories}" data-desc="${item?.Book_escription}" 
+                            data-new="${item?.Book_New}" data-best="${item?.Book_Besteller}" 
+                             data-year="${item?.Book_Year}" data-date="${item?.Book_Date}"
+                            data-bs-toggle="modal" data-bs-target="#modalEdit" class="editIcon" style="width: 30%" src="../icons/icons8-edit-24.png" /></td>
+                        <td class="text-center"><img role="button" data-id="${item?.id}" data-name="${item?.Book_Name}" data-author="${item?.Book_Author}" data-image="${item?.Book_url}" data-type="${item?.Book_categories}" data-bs-toggle="modal" data-bs-target="#modalDelete" class="deleteIcon" style="width: 26%" src="../icons/icons8-trash-48.png" /></td>
                     </tr>`
         }).join("");
 
 
 
         let descHover = document.querySelectorAll(".descHover");
+        let editIcon = document.querySelectorAll(".editIcon");
+        let deleteIcon = document.querySelectorAll(".deleteIcon");
 
-        descHover.forEach((btn) => {                      //shows function that shows full description and then hide description
-            btn.addEventListener("mouseover", (e) => {
-                btn.style.overflow = "visible";
-                btn.style.height = "auto";
+        editIcon.forEach((icon) => {
+            icon.addEventListener("mouseover", (e) => {
+                icon.src = "../icons/icons8-edit.gif";
             })
-            btn.addEventListener("mouseleave", () => {
-                btn.style.overflow = "hidden";
-                btn.style.height = "50px";
+            icon.addEventListener("mouseleave", () => {
+                icon.src = "../icons/icons8-edit-24.png";
             })
         })
 
+        deleteIcon.forEach((icon) => {
+            icon.addEventListener("mouseover", (e) => {
+                icon.src = "../icons/system-solid-39-trash.gif";
+            })
+            icon.addEventListener("mouseleave", () => {
+                icon.src = "../icons/icons8-trash-48.png";
+            })
+        })
+
+
+        deleteIcon.forEach((icon) => {
+            icon.addEventListener("click", (e) => {
+                icon.src = "../icons/system-solid-39-trash.gif";
+            })
+            icon.addEventListener("mouseleave", () => {
+                icon.src = "../icons/icons8-trash-48.png";
+            })
+        })
+
+
+
+        const editItemBtn = document.querySelector("#editItemBtn");
         const deleteItemBtn = document.querySelector("#deleteItemBtn");
+        const editModalContent = document.querySelector("#editModalContent");
+        const deleteModalContent = document.querySelector("#deleteModalContent");
+        const alertEdit = document.querySelector("#alertEdit");
 
         let delBtn = document.querySelectorAll(".delBtn");
 
-        delBtn.forEach(btn => {
+        editIcon.forEach(btn => {
             btn.addEventListener("click", () => {
-                console.log(btn.dataset.id, "btn.dataset.id");          //delete function called
-                // deleteBook(btn.dataset.id);
+                console.log(btn.dataset.id, "Edit button"); //edit function called
+                editModalContent.innerHTML = `<div class="d-flex justify-content-between gap-3">
+                                                <div class="d-flex flex-column gap-3 w-75">
+                                                    <p class="d-flex flex-column gap-1 fw-bold"><span class="text-center">Author</span><input id="inpAuthor" class="form-control shadow" style="font-size: 14px" value="${btn.dataset.author}" /></p>
+                                                    <p class="d-flex flex-column gap-1 fw-bold"><span class="text-center">Title</span><input id="inpName" class="form-control shadow" style="font-size: 14px" value="${btn.dataset.name}" /></p>
+                                                    <p class="d-flex flex-column gap-1 fw-bold"><span class="text-center">Type</span><input id="inpType" class="form-control shadow" style="font-size: 14px" value="${btn.dataset.type}" /></p>
+                                                    <p class="d-flex flex-column gap-1 fw-bold"><span class="text-center">Description</span><textarea id="inpDesc" class="form-control shadow" style="font-size: 14px" value="${btn.dataset.desc}">${btn.dataset.desc}</textarea></p>
+                                                    <p class="d-flex flex-column gap-1 fw-bold"><span class="text-center">Image Url</span><input id="inpImage" class="form-control shadow" style="font-size: 14px" value="${btn.dataset.image}"/></p>
+                                                </div>
+                                                <div class="w-25 d-flex align-items-center">
+                                                    <img class="w-100 border border-secondary shadow rounded" style="" src="${btn.dataset.image}"/>
+                                                 
+                                                </div>
+                                            </div>`;
+
+
+                const inpAuthor = document.querySelector("#inpAuthor");
+                const inpName = document.querySelector("#inpName");
+                const inpType = document.querySelector("#inpType");
+                const inpDesc = document.querySelector("#inpDesc");
+                const inpImage = document.querySelector("#inpImage");
+                const year = btn.dataset.year;
+                const newC = btn.dataset.new;
+                const best = btn.dataset.best;
+                const date = btn.dataset.date;
+
+                editItemBtn.addEventListener("click", () => {
+                    const obj = {
+
+                        Book_Name: inpName.value,
+                        Book_Author: inpAuthor.value,
+                        Book_categories: inpType.value,
+                        Book_url: inpImage.value,
+                        Book_escription: inpDesc.value,
+                        Book_Year: year,
+                        Book_New: newC,
+                        Book_Besteller: best,
+                        Book_Date: date
+
+                    }
+                    uptData(btn.dataset.id, "Books/", obj)
+                    console.log(obj, "edited");
+                    alertEditFn();
+                })
+
+            })
+        })
+
+        function uptData(id, col, data) {
+            const dataRef = ref(db, col + "/" + id);
+            update(dataRef, data);
+            
+        }
+
+        function alertEditFn() {
+            alertEdit.innerHTML = `<div class="alert alert-success p-2 m-0 text-center" role="alert">
+                                        Successfully edited!
+                                    </div>`
+    
+            setTimeout(() => {
+                alertEdit.innerHTML = "";
+            }, 1500)
+        }
+
+        deleteIcon.forEach(btn => {
+            btn.addEventListener("click", () => {
+                console.log(btn.dataset.id, "Delete button");          //delete function called
+                deleteModalContent.innerHTML = `<div class="d-flex justify-content-between gap-3">
+                                                    <div class="d-flex flex-column gap-2 w-75">
+                                                        <p class="d-flex flex-column gap-1 fw-bold"><span class="text-center">Author</span><p style="font-size:14px" class="text-center shadow">${btn.dataset.author}</p></p>
+                                                        <p class="d-flex flex-column gap-1 fw-bold"><span class="text-center">Title</span><p style="font-size:14px" class="text-center shadow">${btn.dataset.name}</p></p>
+                                                        <p class="d-flex flex-column gap-1 fw-bold"><span class="text-center">Type</span><p style="font-size:14px" class="text-center shadow">${btn.dataset.type}</p></p>
+                                                    </div>
+                                                    <div class="w-25"><img class="w-100 border border-secondary shadow rounded" style="" src="${btn.dataset.image}"/></div>
+                                                </div>`;
 
                 deleteItemBtn.addEventListener("click", () => {
                     deleteBook(btn.dataset.id);
@@ -404,12 +521,7 @@ function renderBooksonTable() {
 
         function deleteBook(bookId) {                                   //delete function
             let rmv = ref(db, "Books/" + bookId);
-
-            
-            remove(rmv).then(() => console.log("Successfully deleted"));
-            // let myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-            // const myModalEl = document.querySelector('.modal');
-            // myModal.hide()        
+            remove(rmv).then(() => console.log("Successfully deleted"));    
         }
 
     })
@@ -417,31 +529,53 @@ function renderBooksonTable() {
 
 renderBooksonTable();
 
+const tableTitle = document.querySelector("#tableTitle");
+
+
+function sortByName() {
+    const books = ref(db, "Books/");
+
+    onValue(books, async (snapshot) => {
+        const data = await snapshot.val();
+        const arr = convert(data);
+        console.log(arr.map(item => item.Book_Name).sort(), "cliked on sort");
+
+        tableTitle.addEventListener("click", () => {
+            console.log("cliked on sort");
+            tdName.innerHTML = arr.map(item => item.Book_Name).sort().map((item, index) => {
+                return `<a class="tooltip-test text-decoration-none text-dark" title="${item}">${item.length > 25 ? item.slice(0, 25) + "..." : item}</a>`
+            }).join("");
+        })
+    })
+}
+
+// sortByName()
+
 
 
 //? -------------------------------------------- Books Ends-------------------------------------
 
 
 //? -------------------------------------------- Contact Us Starts-------------------------------------
-let ContactTable=document.querySelector("#ContactTable")
-async function getDataContact(){
-   let  dbRefC=ref(getDatabase())
-    let snapshotC=await get(child(dbRefC,"contactUs"))
-    let covertData=convert(snapshotC.val())
-    let ContactMap=covertData.map((item,id)=>{
+let ContactTable = document.querySelector("#ContactTable")
+async function getDataContact() {
+    let dbRefC = ref(getDatabase())
+    let snapshotC = await get(child(dbRefC, "contactUs"))
+    let covertData = convert(snapshotC.val())
+    let ContactMap = covertData.map((item, id) => {
 
 
-        
+
         return `
         
 
 
 
         <tr>
-        <th scope="col" scope="row" class="text-center">${id+1}
+        <th scope="col" scope="row" class="text-center">${id + 1}
         </th>
         <th scope="col" scope="row" class="text-center"">${item.Full_Name
-        }
+            }
            
         </th>
         <th scope="col" scope="row" class="text-center"">${item.Address}
@@ -456,9 +590,9 @@ async function getDataContact(){
 
 
         `
-        
+
     })
-    ContactTable.innerHTML=ContactMap.join("")
+    ContactTable.innerHTML = ContactMap.join("")
 
 
 }

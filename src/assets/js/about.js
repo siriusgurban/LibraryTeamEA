@@ -30,7 +30,7 @@ const main_section = document.querySelector("#main_section");
                                             <p class="parag">${data?.content}</p>
                                         </div>
                                         <div class="w-50">
-                                            <img class="about_img w-100" src="${data?.image}" alt="aboutStore" />
+                                            <img class="about_img w-100" style="object-fit: cover" src="${data?.image}" alt="aboutStore" />
                                         </div>
                                     </div>`
     })
