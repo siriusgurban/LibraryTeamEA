@@ -8,6 +8,7 @@
 
 "use strict";
 
+console.log("Search js");
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js';
 import { getDatabase, ref, set, onValue, remove } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js';
 // TODO: Add SDKs for Firebase products that you want to use

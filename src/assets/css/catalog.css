@@ -40,8 +40,7 @@
 }
 
 #categoriesList::-webkit-scrollbar {
-  width: 3px;
-  height: 10px;
+  height: 8px;
   color: var(--color-main);
 }
 #categoriesList::-webkit-scrollbar-button {
