@@ -229,7 +229,7 @@
                                     <h1 class="formText">Description</h1>
                                     <textarea id="aboutDescription" class="forminpt" name=""></textarea>
                                 </div>
-
+                                <div id="aboutAlert"></div>
                                 <button id="aboutBtnAdd" class="FormBtn">About info add</button>
 
                             </div>
@@ -280,7 +280,7 @@
                                 <tr>
                                     <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">#
                                     </th>
-                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                    <th id="tableTitle" scope="col" class="p-3 text-white" style="background-color: var(--color-red); cursor: pointer;">
                                         Title
                                     </th>
                                     <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
@@ -290,6 +290,9 @@
                                         Description</th>
                                     <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
                                         Category
+                                    </th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Edit
                                     </th>
                                     <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
                                         Delete
@@ -305,23 +308,52 @@
 
 
 
-                <div class="modal" id="exampleModal" tabindex="-1">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title">Deleting</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                <!-- ----------------------------------------------Edit modal starts------------------------------------ -->
+
+                <div class="modal " id="modalEdit" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header" style="background-color: var(--color-orange);">
+                                <h5 class="modal-title text-white">Editing...</h5>
+                                <button type="button" class="btn-close text-white" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" id="editModalContent">
+
+                            </div>
+                            <div class="modal-footer d-flex align-items-center justify-content-between">
+                                <div id="alertEdit"></div>
+                                <div>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button id="editItemBtn" type="button" class="btn text-white"
+                                    style="background-color: var(--color-orange);">Edit book</button>
+                            </div></div>
                         </div>
-                        <div class="modal-body">
-                          <p>Are you sure?</p>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button id="deleteItemBtn" type="button" class="btn text-white" style="background-color: var(--color-red);">Delete item</button>
-                        </div>
-                      </div>
                     </div>
-                  </div>
+                </div>
+
+                <!-- ----------------------------------------------Delete modal starts------------------------------------ -->
+
+                <div class="modal" id="modalDelete" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header" style="background-color: var(--color-red);">
+                                <h5 class="modal-title text-white">Deleting...</h5>
+                                <button type="button" class="btn-close text-white" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" id="deleteModalContent">
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button id="deleteItemBtn" type="button" class="btn text-white" data-bs-dismiss="modal"
+                                    style="background-color: var(--color-red);">Delete book</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-------------------------------------------- Books Ends------------------------------------>
 

@@ -10,9 +10,9 @@
   flex-direction: column;
 }
 
-.search-header {
+/* .search-header {
   margin-bottom: 22px;
-}
+} */
 .search-header h2 {
   font-size: 36px;
   font-weight: 600;
