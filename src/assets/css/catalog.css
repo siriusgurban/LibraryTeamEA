@@ -92,6 +92,25 @@
   padding-left: 40px;
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 90%;
+  padding: 4px;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: rgba(251, 179, 102, 0.756);
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+.swiper-button-next {
+  right: 10px;
+}
+
 .card {
   padding: 24px;
   text-align: center;
@@ -111,7 +130,7 @@
   width: 100%;
   height: 190px;
   padding-bottom: 30px;
-  object-fit: contain;
+  object-fit: fill;
 }
 
 .card h2 {
@@ -190,16 +209,19 @@
   .catagories {
     width: 100%;
   }
-}
 
-@media screen and (max-width: 900px) {
   .classForDisplayNoneArrows {
     .swiper-button-prev,
     .swiper-button-next {
       display: none;
     }
   }
+
+  #categoriesList::-webkit-scrollbar {
+    height: 7px;
+  }
 }
+
 @media screen and (max-width: 768px) {
   .all-books {
     display: flex;
@@ -208,6 +230,47 @@
     gap: 30px;
   }
   .categories {
-    width: 480px;
+    width: 400px;
+  }
+
+  .all-books {
+    gap: 15px;
+  }
+  .categories-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  #categoriesList::-webkit-scrollbar {
+    height: 6px;
+    width: 3px;
+  }
+}
+@media screen and (max-width: 501px) {
+  .categories {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .categories {
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+  }
+  .all-books {
+    gap: 10px;
+  }
+  .categories-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  #categoriesList::-webkit-scrollbar {
+    width: 5px;
   }
 }

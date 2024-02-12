@@ -78,7 +78,12 @@ function SwiperSlider() {
     direction: "horizontal",
     // autoplay: {
     //   delay: 2000,
-    //   disableOnInteraction: false, // Continue autoplay even when the user interacts with the slider
+    //   disableOnInteraction: false
+    // },
+    // effect: "coverflow",
+    // coverflowEffect: {
+    //   rotate: 2,
+    //   slideShadows: false,
     // },
     loop: true,
     slidesPerView: 1,
@@ -92,13 +97,16 @@ function SwiperSlider() {
     },
     breakpoints: {
       320: {
-        slidesPerView: 1.5,
+        slidesPerView: 1.4,
       },
       601: {
         slidesPerView: 2,
       },
-      1200: {
+      768: {
         slidesPerView: 3,
+      },
+      1200: {
+        slidesPerView: 4,
       },
       1440: {
         slidesPerView: 5,
