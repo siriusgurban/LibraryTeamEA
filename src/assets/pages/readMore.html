@@ -78,7 +78,7 @@
            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
 
-                <div class=" text-end"><button type="button" class="btn fs-1" style="color: white;" data-bs-dismiss="modal" aria-label="Close">✖</button>
+                <div class=" text-end"><button type="button" class="btn fs-3" style="color: white;" data-bs-dismiss="modal" aria-label="Close">✖</button>
                 </div><div class="modal-content w-100">
 
                     <div class="modal-header" style="padding-top: 35px; padding-bottom: 16px;font-size: 40px;">
@@ -90,7 +90,7 @@
 
                         <div id="successAlert"></div>
 
-                        <form class="row" action="" id="joinUsBtn">
+                        <form class="row" action="" id="joinUsFormBtn">
 
                             <div class="mb-4 mt-2 col-11 m-auto ab " style="width: 90%;">
                                 <input type="text" class="form-control p-3 w-100 px-5" id="inpFullname"
@@ -124,30 +124,30 @@
                 
         <div class="full-text">
             <div class="btn">
-                <button class="btn_back">
+                <button id="ReadMoreBackBtn" class="btn_back">
                     BACK
                 </button>
-                <button class="btn_year">
-                    2017
+                <button id="BookYear" class="btn_year">
+                    
                 </button>
 
             </div>
             <div class="text">
-                <h1 class="order">Order in Chaos</h1>
-                <h1 class="day">2 days ago added</h1>
-                <h1 class="Konstantin">Konstantin Koptelov</h1>
-                <h1 class="Kiev"> s of Kiev can receive an order on the day of its registration. Customers from other cities of Ukraine can receive an order within 1-5 days, depending on the location of the settlement and the selected delivery method. Orders over UAH 1000 are delivered  free of charge *. You can see the available methods, exact terms and cost of delivery during checkout in the order basket, after selecting the delivery city.
-                    More details      </h1>
+                <h1 id="BookName" class="order"></h1>
+                <h1 id="DateAdded" class="day"></h1>
+                <h1 id="BookAuthor" class="Konstantin"></h1>
+                <h1  id="BookDescription" class="Kiev">  
+                       </h1>
 
             </div>
 
         </div>
 
         <div class="img_div">
-            <img src="../images/readMore.svg" alt="">
-
+            <img id="BookImgUrl" src="" alt="">
+           
         </div>
-
+        
         </div>
 </div>
 
@@ -156,24 +156,30 @@
         <div class="container">
             <div class="commentDiv">
 
-                <div class="InputC">
+           <div class="d">
+            <div class="InputC">
 
-                    <input class="inputComment" placeholder="your anonim comment..." type="text">
-                    <button class="commentbtn"><img src="../images/icon.svg" alt=""></button>
-                </div>
+              <input id="inputComment" class="inputComment" placeholder="your anonim comment..." type="text">
+              
+              <button id="commentbtn" class="commentbtn"><img src="../images/icon.svg" alt=""></button>
+              
+          </div>
+          <h1 id="TextEror" class="TextEror">Please fill in all input field</h1>
 
-                <div class="comments">
+         
+           </div>
+                <div id="commentsDiv" class="comments">
 
-              <div class="comment">
+              <div id class="comment">
                 <div class="commentHistory">
-                    <h1 class="anonimText">anonim</h1>
-                    <h1 class="anonimHistory">18:32 today</h1>
+                    <h1  class="anonimText">anonim</h1>
+                    <h1 id="postDate" class="anonimHistory">18:32 today</h1>
 
 
 
                 </div>
                 <div class="commentText w-100">
-                    <h1 class="anonimComment">Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!</h1>
+                    <h1 id="comment" class="anonimComment">Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!</h1>
 
                 </div>
 

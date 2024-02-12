@@ -20,7 +20,7 @@
         <!-- -------------------------------------------- Admin Authecation Starts-------------------------------------- -->
 
 
-        <section id="adminCard" class="">
+        <section id="adminCard" class="d-none">
             <div class=" d-flex justify-content-center align-items-center"
                 style="height: 100vh;  background-color: var(--color-red);">
                 <form class="row bg-white" style="width: 40%;" action="" id="adminForm">
@@ -42,7 +42,7 @@
             </div>
         </section>
 
-        <!-- -------------------------------------------- Admin Authecation Ends-------------------------------------- -->
+        <!---------------------------------------------- Admin Authecation Ends---------------------------------------->
 
 
 
@@ -51,37 +51,46 @@
             <!-------------------------------------------- Left Side Menu Starts------------------------------------->
 
 
-            <div class="ps-5 py-5"
-                style="width:25%; position: fixed; height: 100%; overflow: auto; background-color: var(--color-red); overflow-x: hidden;">
+            <div class=""
+                style="width:22%; position: fixed; height: 100%; overflow: auto; background-color: var(--color-red); overflow-x: hidden; padding-top: 90px; padding-left: 30px;">
+                <div class="d-flex flex-column" style="gap: 30px;">
 
-                <div class="d-flex align-items-center gap-2 text-decoration-none link-warning ">
-                    <div><img src="../icons/logo.svg" height="112" width="88" alt=""></div>
-                    <div class="d-flex flex-column gap-1">
-                        <div class="text-white fw-bold text-uppercase fs-3">Library</div>
-                        <div style="background-color: #C3C0BD; height: 1px;"></div>
-                        <div class="text-white fs-3">Admin Panel</div>
+
+                    <div class="d-flex align-items-center gap-2 text-decoration-none link-warning ">
+                        <div><img src="../icons/logo.svg" width="68" alt=""></div>
+                        <div class="d-flex flex-column gap-1">
+                            <div class="text-white fw-bold text-uppercase" style="font-size: 14px;">Library</div>
+                            <div style="background-color: rgba(255, 255, 255, 0.59); height: 1px; width: 120px;"></div>
+                            <div class="text-white" style="font-size: 13px;">Admin Panel</div>
+                        </div>
                     </div>
-                </div>
 
-                <a class="text-decoration-none link-warning text-white " href="#home">
-                    <h2 class="fs-5 d-flex align-items-center gap-2 zoom"><img src="../icons/logo.svg" alt="">Home</h2>
-                </a>
-                <a class="text-decoration-none link-warning text-white " href="#books">
-                    <h2 class="fs-5 d-flex align-items-center gap-2 zoom"><img src="../icons/logo.svg" alt="">Books</h2>
-                </a>
-                <h2 class="fs-5 d-flex align-items-center gap-2 text-decoration-none link-warning text-white zoom"><img
-                        src="../icons/logo.svg" alt="">About</h2>
-                <a class="text-decoration-none link-warning text-white" href="#joinUs">
-                    <h2 class="fs-5 d-flex align-items-center gap-2 zoom"><img src="../icons/logo.svg" alt="">Join Us
-                    </h2>
-                </a>
-                <a class="text-decoration-none link-warning text-white" href="#contactUs">
-                    <h2 class="fs-5 d-flex align-items-center gap-2 zoom"><img src="../icons/logo.svg" alt="">Contact Us
-                    </h2>
-                </a>
-                <h2 style="cursor: pointer;" id="adminLogOut"
-                    class="fs-5 d-flex align-items-center gap-2 text-decoration-none link-warning text-white zoom"><img
-                        src="../icons/logo.svg" alt="">Log Out</h2>
+                    <a class="text-decoration-none nav-hover" href="#home">
+                        <h2 class=" d-flex align-items-center gap-2 zoom " style="font-size: 18px;"><img
+                                src="../icons/logo.svg" width="35" alt="">Home</h2>
+                    </a>
+                    <a class="text-decoration-none nav-hover" href="#books">
+                        <h2 class=" d-flex align-items-center gap-2 zoom" style="font-size: 18px;"><img
+                                src="../icons/logo.svg" width="35" alt="">Books</h2>
+                    </a>
+                    <a class="text-decoration-none  nav-hover" href="#about">
+                        <h2 class=" d-flex align-items-center gap-2 text-decoration-none  zoom nav-hover"
+                            style="font-size: 18px;"><img src="../icons/logo.svg" width="35" alt="">About</h2>
+                    </a>
+                    <a class="text-decoration-none  nav-hover" href="#joinUs">
+                        <h2 class=" d-flex align-items-center gap-2 zoom" style="font-size: 18px;"><img
+                                src="../icons/logo.svg" width="35" alt="">Join Us
+                        </h2>
+                    </a>
+                    <a class="text-decoration-none " href="#contactUs">
+                        <h2 class=" d-flex align-items-center gap-2 zoom nav-hover" style="font-size: 18px;"><img
+                                src="../icons/logo.svg" width="35" alt="">Contact Us
+                        </h2>
+                    </a>
+                    <h2 style="cursor: pointer;" id="adminLogOut"
+                        class=" d-flex align-items-center gap-2 text-decoration-none  zoom  nav-hover"
+                        style="font-size: 18px;"><img src="../icons/logo.svg" width="35" alt="">Log Out</h2>
+                </div>
             </div>
 
             <!-------------------------------------------- Left Side Menu Ends------------------------------------->
@@ -90,91 +99,331 @@
             <!-------------------------------------------- Right Side Menu Starts------------------------------------->
 
 
-            <div class="p-4" style="margin-left: 27%;">
+            <div class="p-4" style="margin-left: 24%;">
 
 
 
 
                 <!-------------------------------------------- Add Book Starts------------------------------------->
 
+                <section class="AddBookStart" id="home">
+                    <div class="container">
+                        <div class="adminlogo">
+                            <img class="adminImg" src="../images/admin.svg" alt="">
+                            <h1 class="adminText">Admin</h1>
+
+                        </div>
+                        <h1 class="addBook">
+                            Add book
+                        </h1>
+
+                        <div class="searchBook">
+                            <h1 class="SearchText">Search book</h1>
+                            <div class="SearchDiv">
+                                <input placeholder="Dan Brown" id="inptSearch" class="inptSearch" type="text">
+                                <button id="SearchIcon" class="Searchbtn"><img class="SearchIcon"
+                                        src="../images/adminsearch.svg" alt=""></button>
+                            </div>
+                            <ul id="BooksUl" class="Books ">
+
+
+
+
+                            </ul>
+
+                            <h1 class="BookFormText">Book form</h1>
+
+                            <div class="BookForm">
+                                <div class="formInptDiv">
+                                    <h1 class="formText">Book Name</h1>
+                                    <input id="BookName" class="forminpt" type="text">
+                                </div>
+                                <div class="formInptDiv">
+                                    <h1 class="formText">Author Name</h1>
+                                    <input id="AuthorName" class="forminpt" type="text">
+                                </div>
+                                <div class="formInptDiv">
+                                    <h1 class="formText">Book Image Url</h1>
+                                    <input id="BookUrl" class="forminpt" type="text">
+                                </div>
+                                <div class="formInptDiv">
+                                    <h1 class="formText">Publication Year</h1>
+                                    <input id="BookYear" class="forminpt" type="select" min="1" max="10000">
+                                </div>
+
+                                <div class="checkboxDiv">
+                                    <input id="checkboxNew" class="checkbox form-check-input" type="checkbox" name="subscribe"
+                                        value="yes">
+                                    <h1 class="checkboxtext">New</h1>
+                                </div>
+                                <div class="checkboxDiv">
+                                    <input id="checkboxBesteller" class="checkbox form-check-input" type="checkbox" name="subscribe"
+                                        value="yes">
+                                    <h1 class="checkboxtext">Besteller</h1>
+
+
+                                </div>
+                                <div class="formInptDiv">
+                                    <h1 class="formText">Description</h1>
+                                    <textarea id="Description" class="forminpt" name="" id=""></textarea>
+                                </div>
+                                <div class="formInptDiv">
+                                    <div class="addType">
+                                        <h1 class="formText">Book Type</h1>
+                                        <button class="btnType" id="btnType">
+                                            <img class="plus" src="../icons/pluspngwing.com.png" alt="">
+                                        </button>
+                                    </div>
+                                    <input id="BookType" class="forminpt d-none" type="text">
+                                    <select id="select" class="forminpt d-block" name="cars">
+                                        <option value="" disabled selected hidden>Select an option</option>
+
+
+                                    </select>
+                                </div>
+
+                                <button id="FormBtnAdd" class="FormBtn">Add</button>
+                                <h1 id="textEror" class="textEror ">Please fill in all input fields!!</h1>
+                                <h1 class="TextSuccessfully" id="TextSuccessfully">The book was added successfully</h1>
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+
+
+                    </div>
+
+                </section>
+
+
 
                 <!-------------------------------------------- Add Book Ends------------------------------------->
 
                 <!-------------------------------------------- About Store Starts------------------------------------->
 
+                <section id="about" class="AddBookStart" style="margin-top: 160px;">
+                    <div class="container">
+                        <h1 class="addBook">About Store</h1>
+                        <div class="searchBook">
 
+                            <div class="BookForm">
+
+                                <div class="formInptDiv">
+                                    <h1 class="formText">Title</h1>
+                                    <input id="aboutTitle" class="forminpt" type="text">
+                                </div>
+
+                                <div class="formInptDiv">
+                                    <h1 class="formText">Book Image Url</h1>
+                                    <input id="aboutImgUrl" class="forminpt" type="text">
+                                </div>
+
+                                <div class="formInptDiv">
+                                    <h1 class="formText">Description</h1>
+                                    <textarea id="aboutDescription" class="forminpt" name=""></textarea>
+                                </div>
+                                <div id="aboutAlert"></div>
+                                <button id="aboutBtnAdd" class="FormBtn">About info add</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
                 <!-------------------------------------------- About Store Ends------------------------------------->
 
 
                 <!-------------------------------------------- Join Us Starts------------------------------------->
+                <section id="about" class="AddBookStart" style="margin-top: 160px;">
+                    <div class="container">
+                        <h1 id="joinUs" class="addBook">Join Us</h1>
+                        <table class="table table-striped table-bordered w-50">
+                            <thead class="text-white text-center" style="font-size: 14px;">
+                                <tr>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">#
+                                    </th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Fullname
+                                    </th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Address
+                                    </th>
 
-                <h1 id="joinUs" class="mt-5 mb-3 fs-2 fw-bold">Join Us</h1>
-                <table class="table table-striped table-bordered w-75">
-                    <thead class="fw-bold text-white text-center">
-                        <tr>
-                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">#</th>
-                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">Fullname
-                            </th>
-                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">Address
-                            </th>
+                                </tr>
+                            </thead>
+                            <tbody id="joinUstbody" style="font-size: 14px;">
 
-                        </tr>
-                    </thead>
-                    <tbody id="joinUstbody">
-
-                    </tbody>
-                </table>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
 
                 <!-------------------------------------------- Join Us Ends------------------------------------->
 
                 <!-------------------------------------------- Books Starts------------------------------------->
-                <h1 id="books" class="mt-5 mb-3 fs-2 fw-bold">BOOKS</h1>
-                <table class="table table-striped table-bordered">
-                    <thead class=" fw-bold text-white text-center">
-                        <tr>
-                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">#</th>
-                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">Title
-                            </th>
-                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">Author
-                            </th>
-                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
-                                Description</th>
-                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">Category
-                            </th>
-                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">Delete
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody id="booktbody" class="">
 
-                    </tbody>
-                </table>
+
+
+
+                <section id="about" class="AddBookStart" style="margin-top: 160px;">
+                    <div class="container">
+                        <h1 id="books" class="addBook">Books</h1>
+                        <table class="table table-striped table-bordered">
+                            <thead class="text-white text-center" style="font-size: 14px;">
+                                <tr>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">#
+                                    </th>
+                                    <th id="tableTitle" scope="col" class="p-3 text-white"
+                                        style="background-color: var(--color-red); cursor: pointer;">
+                                        Title
+                                    </th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Author
+                                    </th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Description</th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Category
+                                    </th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Edit
+                                    </th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Delete
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="booktbody" style="font-size: 14px;">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+
+
+
+                <!-- ----------------------------------------------Edit modal starts------------------------------------ -->
+
+                <div class="modal " id="modalEdit" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header" style="background-color: var(--color-orange);">
+                                <h5 class="modal-title text-white">Editing...</h5>
+                                <button type="button" class="btn-close text-white" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" id="editModalContent">
+
+                            </div>
+                            <div class="modal-footer d-flex align-items-center justify-content-between">
+                                <div id="alertEdit"></div>
+                                <div>
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                    <button id="editItemBtn" type="button" class="btn text-white"
+                                        style="background-color: var(--color-orange);">Edit book</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ----------------------------------------------Delete modal starts------------------------------------ -->
+
+                <div class="modal" id="modalDelete" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header" style="background-color: var(--color-red);">
+                                <h5 class="modal-title text-white">Deleting...</h5>
+                                <button type="button" class="btn-close text-white" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" id="deleteModalContent">
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button id="deleteItemBtn" type="button" class="btn text-white" data-bs-dismiss="modal"
+                                    style="background-color: var(--color-red);">Delete book</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-------------------------------------------- Books Ends------------------------------------>
 
 
                 <!-------------------------------------------- Contact Us Starts------------------------------------->
 
-                <h1 id="contactUs" class="mt-5 mb-3 fs-2 fw-bold">Contact Us</h1>
-                <table class="table table-striped table-bordered">
-                    <thead class="fw-bold text-white text-center">
-                        <tr>
-                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">#</th>
-                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">Fullname
-                            </th>
-                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">Address
-                            </th>
-                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">Email
-                            </th>
-                            <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">Phone
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody id="contactUstbody">
 
-                    </tbody>
-                </table>
+                <section id="contactUs" class="AddBookStart" style="margin-top: 160px; margin-bottom: 160px;">
+                    <div class="container">
+                        <h1 id="books" class="addBook">Contact Us</h1>
+
+                        <table class="table table-striped table-bordered">
+                            <thead class="text-white text-center" style="font-size: 14px;">
+                                <tr>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">#
+                                    </th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Full Name
+                                    </th>
+                                    <th scope="col-6" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Address
+                                    </th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Email Address</th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Phone Number
+                                    </th>
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        View
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="ContactTable" style="font-size: 14px;">
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ----------------------------------------------View modal starts------------------------------------ -->
+
+                <div class="modal " id="modalEye" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header" style="background-color: rgb(188, 188, 188);">
+                                <h5 class="modal-title text-white">View...</h5>
+                                <button type="button" class="btn-close text-white" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" id="eyeModalContent">
+
+                            </div>
+                            <div class="modal-footer d-flex align-items-center justify-content-between">
+                                <div id="alertEdit"></div>
+                                <div>
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
 
                 <!-------------------------------------------- Contact Us Ends------------------------------------->
 
@@ -195,6 +444,6 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 
-    <script type="module" src="../js/adminPanel.js"></script>
+<script type="module" src="../js/adminPanel.js"></script>
 
 </html>

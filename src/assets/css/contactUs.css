@@ -96,3 +96,12 @@ line-height: normal;
     padding-top: 74px;
   
 }
+.TextEror{
+    color: red;
+    text-align:center;
+    font-size: large;
+    padding-top: 20px;
+    display: none;
+    /* display: none; */
+
+}

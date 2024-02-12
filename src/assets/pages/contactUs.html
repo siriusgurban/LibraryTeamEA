@@ -79,7 +79,7 @@
    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
 
-        <div class=" text-end"><button type="button" class="btn fs-1" style="color: white;" data-bs-dismiss="modal" aria-label="Close">✖</button>
+        <div class=" text-end"><button type="button" class="btn fs-3" style="color: white;" data-bs-dismiss="modal" aria-label="Close">✖</button>
         </div><div class="modal-content w-100">
 
             <div class="modal-header" style="padding-top: 35px; padding-bottom: 16px;font-size: 40px;">
@@ -91,7 +91,7 @@
 
                 <div id="successAlert"></div>
 
-                <form class="row" action="" id="joinUsBtn">
+                <form class="row" action="" id="joinUsFormBtn">
 
                     <div class="mb-4 mt-2 col-11 m-auto ab " style="width: 90%;">
                         <input type="text" class="form-control p-3 w-100 px-5" id="inpFullname"
@@ -127,17 +127,17 @@
                   <div class="InputsDiv   ">
                     
                       <div class="inptDiv1">
-                        <input class=" ContactInput " type="text" placeholder="Full Name">
+                        <input class=" ContactInput " id="Full_Name" type="text" placeholder="Full Name">
                     
                     
-                      <input class=" ContactInput  " type="text" placeholder="Email">
+                      <input class=" ContactInput  " id="Email" type="email" placeholder="Email">
                    
                       </div>
                    
-                     <div class="inptDiv2"> <input class=" ContactInput" type="text" placeholder="Address">
+                     <div class="inptDiv2"> <input class=" ContactInput" id="Address" type="text" placeholder="Address">
                    
                    
-                        <input class=" ContactInput" type="text" placeholder="Phone">
+                        <input class=" ContactInput" type="number" id="Phone" placeholder="Phone">
                       </div>
 
                   
@@ -145,14 +145,16 @@
                   </div>
 
                   <div class=" TextAreaDiv w-100 ">
-                    <textarea class="ContactTextare" name="" id="" cols="" rows=""></textarea>
+                    <textarea class="ContactTextare"  name="" id="ContactTextare" cols="" rows=""></textarea>
                   </div>
                 </div>
+                <h1 id="TextErorContact" class="TextEror">Please fill in all input field</h1>
 
 
                 <div class="BtnDivC">
-                    <button class="Contactbtn">Send</button>
+                    <button id="Contactbtn" class="Contactbtn">Send</button>
                 </div>
+                
               </div>
 
         </section>

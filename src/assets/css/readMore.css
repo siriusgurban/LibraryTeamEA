@@ -178,3 +178,18 @@ padding-right: 17px;
     padding-top: 128px;
     
 }
+.TextEror{
+    color: red;
+    text-align:center;
+    font-size: large;
+    display: none;
+    
+}
+.d{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 700px;
+    
+
+}
