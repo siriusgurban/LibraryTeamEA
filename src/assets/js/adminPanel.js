@@ -580,43 +580,64 @@ function sortByName() {
 //? -------------------------------------------- Contact Us Starts-------------------------------------
 let ContactTable = document.querySelector("#ContactTable")
 async function getDataContact() {
+
     let dbRefC = ref(getDatabase())
     let snapshotC = await get(child(dbRefC, "contactUs"))
     let covertData = convert(snapshotC.val())
+
     let ContactMap = covertData.map((item, id) => {
 
-
-
-        return `
-        
-
-
-
-        <tr>
-        <th scope="col" scope="row" class="text-center">${id + 1}
-        </th>
-        <th scope="col" scope="row" class="text-center"">${item.Full_Name
+        return `<tr>
+                    <th scope="col-" scope="row" class="text-center">${id + 1}
+                    </th>
+                    <th scope="col-3" scope="row" class="text-center"">${item.Full_Name
             }
-           
-        </th>
-        <th scope="col" scope="row" class="text-center"">${item.Address}
-            
-        </th>
-        <th scope="col" scope="row" class="text-center"">
-            ${item.Email}</th>
-        <th scope="col" scope="row" class="text-center"">
-           ${item.Phone}
-        </th>
-        </tr>
-
-
-        `
+                    
+                    </th>
+                    <th scope="col-3" scope="row" class="text-center"">${item.Address}
+                        
+                    </th>
+                    <th scope="col-3" scope="row" class="text-center"">
+                        ${item.Email}</th>
+                    <th scope="col-2" scope="row" class="text-center"">
+                    ${item.Phone}
+                    </th>
+                    <th><img role="button" 
+                        data-id="${item?.id}" data-fullname="${item?.Full_Name}" 
+                        data-address="${item?.Address}" data-email="${item?.Email}" 
+                        data-phone="${item?.Phone}" data-desc="${item?.Description}"
+                        data-bs-toggle="modal" data-bs-target="#modalEye" class="eyeIcon" style="width: 5%" src="../icons/eyepngwing.com.png" /></th>
+                 </tr>`
 
     })
+
     ContactTable.innerHTML = ContactMap.join("")
+
+    const eyeIcon = document.querySelectorAll(".eyeIcon");
+    const eyeModalContent = document.querySelector("#eyeModalContent");
+
+    eyeIcon.forEach(btn => {
+        btn.addEventListener("click", () => {
+            console.log(btn.dataset.id, "Edit button"); //edit function called
+            eyeModalContent.innerHTML = `<div class="d-flex justify-content-between gap-3">
+                                            <div class="d-flex flex-column gap-3 w-100">
+
+                                                <p class="d-flex flex-column gap-1 fw-bold"><span class="text-center">Full Name</span><p id="inpName" class="form-control shadow" style="font-size: 14px" value="">${btn.dataset.fullname} </p></p>
+                                                <p class="d-flex flex-column gap-1 fw-bold"><span class="text-center">Email</span><p id="inpType" class="form-control shadow" style="font-size: 14px" value=""> ${btn.dataset.email}</p></p>
+                                                <p class="d-flex flex-column gap-1 fw-bold"><span class="text-center">Address</span><p id="inpAuthor" class="form-control shadow" style="font-size: 14px" value="">${btn.dataset.address}</p></p>
+                                                <p class="d-flex flex-column gap-1 fw-bold"><span class="text-center">Phone Number</span><p id="inpType" class="form-control shadow" style="font-size: 14px" value="">${btn.dataset.phone} </p></p>
+                                                <p class="d-flex flex-column gap-1 fw-bold"><span class="text-center">Desscription</span><p id="inpType" class="form-control shadow" style="font-size: 14px" value=""> ${btn.dataset.desc}</p></p>
+
+                                            </div>
+                                        </div>`;
+
+
+        })
+    })
 
 
 }
+
 getDataContact()
 
 

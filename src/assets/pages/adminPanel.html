@@ -171,9 +171,7 @@
                                     <div class="addType">
                                         <h1 class="formText">Book Type</h1>
                                         <button class="btnType" id="btnType">
-                                            <img class="plus"
-                                                src="../icons/pluspngwing.com.png"
-                                                alt="">
+                                            <img class="plus" src="../icons/pluspngwing.com.png" alt="">
                                         </button>
                                     </div>
                                     <input id="BookType" class="forminpt d-none" type="text">
@@ -270,7 +268,7 @@
                 <!-------------------------------------------- Books Starts------------------------------------->
 
 
-                  
+
 
                 <section id="about" class="AddBookStart" style="margin-top: 160px;">
                     <div class="container">
@@ -280,7 +278,8 @@
                                 <tr>
                                     <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">#
                                     </th>
-                                    <th id="tableTitle" scope="col" class="p-3 text-white" style="background-color: var(--color-red); cursor: pointer;">
+                                    <th id="tableTitle" scope="col" class="p-3 text-white"
+                                        style="background-color: var(--color-red); cursor: pointer;">
                                         Title
                                     </th>
                                     <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
@@ -325,10 +324,12 @@
                             <div class="modal-footer d-flex align-items-center justify-content-between">
                                 <div id="alertEdit"></div>
                                 <div>
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                <button id="editItemBtn" type="button" class="btn text-white"
-                                    style="background-color: var(--color-orange);">Edit book</button>
-                            </div></div>
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                    <button id="editItemBtn" type="button" class="btn text-white"
+                                        style="background-color: var(--color-orange);">Edit book</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -360,11 +361,11 @@
 
                 <!-------------------------------------------- Contact Us Starts------------------------------------->
 
-                
+
                 <section id="contactUs" class="AddBookStart" style="margin-top: 160px;">
                     <div class="container">
                         <h1 id="books" class="addBook">Contact Us</h1>
-                        
+
                         <table class="table table-striped table-bordered">
                             <thead class="text-white text-center" style="font-size: 14px;">
                                 <tr>
@@ -381,18 +382,46 @@
                                     <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
                                         Phone Number
                                     </th>
-                                   
+                                    <th scope="col" class="p-3 text-white" style="background-color: var(--color-red);">
+                                        Show
+                                    </th>
+
                                 </tr>
                             </thead>
                             <tbody id="ContactTable" style="font-size: 14px;">
-                                
-                                
+
+
 
                             </tbody>
                         </table>
                     </div>
                 </section>
-               
+
+                <!-- ----------------------------------------------Show modal starts------------------------------------ -->
+
+                <div class="modal " id="modalEye" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header" style="background-color: rgb(188, 188, 188);">
+                                <h5 class="modal-title text-white">Show...</h5>
+                                <button type="button" class="btn-close text-white" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" id="eyeModalContent">
+
+                            </div>
+                            <div class="modal-footer d-flex align-items-center justify-content-between">
+                                <div id="alertEdit"></div>
+                                <div>
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
 
 
 
