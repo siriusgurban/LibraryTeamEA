@@ -602,11 +602,11 @@ async function getDataContact() {
                     <th scope="col-2" scope="row" class="text-center"">
                     ${item.Phone}
                     </th>
-                    <th><img role="button" 
+                    <th class=" text-center"><img role="button" 
                         data-id="${item?.id}" data-fullname="${item?.Full_Name}" 
                         data-address="${item?.Address}" data-email="${item?.Email}" 
                         data-phone="${item?.Phone}" data-desc="${item?.Description}"
-                        data-bs-toggle="modal" data-bs-target="#modalEye" class="eyeIcon" style="width: 5%" src="../icons/eyepngwing.com.png" /></th>
+                        data-bs-toggle="modal" data-bs-target="#modalEye" class="eyeIcon" style="width: 15%" src="../icons/iconmonstr-eye-9.svg" /></th>
                  </tr>`
 
     })
