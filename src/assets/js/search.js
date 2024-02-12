@@ -71,7 +71,7 @@ function renderFoundBooks() {
                 swiperWrapper.innerHTML = filteredBookArr.map((el, index) =>
                 (`<div class="carousel-item ${index == 0 ? "active" : ""}">
                      <div class="card" style="max-width: 930px; padding: 48px 30px;">
-                       <div class="d-flex justify-content-between gap-3">
+                       <div class="d-flex justify-content-between gap-3 slider-content">
         
                          <div class="" >
                             <img style="width: 220px;" src="${el.Book_url == "undefined" ? `../icon/logo_red.svg` : el.Book_url}" class="shadow border" class="img-fluid rounded-start " alt="Book image">
@@ -97,7 +97,7 @@ function renderFoundBooks() {
                 <div class="carousel-item active">
 
                 <div class="card" style="max-width: 930px; padding: 48px 30px;">
-                  <div class="d-flex justify-content-between">
+                  <div class="d-flex justify-content-between slider-content">
 
                     <div class="w-100" style="max-width: 220px;">
                       <img src="../images/41bLP6NzvKL.jpg"
