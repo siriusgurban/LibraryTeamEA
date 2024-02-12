@@ -35,6 +35,8 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+  position: relative;
+
 }
 .SearchText {
   color: #333;
@@ -101,6 +103,9 @@
   padding-top: 18px;
   padding-bottom: 18px;
   display: none;
+  position: absolute;
+  left: 0;
+  top: 116px;
 }
 .adminHistory {
   width: 15px;
@@ -118,8 +123,9 @@
 .AdminLi {
   display: flex;
   margin-top: 10px;
-  padding-left: 26px;
+  padding-left: 6px;
   width: 100%;
+    cursor: pointer;
 }
 .BookFormText {
   color: #333;

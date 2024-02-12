@@ -147,20 +147,32 @@ function GetData(gol) {
     const booksRef = ref(db, gol)
     onValue(booksRef, (s) => {
         const data = s.val()
-        let convertdata = convert(data)
+        let convertdata = convert(data);
 
-        let option = convertdata.map((i) => {
+
+        let arrSortedCategories = checkForDuplicates(convertdata.map(item => item.Book_categories));//convertdata-nin icinden kategoriyalari gotururem, ve unikallasdiriram checkForDuplicates ile
+
+        let option = arrSortedCategories.map((i) => {
             return `
-        <option value="saab">${i.Book_categories}</option>
-        `
+                    <option value="saab">${i}</option>
+                    `
         })
 
-        let arr = [`<option value="" disabled selected hidden>Select an option</option>`, ...option]
+        //Beyler-in kodu
+        // let option = convertdata.map((i) => {
+        //     return `
+        //             <option value="saab">${i.Book_categories}</option>
+        //             `
+        // })
+
+
+        let arr = [`<option value="" disabled selected hidden >Select an option</option>`, ...option]
         select.innerHTML = arr.join("")
 
     })
 
 }
+
 GetData("Books")
 async function getDateBooks() {
     try {
@@ -179,14 +191,15 @@ async function getDateBooks() {
         BooksUl.style.display = "block";
         BooksUl.addEventListener("click", async (event) => {
             let bb = event.target.dataset.info
-            BookName.value = filteredItems[bb].volumeInfo.title
-            AuthorName.value = filteredItems[bb].volumeInfo.authors
+            BookName.value = filteredItems[bb]?.volumeInfo?.title
+            AuthorName.value = filteredItems[bb]?.volumeInfo?.authors
             BookUrl.value = filteredItems[bb].volumeInfo.imageLinks.smallThumbnail
             filteredItems[bb].volumeInfo.description == undefined ? Description.value = "" : Description.value = filteredItems[bb].volumeInfo.description
             filteredItems[bb].volumeInfo.categories == undefined ? BookType.value = "" : BookType.value = filteredItems[bb].volumeInfo.categories
             BookYear.value = filteredItems[bb].volumeInfo.publishedDate
             inptSearch.value = ""
             inptSearch.removeAttribute('placeholder')
+            BooksUl.style.display = "none";
         })
 
     } catch (error) {
@@ -195,17 +208,22 @@ async function getDateBooks() {
 
 }
 
+const plus = document.querySelector(".plus");
+
 SearchIcon.addEventListener("click", getDateBooks)
 btnType.addEventListener("click", () => {
     if (BookType.classList.contains("d-none")) {
         BookType.classList.remove("d-none")
         select.classList.remove("d-block")
         select.classList.add("d-none")
+        plus.src = "../icons/plusorangepngwing.com.png"
     }
     else {
         BookType.classList.add("d-none")
         select.classList.remove("d-none")
         select.classList.add("d-block")
+        plus.src = "../icons/pluspngwing.com.png"
+
     }
 })
 function myFunction() {
@@ -252,6 +270,7 @@ FormBtnAdd.addEventListener("click", () => {
             select.classList.remove("d-block")
             select.classList.add("d-none")
 
+
         }
         else {
             BookType.classList.add("d-none")
@@ -265,7 +284,9 @@ FormBtnAdd.addEventListener("click", () => {
     }
 })
 
-
+function checkForDuplicates(arr) {    //function checks For Duplicates in categories
+    return [...new Set(arr)];
+}
 
 //? -------------------------------------------- Add Book Ends-------------------------------------
 
@@ -485,14 +506,14 @@ function renderBooksonTable() {
         function uptData(id, col, data) {
             const dataRef = ref(db, col + "/" + id);
             update(dataRef, data);
-            
+
         }
 
         function alertEditFn() {
             alertEdit.innerHTML = `<div class="alert alert-success p-2 m-0 text-center" role="alert">
                                         Successfully edited!
                                     </div>`
-    
+
             setTimeout(() => {
                 alertEdit.innerHTML = "";
             }, 1500)
@@ -521,7 +542,7 @@ function renderBooksonTable() {
 
         function deleteBook(bookId) {                                   //delete function
             let rmv = ref(db, "Books/" + bookId);
-            remove(rmv).then(() => console.log("Successfully deleted"));    
+            remove(rmv).then(() => console.log("Successfully deleted"));
         }
 
     })
