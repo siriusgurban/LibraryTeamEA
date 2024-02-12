@@ -588,25 +588,25 @@ async function getDataContact() {
     let ContactMap = covertData.map((item, id) => {
 
         return `<tr>
-                    <th scope="col-" scope="row" class="text-center">${id + 1}
+                    <th class="text-center p-3">${id + 1}
                     </th>
-                    <th scope="col-3" scope="row" class="text-center"">${item.Full_Name
+                    <th scope="col-3" scope="row" class="text-center p-3">${item.Full_Name
             }
                     
                     </th>
-                    <th scope="col-3" scope="row" class="text-center"">${item.Address}
+                    <th scope="col-3" scope="row" class="text-center p-3">${item.Address}
                         
                     </th>
-                    <th scope="col-3" scope="row" class="text-center"">
+                    <th scope="col-3" scope="row" class="text-center p-3">
                         ${item.Email}</th>
-                    <th scope="col-2" scope="row" class="text-center"">
+                    <th scope="col-2" scope="row" class="text-center p-3">
                     ${item.Phone}
                     </th>
-                    <th class=" text-center"><img role="button" 
+                    <th class=" text-center p-3"><img role="button" 
                         data-id="${item?.id}" data-fullname="${item?.Full_Name}" 
                         data-address="${item?.Address}" data-email="${item?.Email}" 
                         data-phone="${item?.Phone}" data-desc="${item?.Description}"
-                        data-bs-toggle="modal" data-bs-target="#modalEye" class="eyeIcon" style="width: 15%" src="../icons/iconmonstr-eye-9.svg" /></th>
+                        data-bs-toggle="modal" data-bs-target="#modalEye" class="eyeIcon" style="width: 18%" src="../icons/iconmonstr-eye-9.svg" /></th>
                  </tr>`
 
     })
