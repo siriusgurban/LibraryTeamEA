@@ -83,7 +83,7 @@
   line-height: 1.5;
 }
 
-@media (min-width: 320px) and (max-width: 600px) {
+@media (min-width: 320px) and (max-width: 768px) {
   .search-content {
     flex-direction: column !important;
   }
