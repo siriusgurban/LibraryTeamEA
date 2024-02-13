@@ -33,7 +33,7 @@ const main_section = document.querySelector("#main_section");
                                         </div>
 
                                         <div class="w-50 about_img" style="margin-top: 120px">
-                                            <img class=" w-100" style="object-fit: cover" src="${data?.image}" alt="aboutStore" />
+                                            <img class=" w-100" style="object-fit: contain" src="${data?.image}" alt="aboutStore" />
                                         </div>
                                         
                                     </div>`
