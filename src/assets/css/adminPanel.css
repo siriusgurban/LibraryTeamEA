@@ -251,3 +251,109 @@
 /* //? -------------------------------------------- Contact Us Starts------------------------------------- */
 
 /* //? -------------------------------------------- Contact Us Ends------------------------------------- */
+
+/* //? -------------------------------------------- Responsive Side Menu Starts------------------------------------- */
+
+
+.hamburger {
+  display: none !important;
+}
+
+.bar {
+  display: block !important;
+  width: 25px !important;
+  height: 3px !important;
+  margin: 5px auto !important;
+  background-color: var(--color-main) !important;
+  -webkit-transition: all 0.3s ease-in-out !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.nav-menu {
+  display: none !important;
+}
+
+@media (min-width: 320px) and (max-width: 576px) {
+  /* -------------HEADER--BEGINS----------- */
+
+
+  .adminlogo{
+    display: none;
+  }
+
+  .hamburger {
+    display: block !important;
+    position: absolute;
+    right: 20px !important;
+    z-index: 99;
+  }
+
+  .hamburger.actived .bar:nth-child(2) {
+    opacity: 0 !important;
+  }
+  .hamburger.actived .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    background-color: var(--color-body) !important;
+  }
+  .hamburger.actived .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: var(--color-body) !important;
+  }
+
+  .header-section {
+    height: 80px !important;
+  }
+
+  .nav-menu.actived {
+    display: block !important;
+    position: fixed !important;
+    right: -100% !important;
+    top: 0px !important;
+    gap: 0 !important;
+    flex-direction: column !important;
+    background-color: var(--color-red) !important;
+    width: 90% !important;
+    text-align: center !important;
+    transition: all 0.5s ease-in-out;
+    height: 100% !important;
+    z-index: 99;
+  }
+
+  .nav-menu li {
+    margin: 20px 0 !important;
+    font-size: 17px !important;
+    text-align: end !important;
+  }
+
+  .nav-menu {
+    left: 0 !important;
+    padding-top: 80px !important;
+    padding-right: 8% !important;
+  }
+
+  .navbar {
+    position: absolute !important;
+    right: 2% !important;
+    padding-bottom: 16px !important;
+  }
+
+  .nav-color{
+    color: var(--color-body);
+  }
+
+  #joinUsBtn {
+    position: absolute !important;
+    right: calc(60px) !important;
+  }
+
+  .nav-color-footer {
+    color: var(--color-body) !important;
+    list-style: none;
+    text-decoration: none;
+  }
+
+  /* -------------HEADER--ENDS----------- */
+
+}
+
+/* //? -------------------------------------------- Responsive Side Menu Ends------------------------------------- */
