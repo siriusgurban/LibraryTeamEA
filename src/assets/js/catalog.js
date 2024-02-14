@@ -320,7 +320,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     try {
       const booksData = await getCategories("Books");
 
-      if (selectedCategory === allBooksLink) {
+      if (selectedCategory === "All") {
         renderBookCards(booksData);
         renderBookCards2(booksData);
         renderBookCards3(booksData);
@@ -358,7 +358,7 @@ allBooksLink.addEventListener("click", async function () {
       link.style.color = "";
     });
     allBooksLink.style.color = "var(--color-orange)";
-    localStorage.setItem("selectedCategory", allBooksLink);
+    localStorage.setItem("selectedCategory", "All");
   } catch (error) {
     console.error(error);
   }

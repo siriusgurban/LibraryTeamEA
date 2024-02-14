@@ -24,14 +24,18 @@ const main_section = document.querySelector("#main_section");
     onValue(aboutUsRef, async (s) => {
         const data = await s.val();
 
-        main_section.innerHTML = ` <h1 class="about">${data?.title}</h1>
-                                    <div class="d-flex" style="gap: 50px">
-                                        <div class="w-50">
+        main_section.innerHTML = ` 
+                                    <div class="d-flex about-container" style="gap: 50px">
+                                    
+                                        <div class="w-50 about_text">
+                                            <h1 class="about">${data?.title}</h1>
                                             <p class="parag">${data?.content}</p>
                                         </div>
-                                        <div class="w-50">
-                                            <img class="about_img w-100" style="object-fit: cover" src="${data?.image}" alt="aboutStore" />
+
+                                        <div class="w-50 about_img" style="margin-top: 120px">
+                                            <img class=" w-100" style="object-fit: contain" src="${data?.image}" alt="aboutStore" />
                                         </div>
+                                        
                                     </div>`
     })
 

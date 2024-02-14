@@ -34,10 +34,23 @@
 }
 @media (min-width: 320px) and (max-width: 600px) {
   .about-container {
-    
     flex-direction: column-reverse;
+    gap: 0px !important;
   }
   .about_img {
-    width: 100%;
+    width: 100% !important;
+    margin-top: 50px !important;
+  }
+  .about_text{
+    width: 100% !important;
+  }
+
+  .about{
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .parag{
+    font-size: 12px;
   }
 }
