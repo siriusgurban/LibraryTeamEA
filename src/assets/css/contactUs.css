@@ -105,3 +105,95 @@ line-height: normal;
     /* display: none; */
 
 }
+
+@media (min-width: 320px) and (max-width: 600px) {
+.fw_bold{
+    color: var(--, #241400);
+font-family: Montserrat;
+font-size: 25px;
+font-style: normal;
+font-weight: 900;
+line-height: 196.187%;
+text-align: center;
+}
+    .InputsDiv{
+        width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0;
+      margin: 0;
+      padding-top: 29px;
+
+    }
+    .inptDiv1{
+      display: flex;
+      width: 80%;
+      flex-direction: column;
+      align-items: center;
+      gap: 39px;
+      padding: 0;
+      margin: 0;
+      
+    }
+    .inptDiv2{
+        display: flex;
+        width: 80%;
+        flex-direction: column;
+        align-items: center;
+        gap: 39px;
+        padding: 0;
+      margin: 0;
+    }
+    .ContactInput{
+        height:39px ;
+        border-radius: 5px;
+border: 1px solid #CECECE;
+
+background: #FFF;
+        
+    }
+    .TextAreaDiv{
+        display: none;
+    }
+    .ContactInput::placeholder{
+        color: #241400;
+        font-family: "Crimson Text";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .ContactInput:focus{
+        color: #241400;
+        font-family: "Crimson Text";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    
+    }
+    
+    .Contactbtn{
+        width: 80%;
+        border-radius: 5px;
+        background: #E16A00;
+        height: 37px ;
+        color: #FFF;
+
+text-align: center;
+font-family: "Crimson Text";
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+    }
+    
+  }
+  .successfull{
+    display: none;
+    color: green;
+    text-align:center;
+    font-size: large;
+    padding-top: 20px;
+  }
