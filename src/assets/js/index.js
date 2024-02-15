@@ -56,7 +56,7 @@ function renderCategories(categoriesDat) {
 
       return `
           <div class="toys-creativity catalog-element-style">
-            <a href="#">${item[1].Book_categories}</a>
+            <a href="">${item[1].Book_categories}</a>
           </div>`;
     })
     .join("");

@@ -311,7 +311,7 @@ categoriesList.addEventListener("click", async function (event) {
   }
 });
 
-// localStorage
+// local storage
 document.addEventListener("DOMContentLoaded", async function () {
   SwiperSlider();
   const selectedCategory = localStorage.getItem("selectedCategory");
@@ -320,21 +320,26 @@ document.addEventListener("DOMContentLoaded", async function () {
     try {
       const booksData = await getCategories("Books");
 
-      const filteredBooks = booksData.filter(
-        (item) => item[1].Book_categories === selectedCategory
-      );
-
-      // Update each slider with the filtered books
-      renderBookCards(filteredBooks);
-      renderBookCards2(filteredBooks);
-      renderBookCards3(filteredBooks);
-      document.querySelectorAll(".categorieLink").forEach((link) => {
-        if (link.textContent === selectedCategory) {
-          link.style.color = "var(--color-orange)";
-        } else {
-          link.style.color = "";
-        }
-      });
+      if (selectedCategory === "All") {
+        renderBookCards(booksData);
+        renderBookCards2(booksData);
+        renderBookCards3(booksData);
+        allBooksLink.style.color = "var(--color-orange)";
+      } else {
+        const filteredBooks = booksData.filter(
+          (item) => item[1].Book_categories === selectedCategory
+        );
+        renderBookCards(filteredBooks);
+        renderBookCards2(filteredBooks);
+        renderBookCards3(filteredBooks);
+        document.querySelectorAll(".categorieLink").forEach((link) => {
+          if (link.textContent === selectedCategory) {
+            link.style.color = "var(--color-orange)";
+          } else {
+            link.style.color = "";
+          }
+        });
+      }
     } catch (error) {
       console.error(error);
     }
@@ -353,7 +358,7 @@ allBooksLink.addEventListener("click", async function () {
       link.style.color = "";
     });
     allBooksLink.style.color = "var(--color-orange)";
-    localStorage.setItem("selectedCategory", allBooksLink);
+    localStorage.setItem("selectedCategory", "All");
   } catch (error) {
     console.error(error);
   }
