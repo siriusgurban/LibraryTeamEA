@@ -11,6 +11,11 @@ let inputComment=document.querySelector("#inputComment")
 let commentbtn=document.querySelector("#commentbtn")
 let TextEror=document.querySelector("#TextEror")
 let commentsDiv=document.querySelector("#commentsDiv")
+let full_div=document.querySelector("#full_div")
+let part1=document.querySelector("#part1")
+let spiner=document.querySelector("#spiner")
+
+
 
 ReadMoreBackBtn.addEventListener("click",()=>{
     window.location.href="/LibraryTeamEA/src/assets/pages/catalog.html"
@@ -37,11 +42,15 @@ const db = getDatabase(app);
 const dbRef = ref(getDatabase());
 
 async function getDataById(userId) {
+  part1.style.display="none"
+  spiner.style.display="block"
   try {
     const snapshot = await get(child(dbRef, `Books/${userId}`));
 
     if (snapshot.exists()) {
       let data=snapshot.val()
+      part1.style.display="block"
+  spiner.style.display="none"
       
       BookYear.innerHTML=data.Book_Year
       
@@ -84,6 +93,8 @@ async function getDataById(userId) {
       
    
       BookImgUrl.src=`${data.Book_url}`
+    
+
       console.log(data.Book_url);
      
       
@@ -117,8 +128,7 @@ var requestOptions = {
 };
 let response= await fetch("https://blog-api-t6u0.onrender.com/posts", requestOptions)
 let response2=await response.json()
-console.log("ss");
-console.log(response2);
+
 
   
  }
@@ -206,6 +216,7 @@ console.log(DataMap);
 
     }
  })
+ 
  
 getComment(BookId)
 
