@@ -46,7 +46,9 @@
   line-height: 196.187%;
 }
 .inptSearch {
-  width: 395px;
+  /* width: 395px; */
+  min-width: 230px;
+  width: 38%;
   height: 41px;
   flex-shrink: 0;
   border-radius: 34px;
@@ -95,7 +97,9 @@
 }
 
 .Books {
-  width: 388px;
+  /* width: 388px; */
+  width: 40%;
+  min-width: 230px;
   border-radius: 35px;
   background: #f1f0f0;
   display: flex;
@@ -238,6 +242,30 @@
   display: none;
 }
 
+@media (min-width: 320px) and (max-width: 576px) {
+  .Searchbtn{
+    padding: 12px;
+    border-radius: 5px;
+  }
+  .container{
+    padding: 0 !important;
+  }
+
+  .BookForm{
+    padding: 16px 14px;
+  }
+
+  .Books{
+    padding-top: 12px;
+    padding-left: 12px;
+  }
+
+  .AddBookStart{
+    width: 320px;
+    overflow-x: scroll;
+  }
+}
+
 /* //? -------------------------------------------- Add Book Ends------------------------------------- */
 
 /* //? -------------------------------------------- Join Us Starts------------------------------------- */
@@ -269,13 +297,45 @@
   transition: all 0.3s ease-in-out !important;
 }
 
+#nav-bar-none{
+  display: block !important;
+}
+
+#right-side-menu{
+  margin-left: 24% !important;
+}
+
 .nav-menu {
+  display: block !important;
+}
+
+.right-side-menu-icon{
+  display: none;
+}
+
+.nav-menu-resp{
   display: none !important;
 }
 
 @media (min-width: 320px) and (max-width: 576px) {
   /* -------------HEADER--BEGINS----------- */
 
+  #nav-bar-none{
+    display: none;
+  }
+
+  .nav-menu {
+    display: none !important;
+  }
+
+  #right-side-menu{
+    margin: 0% !important;
+    padding: 11px 13px !important;
+  }
+
+  .right-side-menu-icon{
+    display: block;
+  }
 
   .adminlogo{
     display: none;
@@ -285,6 +345,7 @@
     display: block !important;
     position: absolute;
     right: 20px !important;
+    top: -36px !important;
     z-index: 99;
   }
 
@@ -304,7 +365,11 @@
     height: 80px !important;
   }
 
-  .nav-menu.actived {
+  .nav-menu-resp{
+    display: none;
+  }
+
+  .nav-menu-resp.actived {
     display: block !important;
     position: fixed !important;
     right: -100% !important;
@@ -317,15 +382,19 @@
     transition: all 0.5s ease-in-out;
     height: 100% !important;
     z-index: 99;
+    padding-top: 14px !important;
+    padding-left: 12px !important;
+    gap: 14px !important;
+    font-size: 16px !important;
   }
 
-  .nav-menu li {
+  .nav-menu-resp li {
     margin: 20px 0 !important;
     font-size: 17px !important;
     text-align: end !important;
   }
 
-  .nav-menu {
+  .nav-menu-resp {
     left: 0 !important;
     padding-top: 80px !important;
     padding-right: 8% !important;
@@ -353,6 +422,11 @@
   }
 
   /* -------------HEADER--ENDS----------- */
+
+
+  .addBook{
+    font-size: 25px;
+  }
 
 }
 
