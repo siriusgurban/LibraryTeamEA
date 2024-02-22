@@ -33,23 +33,32 @@ let Phone=document.querySelector("#Phone")
 let ContactTextare=document.querySelector("#ContactTextare")
 let Contactbtn=document.querySelector("#Contactbtn")
 let TextErorContact=document.querySelector("#TextErorContact")
-
+let successfull=document.querySelector("#successfull")
 
 Contactbtn.addEventListener("click",()=>{
 if(Full_Name.value.trim() !== ''&&Address.value.trim()!==""&&Email.value.trim()!==""&&Phone.value.trim()!==""){
     TextErorContact.style.display = "none";
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+   
 
+  
+    
 
-    let obj={
+    let testEmail=emailRegex.test(`${Email.value}`)
+    if(testEmail==true){
+      let obj={
         Full_Name:Full_Name.value,
         Address:Address.value,
         Email:Email.value,
         Phone:Phone.value,
         Description:ContactTextare.value,
     
+    
 
     }
     AddData(obj)
+    
+
     
 
     
@@ -58,11 +67,27 @@ if(Full_Name.value.trim() !== ''&&Address.value.trim()!==""&&Email.value.trim()!
         Email.value="",
         Phone.value="",
         ContactTextare.value=""
+        successfull.style.display="block"
+        setTimeout(()=>{
+          successfull.style.display="none"
+
+        },3000)
         
+
+    }
+    else{
+      TextErorContact.textContent="Invalid email address"
+      TextErorContact.style.display = "block";
+
+    }
+
+
+   
 
 }
 
 else{
+  TextErorContact.textContent="Please fill in all input field"
     TextErorContact.style.display = "block";
 
 
