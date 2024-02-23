@@ -159,7 +159,7 @@ body {
   /* -------------JOIN-US-BEGINS----------- */
 
   .modal-body {
-    height: 200px !important;
+    min-height: 200px !important;
   }
 
   .modal-title {
@@ -188,6 +188,7 @@ body {
     margin: auto !important;
     width: 260px !important;
     height: 340px !important;
+   
   }
 
   .ab {
@@ -198,7 +199,7 @@ body {
 
   .modal-content {
     margin: auto !important;
-    padding-bottom: 50px !important;
+    padding-bottom: 20px !important;
   }
 
   .modal-backdrop {

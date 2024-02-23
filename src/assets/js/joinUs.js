@@ -29,25 +29,51 @@ joinUsFormBtn.addEventListener("submit", (e) => {
     e.preventDefault();
 
     console.log("cliked form");
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (inpFullname.value.trim() !== '' && inpEmail.value.trim() !== "") {
+        let testedEmail = emailRegex.test(`${inpEmail.value.trim()}`)
+        console.log(testedEmail, "testedEmail");
 
-    let joinUsUsObj = {
-        fullname: inpFullname.value,
-        email: inpEmail.value,
+        let joinUsUsObj = {
+            fullname: inpFullname.value,
+            email: inpEmail.value,
+        }
+
+        if (!testedEmail) {
+            successAlert.innerHTML = `<div class="alert alert-danger col-11 row m-auto mb-3 d-flex justify-content-center" role="alert">
+             Enter valid inputs!
+         </div>`
+
+            setTimeout(() => {
+                successAlert.innerHTML = "";
+            }, 2000)
+        } else {
+            writeUserData(joinUsUsObj);    //adding jointUsObj to joinUs called
+            console.log("Joined");
+            inpFullname.value = "";
+            inpEmail.value = "";
+
+            successAlert.innerHTML = `<div class="alert alert-success col-11 row m-auto mb-3 d-flex justify-content-center" role="alert">
+                                        You successfully joined!
+                                    </div>`
+
+            setTimeout(() => {
+                successAlert.innerHTML = "";
+            }, 2000)
+        }
+    } else {
+        successAlert.innerHTML = `<div class="alert alert-danger col-11 row m-auto mb-3 d-flex justify-content-center" role="alert">
+        Fill all inputs!
+    </div>`
+
+        setTimeout(() => {
+            successAlert.innerHTML = "";
+        }, 2000)
     }
 
-    writeUserData(joinUsUsObj);    //adding jointUsObj to joinUs called
-    console.log("Joined");
 
-    inpFullname.value = "";
-    inpEmail.value = "";
 
-    successAlert.innerHTML = `<div class="alert alert-success col-11 row m-auto mb-3" role="alert">
-                                    You successfully joined!
-                                </div>`
-
-    setTimeout(() => {
-        successAlert.innerHTML = "";
-    }, 2000)
 
 })
 
