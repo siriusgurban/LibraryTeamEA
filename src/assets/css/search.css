@@ -10,12 +10,16 @@
   flex-direction: column;
 }
 
+.container_box {
+  margin-top: 100px;
+}
+
 /* .search-header {
   margin-bottom: 22px;
 } */
 .search-header h2 {
   font-size: 36px;
-  font-weight: 600;
+  font-weight: 700;
 }
 .search-input {
   margin-bottom: 44px;
@@ -90,6 +94,63 @@
   .search-search {
     width: 100% !important;
   }
+
+  .search-header h2 {
+    font-size: 25px;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  .container_box {
+    margin-top: 20px;
+  }
+
+  .form_search {
+    gap: 24px !important;
+  }
+
+  .carousel-control-prev-icon {
+    background-image: url(../images/vector.svg);
+    left: -10px;
+    position: absolute;
+  }
+  .carousel-control-next-icon {
+    background-image: url(../images/vector2.svg);
+    right: -10px;
+    position: absolute;
+  }
+
+  #inp {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+  }
+
+  .btn_search {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #warningAlert {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .alert {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  #searchBtn {
+    font-size: 16px !important;
+  }
+
+  .search-header {
+    align-items: center;
+  }
+
   .search-slider {
     width: 100% !important;
   }
@@ -102,11 +163,13 @@
     padding: 5px 10px;
   }
 
-  .card-title{
+  .card-title {
     font-size: 25px !important;
+    text-align: center;
   }
 
-  .card-text{
+  .card-text {
     font-size: 12px !important;
+    text-align: center;
   }
 }

@@ -1,11 +1,3 @@
-// "use strict";
-
-// console.log("Search js");
-
-// const searchInput = document.querySelector("#search-input");
-// const searchBtn = document.querySelector("#search-btn");
-// const carouselInner = document.querySelector("#carousel-inner");
-
 "use strict";
 
 console.log("Search js");
@@ -37,47 +29,50 @@ function renderFoundBooks() {
 
         const books = ref(db, "Books/");
 
-        onValue(books, (snapshot) => {
-            const data = snapshot.val();
+        try {
+            searchBtn.disabled = true;
 
-            let arr = convert(data);
-            console.log(arr);
+            onValue(books, (snapshot) => {
+                const data = snapshot.val();
 
-            let filteredBookArr = arr.filter(el => {
-                if (el.Book_Name.toLowerCase().includes(inp.value.toLowerCase())) {
-                    return el;
-                }
-            })
+                let arr = convert(data);
+                console.log(arr);
+
+                let filteredBookArr = arr.filter(el => {
+                    if (el.Book_Name.toLowerCase().includes(inp.value.trim().toLowerCase())) {
+                        return el;
+                    }
+                })
 
 
-            console.log(filteredBookArr, "filteredBookArr");
+                console.log(filteredBookArr, "filteredBookArr");
 
-            if (inp.value.length == 0) {
-                console.log("Empty input");
-                warningAlert.innerHTML = `<div class="alert alert-warning col-12 row m-auto mb-4 py-4" role="alert">
+                if (inp.value.length == 0) {
+                    console.log("Empty input");
+                    warningAlert.innerHTML = `<div class="alert alert-warning col-12 row m-auto mb-4 py-4 d-flex justify-content-center" role="alert">
                                                 Fill the input!
                                         </div>`
 
-                setTimeout(() => {
-                    warningAlert.innerHTML = "";
-                }, 2000)
+                    setTimeout(() => {
+                        warningAlert.innerHTML = "";
+                    }, 2000)
 
-                return;
-            }
+                    return;
+                }
 
 
-            if (filteredBookArr.length > 0) {
-                console.log("Found");
-                swiperWrapper.innerHTML = filteredBookArr.map((el, index) =>
-                (`<div class="carousel-item ${index == 0 ? "active" : ""}">
+                if (filteredBookArr.length > 0) {
+                    console.log("Found");
+                    swiperWrapper.innerHTML = filteredBookArr.map((el, index) =>
+                    (`<div class="carousel-item ${index == 0 ? "active" : ""}">
                      <div class="card" style="max-width: 930px; padding: 48px 30px;">
                        <div class="d-flex justify-content-between gap-3 slider-content">
         
-                         <div class="" >
+                         <div class=" mx-auto" >
                             <img style="width: 220px;" src="${el.Book_url == "undefined" ? `../icon/logo_red.svg` : el.Book_url}" class="shadow border" class="img-fluid rounded-start " alt="Book image">
                         </div>
 
-                           <div class="card-body d-flex flex-column ">
+                           <div class="card-body d-flex flex-column " style="color: var(--color-footer);">
                              <h5 class="card-title fs-4 fw-bold mb-3">${el?.Book_Name}</h5>
                              <p class="card-text fs-5 mb-4">${el?.Book_Author}</p>
                              <p class="card-text overflow-y-auto w-100"  style="height: 300px; font-size: 14px; line-height: 196%;" ${el?.Book_escription}>${el?.Book_escription}</p>
@@ -88,23 +83,23 @@ function renderFoundBooks() {
                     </div>
                 </div>
                 `)
-                ).join("");
+                    ).join("");
 
-                inp.value = "";
-            } else {
-                console.log("Not found error");
-                swiperWrapper.innerHTML = `
+                    inp.value = "";
+                } else {
+                    console.log("Not found error");
+                    swiperWrapper.innerHTML = `
                 <div class="carousel-item active">
 
                 <div class="card" style="max-width: 930px; padding: 48px 30px;">
                   <div class="d-flex justify-content-between slider-content">
 
-                    <div class="w-100" style="max-width: 220px;">
+                    <div class="w-100  mx-auto"  style="max-width: 220px;">
                       <img src="../images/41bLP6NzvKL.jpg"
                         class="object-fit-contain w-100 border border-danger shadow" alt="default book">
                     </div>
 
-                    <div class="w-100">
+                    <div class="w-100" style="color: var(--color-footer);">
                       <div class="card-body d-flex flex-column ">
                         <h5 class="card-title fs-4 fw-bold mb-3 text-danger">Could not</h5>
                         <p class="card-text fs-5 mb-4 text-danger">Find Your Book</p>
@@ -119,10 +114,17 @@ function renderFoundBooks() {
                 </div>
 
               </div>`
-                inp.value = "";
-            }
+                    inp.value = "";
+                }
 
-        })
+            })
+
+        } catch (error) {
+            console.log(error);
+        } finally {
+            searchBtn.disabled = false;
+        }
+
     })
 }
 
