@@ -158,6 +158,14 @@ function GetData(gol) {
                     `
         })
 
+
+
+
+
+
+
+
+
         //Beyler-in kodu
         // let option = convertdata.map((i) => {
         //     return `

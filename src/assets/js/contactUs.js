@@ -36,16 +36,17 @@ let TextErorContact=document.querySelector("#TextErorContact")
 let successfull=document.querySelector("#successfull")
 
 Contactbtn.addEventListener("click",()=>{
-if(Full_Name.value.trim() !== ''&&Address.value.trim()!==""&&Email.value.trim()!==""&&Phone.value.trim()!==""){
+if(Full_Name.value.trim() !== ''&&Address.value.trim()!==""&&Email.value.trim()!==""&&Phone.value.trim()!==""&&ContactTextare.value.trim()!==""){
     TextErorContact.style.display = "none";
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-   
+    const numberRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
 
   
     
 
     let testEmail=emailRegex.test(`${Email.value}`)
-    if(testEmail==true){
+    let testNumber=numberRegex.test(`${Phone.value}`)
+    if(testEmail==true && testNumber==true){
       let obj={
         Full_Name:Full_Name.value,
         Address:Address.value,
@@ -76,7 +77,7 @@ if(Full_Name.value.trim() !== ''&&Address.value.trim()!==""&&Email.value.trim()!
 
     }
     else{
-      TextErorContact.textContent="Invalid email address"
+      TextErorContact.textContent="Invalid email or number"
       TextErorContact.style.display = "block";
 
     }
