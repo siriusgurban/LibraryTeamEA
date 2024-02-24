@@ -55,13 +55,22 @@ function renderCategories(categoriesDat) {
       arrayDetectingRepetitionCategorie.push(item[1].Book_categories);
 
       return `
-          <div class="toys-creativity catalog-element-style">
-            <a href="">${item[1].Book_categories}</a>
+          <div class="toys-creativity catalog-element-style" role="button" data-cat="${item[1].Book_categories}">
+            ${item[1].Book_categories}
           </div>`;
     })
     .join("");
 
   catalogCategories.innerHTML = categoriesItem;
+
+  let catalogElemntStyle = document.querySelectorAll(".catalog-element-style");
+  catalogElemntStyle.forEach(btn => {
+    btn.addEventListener("click", () => {
+      window.location.href = "../src/assets/pages/catalog.html"
+      localStorage.setItem("selectedCategory", btn.dataset.cat);
+    })
+
+  })
 }
 
 // result

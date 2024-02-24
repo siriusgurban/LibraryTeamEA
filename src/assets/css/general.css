@@ -51,7 +51,7 @@ body {
 }
 
 .navbar {
-  padding-top: 16px;
+  /* padding-top: 16px; */
 }
 
 .hamburger {
@@ -136,7 +136,9 @@ body {
   .navbar {
     position: absolute !important;
     right: 2% !important;
-    padding-bottom: 16px !important;
+    padding-bottom: 0 !important;
+
+    /* padding-bottom: 16px !important; */
   }
 
   .nav-color{

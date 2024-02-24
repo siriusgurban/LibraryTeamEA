@@ -52,7 +52,7 @@ async function getDataById(userId) {
       part1.style.display="block"
   spiner.style.display="none"
       
-      BookYear.innerHTML=data.Book_Year
+      BookYear.innerHTML=data.Book_Year.slice(0,4)
       
       BookName.innerHTML=data.Book_Name
       if((Date.now()-data.Book_Date)/(1000*60*60)>24){
@@ -73,7 +73,7 @@ async function getDataById(userId) {
    
       BookAuthor.innerHTML=data.Book_Author
       if (splitArr.length>100) {
-        BookDescription.innerHTML=`${splitArr.slice(0, 100).join(" ")} <span cursor="pointer" id="ReadMore">...Read more</span> `;
+        BookDescription.innerHTML=`${splitArr.slice(0, 100).join(" ")} <span cursor="pointer" style="font-weight:600" id="ReadMore">...Read more</span> `;
         let ReadMore=document.querySelector("#ReadMore")
         ReadMore.style.cursor = "pointer"
         ReadMore.addEventListener("click",()=>{
