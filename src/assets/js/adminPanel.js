@@ -45,7 +45,7 @@ adminForm.addEventListener("submit", (e) => {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            alertWrong.innerHTML = `<div class="alert alert-danger col-10 row m-auto mb-3 text-center" role="alert">
+            alertWrong.innerHTML = `<div class="alert alert-danger col-10 row m-auto mb-3 text-center form_alert_inner" role="alert">
                                     You entered wrong login or password!
                                 </div>`
 

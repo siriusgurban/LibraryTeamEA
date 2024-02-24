@@ -282,6 +282,16 @@
 
 /* //? -------------------------------------------- Responsive Side Menu Starts------------------------------------- */
 
+.admin_div{
+  position: relative;
+}
+
+.admin_logo{
+  position: absolute;
+  left: 2%;
+  top: 5%;
+  width: 100%;
+}
 
 .hamburger {
   display: none !important;
@@ -299,6 +309,7 @@
 
 #nav-bar-none{
   display: block !important;
+  padding-top: 0 !important;
 }
 
 #right-side-menu{
@@ -318,7 +329,73 @@
 }
 
 @media (min-width: 320px) and (max-width: 576px) {
+
+.form_div{
+  margin-top: 160px !important;
+  width: 70%  !important;
+  height: 60%  !important;/
+}
+
+.admin_logo_img img{
+  width: 40px !important;
+  height: 50px !important;
+}
+
+.admin_logo_gap{
+  gap: 2px !important;
+}
+
+.form_title{
+  font-size: 20px !important;
+  margin-bottom: 5px !important;
+  width: 80% !important;
+  display: flex !important;
+  justify-content: center !important;
+  /* margin-top: 5px !important; */
+margin-left: auto !important;
+margin-right: auto !important;
+}
+
+.form_inp input{
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+.form_btn{
+  margin-bottom: 40px !important;
+  margin-top: 15px !important;
+}
+
+.form_alert{
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+}
+
+.form_alert_inner{
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+  font-size: 13px !important;
+}
+
+.form_btn_inner{
+  padding: 5px !important;
+  font-size: 18px !important;
+  font-family: "Crimson Text" !important; 
+
+}
+
   /* -------------HEADER--BEGINS----------- */
+
+  .nav-menu-gap{
+    gap: 14px !important;
+  }
+
+  .nav-menu-gap a{
+    padding-left: 10px !important;
+  }
+
+  #adminLogOut{
+    padding-left: 10px !important;
+  }
 
   #nav-bar-none{
     display: none;
@@ -386,6 +463,26 @@
     padding-left: 12px !important;
     gap: 14px !important;
     font-size: 16px !important;
+  }
+
+  #right-side-menu.actived{
+    background-color: var(--color-footer) !important;
+  }
+
+  .BookForm.actived{
+    background-color: var(--color-footer) !important;
+  }
+
+  .forminpt.actived{
+    box-shadow: none !important;
+    border: 1px solid var(--color-footer) !important;
+    background-color: var(--color-footer) !important;
+  }
+
+  #AuthorName.actived{
+    box-shadow: none !important;
+    border: 1px solid var(--color-footer) !important;
+    background-color: var(--color-footer) !important;
   }
 
   .nav-menu-resp li {

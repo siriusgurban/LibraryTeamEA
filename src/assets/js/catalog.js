@@ -301,8 +301,8 @@ categoriesList.addEventListener("click", async function (event) {
 
       // Update each slider with the filtered books
       renderBookCards(filteredBooks);
-      renderBookCards2(filteredBooks);
-      renderBookCards3(filteredBooks);
+      // renderBookCards2(filteredBooks);
+      // renderBookCards3(filteredBooks);
 
       localStorage.setItem("selectedCategory", selectedCategory);
     } catch (error) {
